@@ -1,0 +1,103 @@
+/**
+ * Footer
+ */
+footer {
+  .font-karla-bold;
+
+  background: black;
+  border-top: 2px solid white;
+  clear: both; /* note: article footer is inside an absolute positioned div. need this to position correctly */
+  font-size: @font-size-normal;
+  position: relative;
+  margin-top: @margin-lg;
+
+  .footer-cta {
+    background-image: linear-gradient(120deg, @color-gradient-yellow, @color-gradient-blue);
+    border-bottom: 2px solid white;
+    color: white;
+    padding: @margin-lg 0;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+
+    .cta-heading {
+      .font-karla-bold;
+
+      color: @color-yellow;
+      font-size: @font-size-subtitle;
+      margin-bottom: @margin-xs;
+      text-transform: uppercase;
+    }
+
+    .cta-copy {
+      .font-karla;
+
+      font-size: @font-size-header;
+      margin-bottom: @margin-md;
+    }
+
+    .signup-button {
+      background: black;
+      border-radius: 5px;
+      color: white;
+      margin: auto;
+      padding-bottom: @margin-xs;
+      padding-top: @margin-xs;
+      text-transform: uppercase;
+      width: 300px;
+    }
+  }
+
+  .page-links {
+    margin: @margin-md 0;
+    text-align: center;
+
+    a {
+      color: @color-footer;
+      display: inline-block;
+      margin: @margin-xs;
+      text-decoration: none;
+
+      @media (max-width: @screen-xs-max) {
+        display: block;
+      }
+    }
+
+    a:hover {
+      color: @color-yellow;
+    }
+  }
+
+  .-social-icons {
+    margin: @margin-md 0;
+    text-align: center;
+
+    a {
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      margin: @margin-xs;
+    }
+
+    .-icon-facebook {
+      background-image: url("https://images.contentful.com/awpxl2koull4/1I5gf4C4lCSSwIusOG8IwO/8c16cf27bb93b1be2b191621b8246f67/icon-facebook-footer.png");
+      background-repeat: no-repeat;
+    }
+
+    .-icon-instagram {
+      background-image: url("https://images.contentful.com/awpxl2koull4/2QmAXFoxp6gCyYMc8YIyAo/adb58150bf7f8bcbd50e6ab428f79c44/icon-instagram-footer.png");
+      background-repeat: no-repeat;
+    }
+
+    .-icon-twitter {
+      background-image: url("https://images.contentful.com/awpxl2koull4/3NAOvCB3FK0qKA2QYSkEWa/1d8cff31c99583f395742574076c0c90/icon-twitter-footer.png");
+      background-repeat: no-repeat;
+    }
+  }
+
+  .social-and-footer-nav {
+    padding: @margin-md 0;
+  }
+}
