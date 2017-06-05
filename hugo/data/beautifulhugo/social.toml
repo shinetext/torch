@@ -1,3 +1,4 @@
+# Placeholder for either a sidebar or social bar to be used throughout the website
 [[social_icons]]
 id = "email"
 url = "mailto:%s"
@@ -99,4 +100,3 @@ id = "keybase"
 url = "https://keybase.io/%s"
 title = "Keybase"
 icon = "fa-key"
-
