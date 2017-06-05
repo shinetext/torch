@@ -2,7 +2,7 @@
 
 ## Installation
 
-    $ git clone https://github.com/halogenica/beautifulhugo.git beautifulhugo
+    $ https://github.com/shinetext/torch.git
     $ npm i || yarn
     $ npm run hugo-server
           Concurrently in a seperate tab
