@@ -10,17 +10,17 @@
   </div>
   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
     <div class="row pre-article">
-      {{ partial "pre_article.html" . }}
+      {{ partial "article_pre_article.html" . }}
     </div>
 
     <div role="main" id="article-body">
       {{ .Content }}
     </div>
     <div class="post-article">
-      {{ partial "post_article.html" . }}
+      {{ partial "article_post_article.html" . }}
     </div>
     <div class="author-section">
-      {{ partial "author_section.html" . }}
+      {{ partial "article_author_section.html" . }}
     </div>
   </div>
 
