@@ -3,6 +3,8 @@
   title = "Cupcake Ipsum Dolor Sit Amet"
   categories = ["Shine", "Spotlight"]
   tags = ["ipsum", "test", "space"]
+  author = "David Bowie"
+  image = "/img/404-southpark.jpg"
 +++
 
 Across the sea of space, the stars are other suns.

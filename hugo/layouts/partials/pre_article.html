@@ -1,0 +1,48 @@
+<div id="header-author-photo">
+  <img src="{{ .Params.image }}?fit=thumb&w=100&h=100">
+</div>
+
+<div class="social-tags-container">
+  <div class="social-container col-xs-12 col-xs-offset-0 col-md-6">
+    <a class="icon-facebook social-icon" href="#" target="_blank"
+      ga-on="click"
+      ga-event-category="Share"
+      ga-event-action="facebook"
+      ga-event-label={{ .Permalink }}>
+    </a>
+    <a class="icon-twitter social-icon" href="#" target="_blank"
+      ga-on="click"
+      ga-event-category="Share"
+      ga-event-action="twitter"
+      ga-event-label="<%= articleUrlPath %>">
+    </a>
+    <a class="icon-pinterest social-icon" data-pin-do="buttonPin" data-pin-tall="true" data-pin-round="true" data-pin-save="false" href="https://www.pinterest.com/pin/create/button/?url=<%= ARTICLE_SHARE_URL %>&media=<%= ARTICLE_SHARE_IMAGE %>&description=<%= ARTICLE_SHARE_DESCRIPTION %>" target="_blank"
+      ga-on="click"
+      ga-event-category="Share"
+      ga-event-action="pinterest"
+      ga-event-label="<%= articleUrlPath %>">
+    </a>
+    <a class="icon-linkedin social-icon" href="#" target="_blank"
+      ga-on="click"
+      ga-event-category="Share"
+      ga-event-action="linkedin"
+      ga-event-label="<%= articleUrlPath %>">
+    </a>
+    <a class="icon-email social-icon" href="#" rel="external"
+      ga-on="click"
+      ga-event-category="Share"
+      ga-event-action="email"
+      ga-event-label="<%= articleUrlPath %>">
+    </a>
+  </div>
+</div>
+
+<div class="tags-container col-xs-12 col-xs-offset-0 col-md-6">
+  <img class="tags-pin" src="https://images.contentful.com/awpxl2koull4/6YLMyJkVLaWA8giwgIaqIe/1127aa4d12a5121257b3318d3d06dc4e/tag-pin.png">
+
+  <div class="tags">
+    {{ range .Params.tags }}
+      {{ . }}&nbsp;
+    {{ end }}
+  </div>
+</div>

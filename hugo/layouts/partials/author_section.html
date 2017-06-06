@@ -1,0 +1,17 @@
+
+  <div class="-photo-container">
+    <img src="{{ .Params.image }}?fit=thumb&w=100&h=100">
+  </div>
+  <div class="-info-container">
+    <div class="-name">{{ .Params.author }}</div>
+    <div class="-bio">Author Bio</div>
+
+    <div class="-social-links-container">
+      {{ if .Params.facebook }}
+      <a class="-social-link" href="https://www.facebook.com/{{ .Params.facebook }}" target="_blank">Facebook</a>
+      {{ end }}
+      <!-- Add Twitter -->
+      <!-- Add instagram -->
+      <!-- Add linkedin -->
+    </div>
+  </div>

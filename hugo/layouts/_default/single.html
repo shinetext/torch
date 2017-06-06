@@ -1,23 +1,49 @@
 {{ define "main" }}
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-        {{ .Content }}
-      </article>
-      <ul class="pager blog-pager">
-        {{ if .PrevInSection }}
-        <li class="previous">
-          <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ i18n "previousPost" }}</a>
-        </li>
-        {{ end }} {{ if .NextInSection }}
-        <li class="next">
-          <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ i18n "nextPost" }} &rarr;</a>
-        </li>
-        {{ end }}
-      </ul>
+<div id="shine-article">
+  <div class="container-header" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)), url({{ .Params.image }});">
+    <div class="article-header-text">
+      <h1 class="title">{{ .Title }}</h1>
+      <div class="-author">
+        By {{ .Params.author }}
+      </div>
     </div>
   </div>
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+    <div class="row pre-article">
+      {{ partial "pre_article.html" . }}
+    </div>
+
+    <div role="main" id="article-body">
+      {{ .Content }}
+    </div>
+    <div class="post-article">
+      {{ partial "post_article.html" . }}
+    </div>
+    <div class="author-section">
+      {{ partial "author_section.html" . }}
+    </div>
+  </div>
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <article role="main" class="blog-post">
+          {{ .Content }}
+        </article>
+        <ul class="pager blog-pager">
+          {{ if .PrevInSection }}
+          <li class="previous">
+            <a href="{{ .PrevInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title }}">&larr; {{ i18n "previousPost" }}</a>
+          </li>
+          {{ end }} {{ if .NextInSection }}
+          <li class="next">
+            <a href="{{ .NextInSection.Permalink }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title }}">{{ i18n "nextPost" }} &rarr;</a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </div> -->
   {{ partial "sticky_footer.html" . }}
 </div>
 {{ end }}

@@ -2,9 +2,11 @@
 date = "2017-05-18T12:00:00+06:00"
 lastmod = "2017-05-30T22:00:00+06:00"
 title = "Example config.toml"
-categories = ["Others"]
+categories = ["Others", "how to"]
 tags = ["config","example"]
-draft = true
+image = "/img/404-southpark.jpg"
+author = "RoboMon"
+draft = false
 +++
 Here's an example for `config.toml` file.
 
