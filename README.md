@@ -14,7 +14,7 @@ First to install hugo simply run `brew install hugo v0.20.7` or `brew install hu
 
 
 ## Netlify & HUGO & Contentful & Github
-![High level overview](https://github.com/shinetext/torch/master/images/example.png)
+![High level overview](https://github.com/shinetext/torch/blob/master/images/example.png)
 
 
 ## About
