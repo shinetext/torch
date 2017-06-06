@@ -50,14 +50,3 @@ Inline code: `echo "What is the meaning of life?"`. Who knows?
 var meaningOfLife = 42;
 console.log('The meaning of life is: ', meaningOfLife);
 ```
-
----
-
-Who wants some table?
-
-  Minimo  |  Caption  | More Caption
- -------- | --------- | ------------
-   Cool   |   What?   |  Now, wut?!
-
-
-Ah, enough for today, eh?

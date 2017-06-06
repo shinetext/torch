@@ -1,5 +1,5 @@
 baseURL = "/"
-title = "Shine"
+title = "Get Advice | Shine"
 
 contentdir = "hugo/content"
 dataDir = "hugo/data"
@@ -40,7 +40,9 @@ Paginate = 10
   twitter = ""
 
 [permalinks]
+  post = "articles/:slug/"
   page = "/:slug/"
+  author = "/:slug/"
 
 defaultContentLanguage = "en"
 
@@ -50,14 +52,3 @@ defaultContentLanguage = "en"
     lang = "en"
     languageName = "English"
     weight = 1
-
-
-[[menu.main]]
-    name = "Blog"
-    url = "blog/"
-    weight = 1
-
-[[menu.about]]
-    name = "About"
-    url = "page/about/"
-    weight = 3

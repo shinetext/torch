@@ -3,13 +3,11 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<!-- Site Title, Description, Author, and Favicon -->
+<!-- Site Title, Description and Favicon -->
 {{- with .Title | default .Site.Title }}
   <title>{{ . }}</title>
   <meta property="og:title" content="{{ . }}" />
-  <meta name="twitter:title" content="{{ . | truncate 70 }}" />
 {{- end }}
-<meta name="author" content="{{ .Site.Author.name }}"/>
 {{- with .Site.Params.favicon }}
   <link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
 {{- end -}}
@@ -22,5 +20,4 @@
 {{- partial "includes.html" . }}
 
 {{- partial "head_custom.html" . }}
-{{ template "_internal/google_analytics_async.html" . }}
 </head>

@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run hugo-build && npm run webpack-build",
     "hugo-build": "hugo --config=config/hugo.config.toml --destination=public",
-    "hugo-server": "hugo server --config=config/hugo.config.toml --destination=public",
+    "hugo-server": "hugo server --config=config/hugo.config.toml --verbose --destination=public",
     "webpack-server": "webpack-dev-server --config=config/webpack.config.js --port=8282 --watch --debug --verbose --progress --colors",
     "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --progress --colors",
     "webpack-build": "webpack --config=config/webpack.config.js"
@@ -36,6 +36,7 @@
     "moment": "^2.18.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-ga": "^2.2.0",
     "react-redux": "^4.4.6",
     "redux": "^3.6.0",
     "whatwg-fetch": "^2.0.0"

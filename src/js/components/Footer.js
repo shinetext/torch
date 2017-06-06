@@ -1,10 +1,23 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-000000-01'); // This needs to change to Shine google-analytics id
+
 class Footer extends Component {
+  gaClick() {
+    ReactGA.event({action: 'signup', category: 'CTA', label: 'advice.shinetext'});
+  }
   render() {
     return (
       <footer>
+        <div className="footer-cta">
+          <div className="cta-heading">Like what you read?</div>
+          <div className="cta-copy">Get Shine now for daily affirmations on your phone!</div>
+          <a href="http://www.shinetext.com">
+            <div onClick={this.gaClick} className="signup-button">Sign Up</div>
+          </a>
+        </div>
         <div className="social-and-footer-nav">
           <div className="-social-icons">
             <a className="-icon-facebook" href="https://www.facebook.com/Shine-Text" target="_blank"></a>
@@ -25,4 +38,5 @@ class Footer extends Component {
   }
 }
 
-ReactDOM.render(<Footer/>, document.getElementById('footer'));
+ReactDOM.render(
+  <Footer/>, document.getElementById('footer'));
