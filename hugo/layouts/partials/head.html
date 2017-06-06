@@ -1,0 +1,23 @@
+<!-- Head of HTML DOC includes metadata and google analytics links are imported using partial "includes"  -->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<!-- Site Title, Description and Favicon -->
+{{- with .Title | default .Site.Title }}
+  <title>{{ . }}</title>
+  <meta property="og:title" content="{{ . }}" />
+{{- end }}
+{{- with .Site.Params.favicon }}
+  <link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
+{{- end -}}
+{{- with .Site.Params.fb_app_id }}
+  <meta property="fb:app_id" content="{{ . }}" />
+{{- end }}
+<!-- Hugo Version number -->
+  {{ .Hugo.Generator -}}
+<!-- Links and stylesheets -->
+{{- partial "includes.html" . }}
+
+{{- partial "head_custom.html" . }}
+</head>

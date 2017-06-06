@@ -1,0 +1,27 @@
+# Content
+- id: dateFormat
+  translation: "Январь 2, 2006"
+- id: postedOnDate
+  translation: "Опубликовано {{ .Count }}"
+- id: translationsLabel
+  translation: "Другие языки: "
+- id: translationsSeparator
+  translation: ", "
+- id: readMore
+  translation: "Далее"
+- id: olderPosts
+  translation: "Предыдущие записи"
+- id: newerPosts
+  translation: "Новые записи"
+- id: previousPost
+  translation: "Предыдущий"
+- id: nextPost
+  translation: "Следующий"
+
+# 404 page
+- id: pageNotFound
+  translation: "Уууупс, страница не найдена. Поищите ещё. (ошибка 404)"
+
+# Footer
+- id: poweredBy # Accepts HTML
+  translation: 'На базе <a href="http://gohugo.io">Hugo v{{ .Hugo.Version }}</a>'
