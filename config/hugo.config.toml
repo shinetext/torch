@@ -12,7 +12,7 @@ staticdir = "hugo/static"
 theme =  ""
 
 googleAnalytics = ""
-Paginate = 10
+paginate = 9
 
 [params]
   description = "Shine theme for Hugo"

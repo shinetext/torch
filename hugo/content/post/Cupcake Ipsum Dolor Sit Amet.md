@@ -1,8 +1,11 @@
 +++
   date = "2016-08-23T08:10:00-04:00"
   title = "Cupcake Ipsum Dolor Sit Amet"
-  categories = ["Shine Spotlight"]
+  categories = ["Shine", "Spotlight", "new"]
+  image = "/img/404-southpark.jpg"
   tags = ["cupcakes", "sweets", "deserts"]
+  featured = true
+  author = "Fluff N Stuff"
 +++
 
 

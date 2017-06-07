@@ -1,8 +1,11 @@
 +++
 date = "2017-05-19T12:00:00+06:00"
 title = "Typography"
-categories = ["Typography"]
+categories = ["how to"]
 tags = ["example", "Lorem Ipsum"]
+image = "/img/404-southpark.jpg"
+author = "The Librarian"
+facebook = "123"
 +++
 # Heading 1
 
