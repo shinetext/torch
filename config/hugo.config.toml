@@ -25,6 +25,7 @@ paginate = 9
     appid = ""
 
 [taxonomies]
+  author = "author"
   category = "categories"
   tag = "tags"
 
