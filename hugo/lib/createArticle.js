@@ -46,9 +46,8 @@ module.exports = (entry) => {
 +++\n
 ${cleanBody}
 `;
-
   // Render content into the markdown template
-  return fs.writeFile(`../content/post/${filename}.md`, templateData, function(err) {
+  return fs.writeFile( __dirname+`/../content/post/${filename}.md`, templateData, function(err) {
     if (err) {
       console.log(err)
     }
