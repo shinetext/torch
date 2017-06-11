@@ -14,7 +14,7 @@
     </div>
 
     <div role="main" id="article-body">
-      {{ .Content }}
+      {{ .Content | markdownify }}
     </div>
     <div class="post-article">
       {{ partial "article_post_article.html" . }}

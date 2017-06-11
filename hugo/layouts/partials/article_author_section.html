@@ -4,7 +4,11 @@
   </div>
   <div class="-info-container">
     <div class="-name">{{ .Params.author }}</div>
-    <div class="-bio">Author Bio</div>
+    <div class="-bio">
+      {{ range .Params.bio }}
+        {{ . | markdownify }}
+      {{ end }}
+    </div>
 
     <div class="-social-links-container">
       {{ if .Params.facebook }}

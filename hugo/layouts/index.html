@@ -2,28 +2,7 @@
 <div role="main" id="advice-home">
   <div id="featured-container">
     {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }} {{ if .Params.featured }}
-    <a href={{ .Permalink }}>
-      <div class="featured-preview">
-        <!-- Loop through posts and find featured article -->
-        <div class="article-photo" style="background-image: url({{ .Params.image }});"></div>
-        <div class="featured-preview-text">
-          <div>
-            <div class="featured-category-icon"></div>
-            <div class="featured-category">Hot Read of the Day</div>
-          </div>
-          <div class="article-container">
-            <div class="article-title">{{ .Params.title }}</div>
-            <div class="article-description">{{ .Title }}</div>
-          </div>
-          <div class="author-container">
-            <div class="author-photo">
-              <img src={{ .Params.image }}>
-            </div>
-            <div class="author-name">By {{ .Params.author }}</div>
-          </div>
-        </div>
-      </div>
-    </a>
+      {{ .Render "featured_article" }}
     {{ end }} {{ end }}
   </div>
   <div class="container-fluid">
@@ -38,24 +17,7 @@
       <div id="recent-articles">
         <div class="recent-artices">
           {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }}
-            <div class="article-preview col-xs-12 col-sm-4" data-100-bottom-top="transform: translate3d(0px,25%,0px)" data-bottom-bottom="transform: translate3d(0px,0%,0px)">
-              <a href={{ .Permalink }}>
-                <div class="article-photo">
-                  <img src={{ .Params.image }} />
-                </div>
-                <div class="author-photo">
-                  <img src={{ .Params.image }} />
-                </div>
-                <div class="article-preview-text">
-                  <div class="article-category">
-                    {{ range .Params.categories }}
-                    <a href="{{ $.Site.LanguagePrefix }}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
-                  </div>
-                  <div class="article-title">{{ .Params.title }}</div>
-                  <div class="author-name">By {{ .Params.author }}</div>
-                </div>
-              </a>
-            </div>
+            {{ .Render "article_card_preview" }}
           {{ end }}
         </div>
       </div>
