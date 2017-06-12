@@ -1,8 +1,10 @@
 <!-- Importing bundled Javascript && createing dom element for react footer -->
 <div id="footer">
 </div>
-
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src='{{ "js/bundle.js" | relURL }}'></script>
+<script src='{{ "scripts/read-more.js" | relURL }}'></script>
 
 
 {{- partial "footer_custom.html" . }}

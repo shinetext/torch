@@ -1,9 +1,11 @@
 {{ define "main" }}
 <div role="main" id="advice-home">
   <div id="featured-container">
-    {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }} {{ if .Params.featured }}
-      {{ .Render "featured_article" }}
-    {{ end }} {{ end }}
+    {{ range where .Site.Pages "Section" "==" "post" }}
+      {{ if .Params.featured }}
+        {{ .Render "featured_article" }}
+      {{ end }}
+    {{ end }}
   </div>
   <div class="container-fluid">
     <div class="row">
@@ -16,7 +18,7 @@
     <div class="row">
       <div id="recent-articles">
         <div class="recent-artices">
-          {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }}
+          {{ range where .Site.Pages "Section" "==" "post" }}
             {{ .Render "article_card_preview" }}
           {{ end }}
         </div>

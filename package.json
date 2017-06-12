@@ -7,8 +7,8 @@
     "hugo-build": "hugo --config=config/hugo.config.toml --destination=public",
     "hugo-server": "hugo server --config=config/hugo.config.toml --verbose --destination=public",
     "webpack-server": "webpack-dev-server --config=config/webpack.config.js --port=8282 --watch --debug --verbose --progress --colors",
-    "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --progress --colors",
-    "webpack-build": "webpack --config=config/webpack.config.js"
+    "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --progress --colors -p",
+    "webpack-build": "webpack --config=config/webpack.config.js -p"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
