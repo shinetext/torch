@@ -2,7 +2,7 @@
 <div role="main" id="advice-home">
   <div id="featured-container">
     {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }} {{ if .Params.featured }}
-      {{ .Render "featured_article" }}
+      {{ partial "homepage_modules/featured_article.html" . }}
     {{ end }} {{ end }}
   </div>
   <div class="container-fluid">
