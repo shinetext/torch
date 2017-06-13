@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Shine blog framework",
   "scripts": {
+    "build": "pm run webpack-build && npm run hugo-build",
     "hugo-build": "hugo --config=config/hugo.config.toml --destination=public/",
     "hugo-server": "hugo server --config=config/hugo.config.toml --verbose --destination=public/",
     "webpack-server": "webpack-dev-server --config=config/webpack.config.js --port=8282 --watch --debug --verbose --progress --colors",
