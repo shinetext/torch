@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "http://example.com"
 title = "Get Advice | Shine"
 
 contentdir = "hugo/content"
