@@ -43,7 +43,7 @@ module.exports = (entry) => {
   tags = ${JSON.stringify(tags)}
   author = "${name}"
   bio = ['${marked(bio)}']
-  cannonicalLink = ''
+  canonicalLink = ''
 +++\n
 ${cleanBody}
 `;
