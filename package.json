@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Shine blog framework",
   "scripts": {
-    "build": "npm run hugo-build && npm run webpack-build",
-    "hugo-build": "hugo --config=config/hugo.config.toml --destination=public",
-    "hugo-server": "hugo server --config=config/hugo.config.toml --verbose --destination=public",
+    "build": "npm run webpack-build && npm run hugo-build",
+    "hugo-build": "hugo --config=config/hugo.config.toml --destination=public/",
+    "hugo-server": "hugo server --config=config/hugo.config.toml --verbose --destination=public/",
     "webpack-server": "webpack-dev-server --config=config/webpack.config.js --port=8282 --watch --debug --verbose --progress --colors",
-    "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --progress --colors",
-    "webpack-build": "webpack --config=config/webpack.config.js"
+    "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --progress --colors -p",
+    "webpack-build": "webpack --config=config/webpack.config.js -p"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -16,6 +16,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "compression-webpack-plugin": "^0.4.0",
     "css-loader": "^0.28.1",
     "eslint": "^3.19.0",
     "extract-text-webpack-plugin": "^2.1.0",
@@ -23,7 +24,8 @@
     "less-loader": "^4.0.4",
     "postcss-loader": "^2.0.5",
     "style-loader": "^0.18.1",
-    "webpack": "^2.5.1"
+    "webpack": "^2.5.1",
+    "webpack-assets-manifest": "^0.7.0"
   },
   "dependencies": {
     "chalk": "^1.1.3",
@@ -37,7 +39,6 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-ga": "^2.2.0",
-    "redux": "^3.6.0",
     "whatwg-fetch": "^2.0.0"
   },
   "repository": {

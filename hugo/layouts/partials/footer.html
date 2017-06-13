@@ -2,7 +2,7 @@
 <div id="footer">
 </div>
 
-<script src='{{ "js/bundle.js" | relURL }}'></script>
+<script src='{{ $.Site.Data.path.manifest.mainjs | relURL }}'></script>
 
 
 {{- partial "footer_custom.html" . }}

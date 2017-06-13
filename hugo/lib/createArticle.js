@@ -15,10 +15,11 @@ module.exports = (entry) => {
     slug,
     description
   } = content;
+  let idxOfPubExMod = body.indexOf('<div class="pubexchange_module"'); // index of the pub exchange module in article body
   let type = 'article';
   let cleanTitle = title.replace(/\"/g, '\\"');
   let cleanDescription = description.replace(/\"/g, '\\"');
-  let cleanBody = marked(body);
+  let cleanBody = marked(body.slice(0, idxOfPubExMod)); // slice pubexchange off of article body
   let headerPhotoInfo = content.headerPhoto.fields;
 
   // Grab Author information
@@ -43,6 +44,7 @@ module.exports = (entry) => {
   tags = ${JSON.stringify(tags)}
   author = "${name}"
   bio = ['${marked(bio)}']
+  canonicalLink = ''
 +++\n
 ${cleanBody}
 `;
