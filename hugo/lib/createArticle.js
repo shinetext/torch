@@ -15,10 +15,11 @@ module.exports = (entry) => {
     slug,
     description
   } = content;
+  let idxOfPubExMod = body.indexOf('<div class="pubexchange_module"')
   let type = 'article';
   let cleanTitle = title.replace(/\"/g, '\\"');
   let cleanDescription = description.replace(/\"/g, '\\"');
-  let cleanBody = marked(body);
+  let cleanBody = marked(body.slice(0, idxOfPubExMod));
   let headerPhotoInfo = content.headerPhoto.fields;
 
   // Grab Author information
