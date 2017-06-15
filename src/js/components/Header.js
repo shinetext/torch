@@ -34,9 +34,6 @@ class Header extends Component {
             <div className="navbar-links">
               <a href="http://www.shinetext.com/squad">The Squad</a>
             </div>
-            <div className="navbar-links">
-              <a href="https://talk.shinetext.com">Shinevisor</a>
-            </div>
           </div>
           <i id="mobile-menu-button" className="fa fa-bars" aria-hidden="true"></i>
         </div>

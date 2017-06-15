@@ -17,7 +17,7 @@
       <div id="recent-articles">
         <div class="recent-artices">
           {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }}
-            {{ .Render "article_card_preview" }}
+            {{ partial "article_card_preview.html" . }}
           {{ end }}
         </div>
       </div>

@@ -1,0 +1,16 @@
+<article class="card">
+  <a href={{ .Permalink }}>
+    <figure class="card-img">
+      <img src={{ .Params.image }} alt="headerphoto"/>
+    </figure>
+    <div class="card-content">
+
+      <div class="card-title"><h4>{{ .Title }}</h4></div>
+      <div class="card-subtitle">
+        <p class="card-author">By {{ .Params.author }}</p>
+        <p class="card-social">BTN</p>
+      </div>
+
+    </div>
+  </a>
+</article>

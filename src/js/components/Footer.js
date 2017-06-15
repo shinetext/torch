@@ -11,13 +11,6 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-        <div className="footer-cta">
-          <div className="cta-heading">Like what you read?</div>
-          <div className="cta-copy">Get Shine now for daily affirmations on your phone!</div>
-          <a href="http://www.shinetext.com">
-            <div onClick={this.gaClick} className="signup-button">Sign Up</div>
-          </a>
-        </div>
         <div className="social-and-footer-nav">
           <div className="-social-icons">
             <a className="-icon-facebook" href="https://www.facebook.com/Shine-Text" target="_blank"></a>
