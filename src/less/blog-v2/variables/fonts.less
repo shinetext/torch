@@ -1,3 +1,6 @@
+/**
+ * Font mixins and variables from v2.
+ */
 .font-poppins() {
   font-family: 'Poppins';
   font-weight: 400;
@@ -7,22 +10,24 @@
   font-weight: 900;
 }
 
-@font-face {
-  font-family: 'Glacial Indifference';
-  src: url('/fonts/GlacialIndifference-Regular.otf');
-}
-
-@font-face {
-  font-family: 'Glacial Indifference';
-  font-weight: bold;
-  src: url('/fonts/GlacialIndifference-Bold.otf');
-}
-
+@font-category-card-tag: 10px;
 
 /**
  * Font mixins and variables from v1.
  * Remove as they become obsolete
  */
+
+
+ @font-face {
+   font-family: 'Glacial Indifference';
+   src: url('/fonts/GlacialIndifference-Regular.otf');
+ }
+
+ @font-face {
+   font-family: 'Glacial Indifference';
+   font-weight: bold;
+   src: url('/fonts/GlacialIndifference-Bold.otf');
+ }
 
 .font-caveat() {
   font-family: 'Caveat Brush', cursive;

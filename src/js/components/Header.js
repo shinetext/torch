@@ -4,18 +4,15 @@ import $ from 'jquery';
 
 class Header extends Component {
   componentDidMount() {
-    $(document).ready(function() {
+    $('#mobile-menu-button').click(this.toggleMobileMenu);
+    $('#mobile-menu-button-close').click(this.toggleMobileMenu);
 
-      $('#mobile-menu-button').click(toggleMobileMenu);
-      $('#mobile-menu-button-close').click(toggleMobileMenu);
-
-      function toggleMobileMenu() {
-        $('body').toggleClass('mobile-menu-open');
-        $('#mobile-menu').toggleClass('-open');
-      }
-
-    });
   }
+  toggleMobileMenu() {
+    $('body').toggleClass('mobile-menu-open');
+    $('#mobile-menu').toggleClass('-open');
+  }
+
   render() {
     return (
       <header>

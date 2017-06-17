@@ -3,6 +3,11 @@
     <figure class="card-img">
       <img src={{ .Params.image }} alt="headerphoto"/>
     </figure>
+    <div class="card-category">
+      {{ range .Params.categories }}
+        {{ . }}
+      {{ end }}
+    </div>
     <div class="card-content">
 
       <div class="card-title"><h4>{{ .Title }}</h4></div>

@@ -1,0 +1,348 @@
+#shine-article {
+  /**
+   * Article header
+   */
+  .container-header {
+    background-position: center;
+    background-size: cover;
+    color: white;
+    height: @article-header-height;
+    padding: 0;
+    text-align: center;
+
+    .-author {
+      font-size: @font-size-subtitle;
+    }
+
+    .article-header-text {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      max-width: 600px;
+    }
+
+    .category {
+      color: @color-yellow;
+      text-transform: uppercase;
+    }
+
+    .title {
+      .font-karla-bold;
+
+      font-size: @font-size-article-title;
+      margin: 0 0 @margin-xs 0;
+    }
+  }
+
+  /**
+   * Items before the main article section
+   */
+  .pre-article {
+
+    #header-author-photo {
+      position: absolute;
+      left: 50%;
+      margin-left: -45px;
+      top: -45px;
+
+      img {
+        border: 5px solid white;
+        border-radius: 50%;
+        height: 90px;
+        width: 90px;
+      }
+    }
+
+    .social-tags-container {
+      margin-bottom: @margin-sm;
+      margin-top: @margin-md + @margin-sm;
+    }
+
+    .social-container {
+      margin-bottom: @margin-sm;
+
+      .social-icon {
+        display: inline-block;
+        margin-right: 8px;
+        height: 35px;
+        width: 35px;
+      }
+    }
+
+    .tags-container {
+      height: 35px;
+      margin-bottom: @margin-sm;
+    }
+
+    .tags {
+      color: @color-tags;
+      font-size: @font-size-normal;
+      margin-right: 28px;
+      margin-top: -10px;
+      position: relative;
+      text-align: right;
+      top: 50%;
+    }
+
+    .tags-pin {
+      display: block;
+      float: right;
+      margin-top: -10px;
+      position: relative;
+      top: 50%;
+      width: 20px;
+    }
+
+    @media (max-width: @screen-sm-max) {
+      .social-container {
+        text-align: center;
+      }
+
+      .tags {
+        margin-right: 0;
+        text-align: center;
+      }
+
+      .tags-pin {
+        display: none;
+      }
+    }
+  }
+
+  /**
+   * Main container for article content. Need to absolute position this so that
+   * the content draws on top of the header as it scrolls down for parallax. And
+   * removing all margin and padding so that the footer it contains can be
+   * drawn full-width.
+   */
+  .main-content {
+    background: rgba(255,255,255,1);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 0;
+  }
+
+  /**
+   * Main article section
+   */
+  #article-body {
+    color: @color-article-body;
+    font-size: @font-size-article-body;
+
+    blockquote {
+      .font-blockquote;
+
+      border-left: 0;
+      font-size: @font-size-article-blockquote;
+      padding: @margin-md @margin-sm;
+
+      @media (max-width: @screen-xs-max) {
+        font-size: @font-size-article-blockquote-xs;
+      }
+
+      p {
+        line-height: 1.2em;
+        margin: 0 @margin-md;
+      }
+
+      p:before {
+        content:"\A";
+        border-color: @color-yellow transparent transparent transparent;
+        border-style: solid;
+        border-width: 50px 200px 0 0;
+        left: @margin-sm;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    h2 {
+      .font-karla-bold;
+
+      color: black;
+      font-size: @font-size-article-section-title;
+      margin-top: 48px;
+      margin-bottom: 0;
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    img {
+      max-height: 480px;
+      max-width: 100%;
+    }
+
+    ol,ul {
+      .font-caveat;
+
+      font-size: @font-size-article-ol;
+
+      p {
+        .font-karla;
+
+        display: inline-block;
+        font-size: @font-size-article-body;
+        margin-left: @margin-sm;
+        vertical-align: top;
+      }
+    }
+
+    p {
+      line-height: 1.8em;
+      margin: @margin-sm 0;
+    }
+
+    .dropcap {
+      .font-karla-bold;
+
+      float: left;
+      font-size: 68px;
+      line-height: 48px;
+      padding-top: 8px;
+      padding-right: 6px;
+    }
+  }
+
+  /**
+   * Post-article section for social sharing and tags.
+   */
+  .post-article {
+    margin-top: @margin-lg;
+    text-align: center;
+
+    .social-container {
+      .social-icon {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    .tags {
+      color: @color-tags;
+      display: inline-block;
+      font-size: @font-size-normal;
+    }
+
+    .tags-pin {
+      display: inline-block;
+      margin-left: 8px;
+      position: relative;
+      top: -2px;
+    }
+  }
+
+  /**
+   * Author section below the article,
+   */
+  .author-section {
+    border-top: 4px solid @color-yellow;
+    margin-top: @margin-lg;
+    padding: @margin-lg 0;
+
+    .-info-container {
+      margin-left: 100px + @margin-md;
+
+      @media (max-width: @screen-xs-max) {
+        margin-left: 0;
+      }
+
+      .-bio {
+        .font-karla;
+
+        font-size: @font-size-author-bio;
+        margin-bottom: @margin-sm;
+      }
+
+      .-name {
+        .font-karla-bold;
+
+        font-size: @font-size-author-name;
+        margin-bottom: @margin-sm;
+      }
+
+      .-social-link {
+        .font-karla-bold;
+
+        color: @color-tags;
+        display: inline-block;
+        font-size: @font-size-author-bio;
+        margin-right: @margin-sm;
+        text-decoration: none;
+      }
+    }
+
+    .-photo-container {
+      float: left;
+      margin-bottom: @margin-sm;
+
+      @media (max-width: @screen-xs-max) {
+        float: none;
+        text-align: center;
+      }
+
+      img {
+        border: 5px solid white;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+}
+
+#sticky-footer {
+  background-color: #FFE3A3;
+  bottom: 0;
+  position: fixed;
+  transform: translateY(100%);
+  transition: transform 0.3s linear;
+  width: 100%;
+
+  .signup-button {
+    background: black;
+    border-radius: 5px;
+    color: white;
+    float: right;
+    font-weight: 700;
+    margin: 7px @margin-xs;
+    padding: 7px @margin-xs;
+    text-transform: uppercase;
+  }
+
+  .sticky-message {
+    color: black;
+    display: inline-block;
+    font-weight: 700;
+    padding: 14px @margin-xs;
+  }
+
+  @media (min-width: @screen-sm-min) {
+    .signup-button {
+      font-size: @font-size-btn;
+      margin: @margin-sm @margin-md;
+      padding: @margin-xs;
+      text-align: center;
+      width: 250px;
+    }
+
+    .sticky-message {
+      font-size: 20px;
+      margin: 30px 0 30px 40px;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: @screen-md-min) {
+    .signup-button {
+      width: 300px;
+    }
+  }
+}
+
+#sticky-footer.show {
+  transform: translateY(0);
+}

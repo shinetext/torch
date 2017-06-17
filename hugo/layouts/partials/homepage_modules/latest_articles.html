@@ -1,0 +1,26 @@
+<section id="latest-articles-container">
+  {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
+  <div class="latest-articles-first-half">
+    {{ range first 4 $pag.Pages }}
+      {{ partial "article_card_preview.html" . }}
+    {{ end }}
+  </div>
+  <div class="latest-articles-second-half">
+    <div class="latest-articles-second-half-featured-article">
+      {{ range $index, $element:= first 5 $pag.Pages }}
+        {{ if (eq $index 4) }}
+          {{ partial "article_card_featured.html" . }}
+        {{ end }}
+      {{ end }}
+    </div>
+    <div class="latest-articles-second-half-mini">
+      {{ range last 3 $pag.Pages }}
+        {{ partial "article_card_preview.html" . }}
+      {{ end }}
+    </div>
+  </div>
+
+
+
+</section>
+{{ partial "join_bar.html" }}

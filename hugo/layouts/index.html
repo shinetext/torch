@@ -1,28 +1,12 @@
 {{ define "main" }}
 <div role="main" id="advice-home">
-  <div id="featured-container">
-    {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }} {{ if .Params.featured }}
-      {{ partial "homepage_modules/featured_article.html" . }}
-    {{ end }} {{ end }}
-  </div>
   <div class="container-fluid">
-    <div class="row">
-      <div id="recent-posts-title">
-        <div class="recent-posts-icon"></div>
-        <h2>Latest Articles</h2>
-        <div class="recent-posts-description">Authentic advice from <em>real</em> people on living your best life.</div>
-      </div>
+    <div class="container">
+      {{ partial "latest_header.html" }}
     </div>
-    <div class="row">
-      <div id="recent-articles">
-        <div class="recent-artices">
-          {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }}
-            {{ partial "article_card_preview.html" . }}
-          {{ end }}
-        </div>
-      </div>
+    <div class="container">
+      {{ partial "homepage_modules/latest_articles.html" . }}
     </div>
-    <div id="read-more" ga-on="click" ga-event-category="Behavior" ga-event-action="Read More">Read More</div>
   </div>
 </div>
 {{ end }}

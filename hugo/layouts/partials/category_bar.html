@@ -1,5 +1,5 @@
 <div class="category-bar">
   {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-    <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" class="category-bar-link">{{ $name }}</a>
+    <a id="category-link" href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}" class="category-bar-link">{{ $name }}</a>
   {{ end }}
 </div>
