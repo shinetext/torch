@@ -1,8 +1,8 @@
 <article class="card">
   <a href={{ .Permalink }}>
-    <figure class="card-img">
+    <div class="thumbnail">
       <img src={{ .Params.image }} alt="headerphoto"/>
-    </figure>
+    </div>
     <div class="card-category">
       {{ range .Params.categories }}
         {{ . }}
