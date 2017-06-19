@@ -9,25 +9,35 @@
   </div>
 </header>
 {{ end }} {{ define "main" }}
+
+{{ $sp := .Site.Params }}
+{{ if and (isset $sp "Post") (isset $sp.Post "infinite_scroll") }}
+    {{ with $sp.Post.infinite_scroll }}
+        {{ $.Scratch.Set "infinite_scroll" (eq . true) }}
+    {{ end }}
+{{ else }}
+    {{ $.Scratch.Set "infinite_scroll" false }}
+{{ end }}
+
+{{ if eq ($.Scratch.Get "infinite_scroll") false }}
+    {{ with $sp.infinite_scroll }}
+        {{ $.Scratch.Set "infinite_scroll" (eq . true) }}
+    {{ else }}
+        {{ $.Scratch.Set "infinite_scroll" false }}
+    {{ end }}
+{{ end }}
+
+{{ $infinite_scroll := $.Scratch.Get "infinite_scroll" }}
+
 <div class="container" role="main">
-    <section class="cards">
-      {{ range .Paginator.Pages }}
-        {{ partial "article_card_preview.html" . }}
+    <section class="cards {{ if $infinite_scroll }}infinite-scroll{{ end }}">
+      {{ if .IsNode }}
+        {{ range .Paginator.Pages }}
+          {{ partial "article_modules/article_card_preview.html" . }}
+        {{ end }}
       {{ end }}
     </section>
-    {{ partial "join_bar.html" }}
-    {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-    <ul class="pager main-pager">
-      {{ if .Paginator.HasPrev }}
-      <li class="previous">
-        <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; {{ i18n "newerPosts" }}</a>
-      </li>
-      {{ end }} {{ if .Paginator.HasNext }}
-      <li class="next">
-        <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">{{ i18n "olderPosts" }} &rarr;</a>
-      </li>
-      {{ end }}
-    </ul>
-    {{ end }}
+  {{ partial "extra/join_bar.html" }}
+  {{ partial "extra/paginator.html" . }}
 </div>
 {{ end }}

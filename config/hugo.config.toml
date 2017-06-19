@@ -18,6 +18,7 @@ paginate = 9
   description = "Shine theme for Hugo"
   # dateFormat = "2006, Jan 2"
   copyrightStartYear = "2015"
+  infinite_scroll = true
 
 [params.opengraph]
   [params.opengraph.facebook]

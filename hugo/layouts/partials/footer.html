@@ -1,5 +1,5 @@
 <!-- Importing bundled Javascript && createing dom element for react footer -->
-<footer>
+<footer id="footer" data-us-scrollspy="{repeat: true, delay: 600}">
   <div class="social-and-footer-nav">
     <div class="-social-icons">
       <a class="-icon-facebook" href="https://www.facebook.com/Shine-Text" target="_blank"></a>
@@ -15,10 +15,11 @@
       <a href="http://www.shinetext.com/terms-of-service">Terms of Service</a>
     </div>
   </div>
+  <script src="{{ .Site.BaseURL }}scripts/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="{{ .Site.BaseURL }}scripts/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="{{ .Site.BaseURL }}scripts/jquery.infinitescroll.min.js"></script>
+  <script src='{{ $.Site.Data.path.manifest.mainjs | relURL }}'></script>
+  <script src='{{ "scripts/main.js" | relURL }}'></script>
 </footer>
-
-<script src='{{ $.Site.Data.path.manifest.mainjs | relURL }}'></script>
-<script src='{{ "scripts/main.js" | relURL }}'></script>
-
 
 {{- partial "footer_custom.html" . }}
