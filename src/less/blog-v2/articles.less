@@ -10,51 +10,50 @@
     padding: 0;
     text-align: center;
 
-    .-author {
-      font-size: @font-size-subtitle;
-    }
-
-    .article-header-text {
-      position: relative;
-      left: 50%;
-      top: 50%;
-      -webkit-transform: translateX(-50%) translateY(-50%);
-      transform: translateX(-50%) translateY(-50%);
-      max-width: 600px;
-    }
-
-    .category {
-      color: @color-yellow;
-      text-transform: uppercase;
-    }
-
-    .title {
-      .font-karla-bold;
-      font-size: @font-size-article-title;
-      margin: 0 0 @margin-xs;
-    }
   }
   /**
    * Items before the main article section
    */
-  .pre-article {
-    #header-author-photo {
-      position: absolute;
-      left: 50%;
-      margin-left: -45px;
-      top: -45px;
+   .article-header-text {
+     position: absolute;
+     top:-2.4%;     
+     background-color: white;
+     text-align: center;
+     width: 100%;
+     margin: 0 auto;
+     padding: @margin-sm;
 
+     @media (min-width: @screen-md-min) {
+
+     }
+   }
+
+  .pre-article-content {
+    margin-top: @margin-md;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    #header-author-photo {
+      display: flex;
+      align-items: center;
+      padding: @margin-xs/2;
       img {
         border: 5px solid white;
         border-radius: 50%;
         height: 90px;
         width: 90px;
       }
+      .-name {
+        .font-poppins;
+        font-size: @font-size-article-preview-author;
+      }
     }
 
     .social-tags-container {
       margin-bottom: @margin-sm;
-      margin-top: @margin-md + @margin-sm;
+      margin-top: @margin-md;
     }
 
     .social-container {
@@ -67,43 +66,9 @@
         width: 35px;
       }
     }
-
-    .tags-container {
-      height: 35px;
-      margin-bottom: @margin-sm;
-    }
-
-    .tags {
-      color: @color-tags;
-      font-size: @font-size-normal;
-      margin-right: 28px;
-      margin-top: -10px;
-      position: relative;
-      text-align: right;
-      top: 50%;
-    }
-
-    .tags-pin {
-      display: block;
-      float: right;
-      margin-top: -10px;
-      position: relative;
-      top: 50%;
-      width: 20px;
-    }
-    @media (max-width: @screen-sm-max) {
-      .social-container {
-        text-align: center;
-      }
-
-      .tags {
-        margin-right: 0;
-        text-align: center;
-      }
-
-      .tags-pin {
-        display: none;
-      }
+    @media (min-width: @screen-sm-max) {
+      flex-direction: row;
+      justify-content: space-around;
     }
   }
   /**
@@ -236,7 +201,6 @@
       justify-content: space-between;
       align-items: center;
       text-align: center;
-
       @media (min-width: @screen-xs-max) {
         flex-direction: row;
         align-items: baseline;
@@ -253,27 +217,26 @@
         font-size: @font-size-author-name;
         margin-bottom: @margin-sm;
       }
+
       .-social-link {
         .font-poppins-bold;
-
         color: @color-tags;
         display: inline-block;
         font-size: @font-size-author-bio;
         margin-right: @margin-sm;
         text-decoration: none;
       }
-      }
+    }
 
     .-bio {
       .font-poppins;
       font-size: @font-size-author-bio;
       margin-bottom: @margin-sm;
     }
+
     .-photo-container {
       margin-bottom: @margin-sm;
-
       @media (max-width: @screen-xs-max) {
-        float: none;
         text-align: center;
       }
 
@@ -285,72 +248,4 @@
       }
     }
   }
-  // .author-section {
-  //
-  //   .-info-container {
-  //     margin-left: 100px + @margin-md;
-  //
-  //     @media (max-width: @screen-xs-max) {
-  //       margin-left: 0;
-  //     }
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  // }
-}
-
-#sticky-footer {
-  background-color: #FFE3A3;
-  bottom: 0;
-  position: fixed;
-  transform: translateY(100%);
-  transition: transform 0.3s linear;
-  width: 100%;
-
-  .signup-button {
-    background: black;
-    border-radius: 5px;
-    color: white;
-    float: right;
-    font-weight: 700;
-    margin: 7px @margin-xs;
-    padding: 7px @margin-xs;
-    text-transform: uppercase;
-  }
-
-  .sticky-message {
-    color: black;
-    display: inline-block;
-    font-weight: 700;
-    padding: 14px @margin-xs;
-  }
-  @media (min-width: @screen-sm-min) {
-    .signup-button {
-      font-size: @font-size-btn;
-      margin: @margin-sm @margin-md;
-      padding: @margin-xs;
-      text-align: center;
-      width: 250px;
-    }
-
-    .sticky-message {
-      font-size: 20px;
-      margin: 30px 0 30px 40px;
-      padding: 0;
-    }
-  }
-  @media (min-width: @screen-md-min) {
-    .signup-button {
-      width: 300px;
-    }
-  }
-}
-
-#sticky-footer.show {
-  transform: translateY(0);
 }

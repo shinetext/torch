@@ -1,16 +1,15 @@
 {{ define "main" }}
 <div id="shine-article">
   <div class="container-header" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5)), url({{ .Params.image }});">
-    <div class="article-header-text">
-      <h1 class="title">{{ .Title }}</h1>
-      <div class="-author">
-        By {{ .Params.author }}
-      </div>
-    </div>
   </div>
   <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
     <div class="row pre-article">
-      {{ partial "article_modules/article_pre_article.html" . }}
+      <div class="article-header-text">
+        <h1 class="title">{{ .Title }}</h1>
+      </div>
+      <div class="pre-article-content">
+        {{ partial "article_modules/article_pre_article.html" . }}
+      </div>
     </div>
 
     <div role="main" id="article-body">
@@ -24,6 +23,6 @@
     </div>
     {{ partial "article_modules/pubexchange_module.html" }}
   </div>
-  {{ partial "sticky_footer.html" . }}
 </div>
+  {{ partial "join_bar.html" . }}
 {{ end }}
