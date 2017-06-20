@@ -1,22 +1,23 @@
-<a href={{ .Permalink }}>
-  <div class="featured-preview">
-    <!-- Loop through posts and find featured article -->
-    <div class="article-photo" style="background-image: url({{ .Params.image }});"></div>
-    <div class="featured-preview-text">
-      <div>
-        <div class="featured-category-icon"></div>
-        <div class="featured-category">Hot Read of the Day</div>
-      </div>
-      <div class="article-container">
-        <div class="article-title">{{ .Params.title }}</div>
-        <div class="article-description">{{ .Title }}</div>
-      </div>
-      <div class="author-container">
-        <div class="author-photo">
-          <img src={{ .Params.image }}>
+
+<article class="featured-article-preview">
+    <div class="-article-image">
+      <img src="{{ .Params.image }}?&w=600&h=600" alt="headerphoto"/>
+    </div>
+    <span class="-category">
+      {{ range .Params.categories }}
+        {{ . }}
+      {{ end }}
+    </span>
+    <div class="-content">
+      <div class="-title"><h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3></div>
+      <div class="-subtitle">
+        <div id="header-author-photo">
+          <img src="{{ .Params.authorImage }}?fit=thumb&w=100&h=100">
+          <span class="-name">BY: {{ .Params.author }}</span>
         </div>
-        <div class="author-name">By {{ .Params.author }}</div>
+        <div>
+          <p class="card-social">BTN</p>
+        </div>
       </div>
     </div>
-  </div>
-</a>
+</article>

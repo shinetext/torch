@@ -1,21 +1,23 @@
 <section class="latest-articles-container">
   {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
   <div class="latest-articles-first-half">
-    <div class="latest-articles-first-half-featured-article">
-      {{ range $index, $element:= first 5 $pag.Pages }}
-      {{ if (eq $index 4) }}
-      {{ partial "article_modules/article_card_featured.html" . }}
-      {{ end }}
+    <div class="-featured-article">
+      {{ range $index, $element:= first 1 $pag.Pages }}
+        {{ if (eq $index 0) }}
+          {{ partial "homepage_modules/featured_article.html" . }}
+        {{ end }}
       {{ end }}
     </div>
-    <div class="latest-articles-first-half-mini">
-      {{ range last 3 $pag.Pages }}
-      {{ partial "article_modules/article_card_preview.html" . }}
+    <div class="-first-half-mini">
+      {{ range $index, $element:= first 4 $pag.Pages }}
+        {{ if (ge $index 1) }}
+          {{ partial "article_modules/article_card_preview.html" . }}
+        {{ end }}
       {{ end }}
     </div>
   </div>
   <div class="latest-articles-second-half">
-    {{ range first 4 $pag.Pages }}
+    {{ range last 3 $pag.Pages }}
       {{ partial "article_modules/article_card_preview.html" . }}
     {{ end }}
   </div>
