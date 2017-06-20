@@ -9,8 +9,7 @@ $(document).ready(function() {
     }
   }
 
-  // Provide infinite scroll if enable
-
+  // Provide infinite scroll if enabled
   var $infiniteContainer = $(".cards.infinite-scroll").infinitescroll({
       navSelector: "ul.pagination",
       nextSelector: "ul.pagination a:last",

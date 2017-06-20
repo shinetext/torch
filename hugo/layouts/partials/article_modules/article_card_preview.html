@@ -1,7 +1,7 @@
 <article id="card" class="card">
   <div class="card-container">
     <div class="thumbnail">
-      <img src={{ .Params.image }} alt="headerphoto"/>
+      <img src="{{ .Params.image }}?w=400&h=400" alt="headerphoto"/>
     </div>
     <div class="card-category">
       {{ range .Params.categories }}
