@@ -2,10 +2,19 @@
 <div role="main" id="advice-home">
   <div class="container-fluid">
     <div class="container">
+      {{ partial "popular_header.html" }}
+    </div>
+    <div class="container">
+      {{ partial "homepage_modules/latest_articles.html" . }}
+    </div>
+    <div class="container">
       {{ partial "latest_header.html" }}
     </div>
     <div class="container">
       {{ partial "homepage_modules/latest_articles.html" . }}
+    </div>
+    <div id="homepage-third-section" class="container">
+      {{ partial "homepage_modules/latest_articles_second_section.html" . }}
     </div>
   </div>
 </div>
