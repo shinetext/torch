@@ -79,7 +79,8 @@
   flex-direction: column;
   justify-content: space-around;
 
-  .-featured-article {}
+  .-featured-article {
+  }
 
   .-first-half-mini {
     .card {
@@ -149,3 +150,23 @@
 
 
 // Second Section of latest articles
+
+#homepage-third-section {
+  .latest-articles-container {
+    .-first-half-mini {
+      display: flex;
+      flex-direction: column;
+
+      .-first {
+      }
+      .-second {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        .card .card-container {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

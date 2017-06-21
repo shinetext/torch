@@ -8,11 +8,18 @@
       {{ end }}
     </div>
     <div class="-first-half-mini">
-      {{ range $index, $element:= first 4 ((index .Paginator.Pagers 1).Pages) }}
-        {{ if (ge $index 1) }}
+      <div class="-first">
+        {{ range $index, $element:= last 3 (index .Paginator.Pagers 1).Pages }}
+          {{ if (eq $index 0) }}
+            {{ partial "article_modules/article_card_preview.html" . }}
+          {{ end }}
+        {{ end}}
+      </div>
+      <div class="-second">
+        {{ range last 2 (index .Paginator.Pagers 1).Pages }}
           {{ partial "article_modules/article_card_preview.html" . }}
-        {{ end }}
-      {{ end }}
+        {{ end}}
+      </div>
     </div>
   </div>
   <div class="latest-articles-second-half">

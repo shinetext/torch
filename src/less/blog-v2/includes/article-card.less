@@ -2,11 +2,10 @@
 	.font-poppins;
 	background: white;
 	margin-bottom: @margin-sm;
-	
+
 	.card-container {
 	  display: flex;
 	  flex-direction: row;
-		flex-grow: 1;
 		color: black;
 		text-decoration: none;
 	  box-shadow: @box-shadow;
@@ -22,6 +21,7 @@
 					object-fit: cover;
 		      display: block;
 					height: 100%;
+					width: 100%;
 		    }
 		  }
 	}
@@ -31,7 +31,8 @@
 }
 
 .card-category {
-		position: absolute;
+	position: absolute;
+		display: inline-table;
 		background: @color-category-card-tag-background;
 		padding: @category-padding;
 		margin-top: @thumbnail-min-height - 35px;
@@ -98,10 +99,12 @@
 					object-fit: cover;
 				}
 			}
+			.card-content {
+				flex: 0 0 50%;
+			}
     }
   }
 	.card-subtitle {
-		margin-bottom: 2em;
 	}
 	.card-category {
 		margin-top: @thumbnail-max-height - 35px;
