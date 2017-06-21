@@ -1,0 +1,23 @@
+
+<article class="featured-article-preview">
+    <div class="-article-image">
+      <img src="{{ .Params.image }}?&w=600&h=600" alt="headerphoto"/>
+    </div>
+    <span class="-category">
+      {{ range .Params.categories }}
+        {{ . }}
+      {{ end }}
+    </span>
+    <div class="-content">
+      <div class="-title"><h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3></div>
+      <div class="-subtitle">
+        <div id="header-author-photo">
+          <img src="{{ .Params.authorImage }}?fit=thumb&w=100&h=100">
+          <span class="-name">BY: {{ .Params.author }}</span>
+        </div>
+        <div>
+          <p class="card-social">BTN</p>
+        </div>
+      </div>
+    </div>
+</article>

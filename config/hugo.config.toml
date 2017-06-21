@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "http://example.com"
 title = "Get Advice | Shine"
 
 contentdir = "hugo/content"
@@ -10,14 +10,15 @@ destination = "public"
 publishdir = "public"
 staticdir = "hugo/static"
 theme =  ""
-
-googleAnalytics = ""
+googleAnalytics = "UA-68971267-1"
 paginate = 9
 
 [params]
   description = "Shine theme for Hugo"
   # dateFormat = "2006, Jan 2"
   copyrightStartYear = "2015"
+  infinite_scroll = true
+  google_tag_manager = "GMT-XXXXX"
 
 [params.opengraph]
   [params.opengraph.facebook]
@@ -33,7 +34,7 @@ paginate = 9
   facebook = ""
 
 [author]
-  name = "Chris"
+  name = "Shine"
 
 [author.social]
   facebook = ""

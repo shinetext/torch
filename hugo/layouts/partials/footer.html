@@ -1,8 +1,29 @@
 <!-- Importing bundled Javascript && createing dom element for react footer -->
-<div id="footer">
-</div>
+<footer id="footer" data-us-scrollspy="{repeat: true, delay: 600}">
+  <div class="social-and-footer-nav">
+    <div class="-social-icons">
+      <a class="-icon-facebook" href="https://www.facebook.com/Shine-Text" target="_blank"></a>
+      <a class="-icon-instagram" href="https://instagram.com/ShineText" target="_blank"></a>
+      <a class="-icon-twitter" href="https://twitter.com/ShineText" target="_blank"></a>
+    </div>
+    <div class="page-links">
+      <a href="/">Get Advice</a>
+      <a href="http://www.shinetext.com/referrals">Invite Friends</a>
+      <a href="http://www.shinetext.com/squad">The Squad</a>
+      <a href="http://www.shinetext.com/faq">FAQ</a>
+      <a href="http://www.shinetext.com/privacy-policy">Privacy Policy</a>
+      <a href="http://www.shinetext.com/terms-of-service">Terms of Service</a>
+    </div>
+  </div>
+  <script src="{{ .Site.BaseURL }}scripts/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="{{ .Site.BaseURL }}scripts/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="{{ .Site.BaseURL }}scripts/jquery.infinitescroll.min.js"></script>
 
-<script src='{{ $.Site.Data.path.manifest.mainjs | relURL }}'></script>
+  {{ template "_internal/google_analytics_async.html" . }}
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/autotrack/1.0.1/autotrack.js'></script>
 
+  <script src='{{ $.Site.Data.path.manifest.mainjs | relURL }}'></script>
+  <script src='{{ "scripts/main.js" | relURL }}'></script>
+</footer>
 
 {{- partial "footer_custom.html" . }}

@@ -1,0 +1,251 @@
+#shine-article {
+  /**
+   * Article header
+   */
+  .container-header {
+    background-position: center;
+    background-size: cover;
+    color: white;
+    height: @article-header-height;
+    padding: 0;
+    text-align: center;
+
+  }
+  /**
+   * Items before the main article section
+   */
+   .article-header-text {
+     position: relative;
+     background-color: white;
+     text-align: center;
+     width: 100%;
+     margin: 0 auto;
+     margin-top: -@margin-lg;
+     padding: @margin-sm;
+
+     @media (min-width: @screen-md-min) {
+
+     }
+   }
+
+  .pre-article-content {
+    margin-top: @margin-md;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    #header-author-photo {
+      display: flex;
+      align-items: center;
+      padding: @margin-xs/2;
+      img {
+        border: 5px solid white;
+        border-radius: 50%;
+        height: 90px;
+        width: 90px;
+      }
+      .-name {
+        .font-poppins;
+        font-size: @font-size-article-preview-author;
+      }
+    }
+
+    .social-tags-container {
+      margin-bottom: @margin-sm;
+      margin-top: @margin-md;
+    }
+
+    .social-container {
+      margin-bottom: @margin-sm;
+
+      .social-icon {
+        display: inline-block;
+        margin-right: 8px;
+        height: 35px;
+        width: 35px;
+      }
+    }
+    @media (min-width: @screen-sm-max) {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+  /**
+   * Main container for article content. Need to absolute position this so that
+   * the content draws on top of the header as it scrolls down for parallax. And
+   * removing all margin and padding so that the footer it contains can be
+   * drawn full-width.
+   */
+  .main-content {
+    background: rgba(255,255,255,1);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 0;
+  }
+  /**
+   * Main article section
+   */
+  #article-body {
+    color: @color-article-body;
+    font-size: @font-size-article-body;
+
+    blockquote {
+      .font-blockquote;
+      border-left: 0;
+      font-size: @font-size-article-blockquote;
+      padding: @margin-md @margin-sm;
+      @media (max-width: @screen-xs-max) {
+        font-size: @font-size-article-blockquote-xs;
+      }
+
+      p {
+        line-height: 1.2em;
+        margin: 0 @margin-md;
+      }
+
+      p:before {
+        content: "\A";
+        border-color: @color-yellow transparent transparent transparent;
+        border-style: solid;
+        border-width: 50px 200px 0 0;
+        left: @margin-sm;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    h2 {
+      .font-poppins-bold;
+      color: black;
+      font-size: @font-size-article-section-title;
+      margin: 48px 0 0;
+    }
+
+    img {
+      max-height: 480px;
+      max-width: 100%;
+    }
+
+    ol,
+    ul {
+      .font-caveat;
+      font-size: @font-size-article-ol;
+
+      p {
+        .font-poppins;
+        display: inline-block;
+        font-size: @font-size-article-body;
+        margin-left: @margin-sm;
+        vertical-align: top;
+      }
+    }
+
+    p {
+      line-height: 1.8em;
+      margin: @margin-sm 0;
+    }
+
+    .dropcap {
+      .font-poppins-bold;
+      float: left;
+      font-size: 68px;
+      line-height: 48px;
+      padding-top: 8px;
+      padding-right: 6px;
+    }
+  }
+  /**
+   * Post-article section for social sharing and tags.
+   */
+  .post-article {
+    margin-top: @margin-lg;
+    text-align: center;
+
+    .social-container {
+      .social-icon {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+      }
+    }
+
+    .tags {
+      color: @color-tags;
+      display: inline-block;
+      font-size: @font-size-normal;
+    }
+
+    .tags-pin {
+      display: inline-block;
+      margin-left: 8px;
+      position: relative;
+      top: -2px;
+    }
+  }
+  /**
+   * Author section below the article,
+   */
+  .author-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 4px solid @color-yellow;
+    margin-top: @margin-lg;
+    padding: @margin-lg 0;
+
+    .-info-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      @media (min-width: @screen-xs-max) {
+        flex-direction: row;
+        align-items: baseline;
+        margin-left: 0;
+
+        .-name {
+          margin-left: -100px;
+        }
+      }
+
+      .-name {
+        margin-left: 0;
+        .font-poppins-bold;
+        font-size: @font-size-author-name;
+        margin-bottom: @margin-sm;
+      }
+
+      .-social-link {
+        .font-poppins-bold;
+        color: @color-tags;
+        display: inline-block;
+        font-size: @font-size-author-bio;
+        margin-right: @margin-sm;
+        text-decoration: none;
+      }
+    }
+
+    .-bio {
+      .font-poppins;
+      font-size: @font-size-author-bio;
+      margin-bottom: @margin-sm;
+    }
+
+    .-photo-container {
+      margin-bottom: @margin-sm;
+      @media (max-width: @screen-xs-max) {
+        text-align: center;
+      }
+
+      img {
+        border: 5px solid white;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+}

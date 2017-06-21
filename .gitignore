@@ -1,4 +1,4 @@
 node_modules
 .DS_Store
 public
-hugo/data/path
+hugo/data/path/manifest.json

@@ -1,0 +1,122 @@
+.card {
+	.font-poppins;
+	background: white;
+	margin-bottom: @margin-sm;
+
+	.card-container {
+	  display: flex;
+	  flex-direction: row;
+		color: black;
+		height: @thumbnail-min-height;
+		text-decoration: none;
+	  box-shadow: @box-shadow;
+
+		.thumbnail {
+		    overflow: hidden;
+				padding: 0;
+				align-items: center;
+				margin-bottom: 0;
+				height: @thumbnail-min-height;
+				width: 100%;
+		    img {
+					object-fit: cover;
+		      display: block;
+					height: 100%;
+					width: 100%;
+		    }
+		  }
+	}
+	.card-container:hover {
+		text-decoration: none;
+	}
+}
+
+.card-category {
+	position: absolute;
+		display: inline-table;
+		background: @color-category-card-tag-background;
+		padding: @category-padding;
+		margin-top: @thumbnail-min-height - 35px;
+		color: @color-category-card-tag-font;
+		font-size: @font-category-card-tag;
+		font-weight: 600;
+		text-transform: uppercase;
+		border-radius: 2%;
+		z-index: 1;
+	}
+
+.card-content {
+  flex: 0 0 50%;
+	padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  .font-poppins-bold;
+  align-items: flex-start;
+	margin-top: 0;
+	a {
+		color: black;
+	}
+}
+
+.card-subtitle {
+  .font-poppins;
+	font-size: @article-card-author-name-min;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+// /* Flexbox styles */
+@media screen and (min-width: @screen-sm-min) {
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+}
+
+@media screen and (min-width: @screen-md-min) {
+    .cards {
+      margin-top: inherit;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  .card {
+    margin-bottom: 2em;
+    display: flex;
+		flex-direction: column;
+    flex: 0 1 calc(32%);
+    /* width: calc(33% - 1em); */
+    .card-container {
+			height: @thumbnail-min-height*2;
+      flex-direction: column;
+
+			.thumbnail {
+				img {
+					object-fit: cover;
+				}
+			}
+			.card-content {
+				flex: 0 0 50%;
+			}
+    }
+  }
+	.card-title {
+	  font-size: @article-card-title-max;
+		a {
+			text-decoration: none;
+		}
+	}
+	.card-subtitle {
+		font-size: @article-card-author-name-max;
+	}
+	.card-category {
+		margin-top: @thumbnail-min-height - 35px;
+	}
+} /* mq 60em*/
