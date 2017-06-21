@@ -10,8 +10,6 @@ destination = "public"
 publishdir = "public"
 staticdir = "hugo/static"
 theme =  ""
-
-uglyURLs=true
 googleAnalytics = "UA-68971267-1"
 paginate = 9
 

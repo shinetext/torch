@@ -78,16 +78,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-
   .-featured-article {
+
   }
 
   .-first-half-mini {
     .card {
       .card-container {
+        height: @thumbnail-min-height;
         flex-direction: row;
 
-        .thumbnail {}
+        .thumbnail {
+          height: @thumbnail-min-height
+        }
       }
     }
   }
@@ -122,11 +125,6 @@
           flex-direction: row;
 
           .thumbnail {
-            height: 225px;
-          }
-
-          .card-category {
-            margin-top: 191px;
           }
         }
       }
@@ -161,12 +159,33 @@
       }
       .-second {
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        .card .card-container {
-          flex-direction: column;
+        flex-direction: column;
+      }
+    }
+  }
+  // Media Queries specific to second second fo latest articles
+  @media screen and (min-width: @screen-md-max) {
+    .latest-articles-container {
+      .-second .card {
+        flex: 0 1 48%;
+
+        .card-category {
+          margin-top: @thumbnail-min-height - 84px;
         }
       }
+      .-second .card .card-container {
+        height: @thumbnail-max-height;
+        flex-direction: column;
+      }
+      .-first-half-mini {
+        .-first {
+        }
+        .-second {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+
     }
   }
 }
