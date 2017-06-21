@@ -18,6 +18,10 @@
   <script src="{{ .Site.BaseURL }}scripts/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="{{ .Site.BaseURL }}scripts/imagesloaded.pkgd.min.js"></script>
   <script type="text/javascript" src="{{ .Site.BaseURL }}scripts/jquery.infinitescroll.min.js"></script>
+
+  {{ template "_internal/google_analytics_async.html" . }}
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/autotrack/1.0.1/autotrack.js'></script>
+
   <script src='{{ $.Site.Data.path.manifest.mainjs | relURL }}'></script>
   <script src='{{ "scripts/main.js" | relURL }}'></script>
 </footer>

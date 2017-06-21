@@ -99,3 +99,36 @@
     }
   }
 }
+
+
+// Read More Button on main-page
+
+
+#read-more {
+  .font-poppins-bold;
+  background-color: grey;
+  color: black;
+  cursor: pointer;
+  font-size: @font-size-normal;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: @margin-md;
+  padding-bottom: @margin-xs;
+  padding-top: @margin-xs;
+  text-align: center;
+  text-transform: uppercase;
+  width: 241px;
+
+  a {
+    color: black;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+#read-more.disabled {
+  background-color: @color-button-disabled-background;
+  color: @color-button-disabled-text;
+  cursor: default;
+}
