@@ -10,7 +10,6 @@ destination = "public"
 publishdir = "public"
 staticdir = "hugo/static"
 theme =  ""
-googleAnalytics = "UA-68971267-1"
 paginate = 9
 
 [params]
@@ -18,7 +17,6 @@ paginate = 9
   # dateFormat = "2006, Jan 2"
   copyrightStartYear = "2015"
   infinite_scroll = true
-  google_tag_manager = "GMT-XXXXX"
 
 [params.opengraph]
   [params.opengraph.facebook]
