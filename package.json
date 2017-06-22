@@ -4,6 +4,11 @@
   "description": "Shine blog framework",
   "scripts": {
     "build": "npm run webpack-build && npm run hugo-build",
+    "build-for-staging": "npm run clear-public && npm run clear-content && npm run fetch-content -- --staging && npm run build",
+    "build-for-production": "npm run clear-public && npm run clear-content && npm run fetch-content -- --production && npm run build",
+    "clear-content": "cd hugo/lib && ./clear-content.sh",
+    "clear-public": "rm -rf ./public",
+    "fetch-content": "node hugo/lib/getArticles.js",
     "hugo-build": "hugo --config=config/hugo.config.toml --destination=public/",
     "hugo-server": "hugo server --config=config/hugo.config.toml --verbose --destination=public/",
     "webpack-server": "webpack-dev-server --config=config/webpack.config.js --port=8282 --watch --debug --verbose --progress --colors",
@@ -28,6 +33,7 @@
     "webpack-assets-manifest": "^0.7.0"
   },
   "dependencies": {
+    "bluebird": "^3.5.0",
     "chalk": "^1.1.3",
     "contentful": "^4.4.2",
     "es6-docready": "^1.0.0",
