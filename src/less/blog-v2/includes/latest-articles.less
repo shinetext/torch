@@ -1,7 +1,6 @@
 /* CSS for featured article preview display */
 .featured-article-preview {
   height: @thumbnail-min-height * 3;
-  .font-poppins;
   display: flex;
   flex-direction: column;
 
@@ -16,6 +15,8 @@
     display: inline-table;
     position: relative;
     margin-top: -@margin-md;
+    top: -@margin-lg;
+    left: 2.5%;
     object-fit: contain;
     padding: @category-padding;
     background-color: @color-category-card-tag-background;
@@ -24,8 +25,8 @@
   .-content {
     width: 95%;
     align-self: center;
-    margin-top: -@margin-md;
-    margin-bottom: @margin-md;
+    margin-top: -@margin-md*2;
+    // margin-bottom: @margin-sm;
     object-fit: cover;
     display: flex;
     background-color: white;
@@ -37,9 +38,15 @@
     .-title {
       text-align: center;
       .font-poppins-bold;
+      font-size: @featured-article-font-size;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
     }
 
     .-subtitle {
+      .font-poppins;
       display: flex;
       width: 100%;
       justify-content: space-between;
@@ -55,12 +62,14 @@
     img {
       border: 5px solid white;
       border-radius: 50%;
-      height: 60px;
-      width: 60px;
+      height: 40px;
+      width: 40px;
     }
 
     .-name {
-      .font-poppins;
+      color: @article-card-subtitle-color;
+      font-size: @article-card-author-name-max;
+
     }
     @media screen and (min-width: @screen-sm-max) {
       img {
@@ -110,7 +119,7 @@
   }
 }
 // /* Media Query styles */
-@media screen and (min-width: @screen-md-max) {
+@media screen and (min-width: @screen-md-min) {
   .latest-articles-container {
     flex-direction: row-reverse;
     margin: @margin-md;
@@ -153,6 +162,9 @@
 
 #homepage-third-section {
   .latest-articles-container {
+    .featured-article-preview {
+      height: 400px;
+    }
     .-first-half-mini {
       display: flex;
       flex-direction: column;
@@ -165,14 +177,13 @@
       }
     }
   }
-  // Media Queries specific to second second fo latest articles
-  @media screen and (min-width: @screen-md-max) {
+  // Media Queries specific to second section fo latest articles
+  @media screen and (min-width: @screen-md-min) {
     .latest-articles-container {
       .-second .card {
         flex: 0 1 48%;
 
         .card-category {
-          margin-top: @thumbnail-min-height - 84px;
         }
       }
       .-second .card .card-container {
@@ -181,6 +192,13 @@
       }
       .-first-half-mini {
         .-first {
+          .card .card-container {
+            height: @thumbnail-min-height + 30px;
+            .thumbnail {
+              height: @thumbnail-min-height + 30px;
+
+            }
+          }
         }
         .-second {
           flex-direction: row;
