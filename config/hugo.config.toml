@@ -1,4 +1,4 @@
-baseURL = "http://example.com"
+baseURL = "/"
 title = "Get Advice | Shine"
 
 contentdir = "hugo/content"
@@ -10,6 +10,7 @@ destination = "public"
 publishdir = "public"
 staticdir = "hugo/static"
 theme =  ""
+googleAnalytics = "UA-68971267-1"
 paginate = 9
 
 [params]

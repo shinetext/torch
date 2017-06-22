@@ -9,7 +9,6 @@
   </div>
 </header>
 {{ end }} {{ define "main" }}
-
 {{ $sp := .Site.Params }}
 {{ if and (isset $sp "Post") (isset $sp.Post "infinite_scroll") }}
     {{ with $sp.Post.infinite_scroll }}

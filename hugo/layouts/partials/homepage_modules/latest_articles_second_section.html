@@ -1,4 +1,5 @@
 <section class="latest-articles-container">
+  {{ if (ge (index .Paginator.Pagers) 2) }}
   <div class="latest-articles-first-half">
     <div class="-featured-article">
       {{ range $index, $element:= first 1 ((index .Paginator.Pagers 1).Pages) }}
@@ -27,4 +28,6 @@
       {{ partial "article_modules/article_card_preview.html" . }}
     {{ end}}
   </div>
+  {{ end }}
+
 </section>
