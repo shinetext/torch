@@ -119,7 +119,7 @@
   }
 }
 // /* Media Query styles */
-@media screen and (min-width: @screen-md-max) {
+@media screen and (min-width: @screen-md-min) {
   .latest-articles-container {
     flex-direction: row-reverse;
     margin: @margin-md;
@@ -162,6 +162,9 @@
 
 #homepage-third-section {
   .latest-articles-container {
+    .featured-article-preview {
+      height: 400px;
+    }
     .-first-half-mini {
       display: flex;
       flex-direction: column;
@@ -174,14 +177,13 @@
       }
     }
   }
-  // Media Queries specific to second second fo latest articles
-  @media screen and (min-width: @screen-md-max) {
+  // Media Queries specific to second section fo latest articles
+  @media screen and (min-width: @screen-md-min) {
     .latest-articles-container {
       .-second .card {
         flex: 0 1 48%;
 
         .card-category {
-          margin-top: @thumbnail-min-height - 84px;
         }
       }
       .-second .card .card-container {
@@ -190,6 +192,13 @@
       }
       .-first-half-mini {
         .-first {
+          .card .card-container {
+            height: @thumbnail-min-height + 30px;
+            .thumbnail {
+              height: @thumbnail-min-height + 30px;
+
+            }
+          }
         }
         .-second {
           flex-direction: row;
