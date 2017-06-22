@@ -11,6 +11,6 @@
 {{ else }}
   <link rel="canonical" href="{{ .URL | absLangURL }}" />
 {{ end }}
-
-
 {{ template "_internal/google_analytics_async.html" . }}
+{{ partial "extra/google_tag_manager" . }}
+<script async src='https://cdnjs.cloudflare.com/ajax/libs/autotrack/1.0.1/autotrack.js'></script>
