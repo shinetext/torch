@@ -1,14 +1,9 @@
 
-  <div class="-photo-container">
-    <img src="{{ .Params.image }}?fit=thumb&w=100&h=100">
-  </div>
   <div class="-info-container">
-    <div class="-name">{{ .Params.author }}</div>
-    <div class="-bio">
-      {{ range .Params.bio }}
-        {{ . | markdownify }}
-      {{ end }}
+    <div class="-photo-container">
+      <img src="{{ .Params.image }}?fit=thumb&w=100&h=100">
     </div>
+    <div class="-name">Author: {{ .Params.author }}</div>
 
     <div class="-social-links-container">
       {{ if .Params.facebook }}
@@ -18,4 +13,9 @@
       <!-- Add instagram -->
       <!-- Add linkedin -->
     </div>
+  </div>
+  <div class="-bio">
+    {{ range .Params.bio }}
+      {{ . | markdownify }}
+    {{ end }}
   </div>

@@ -1,0 +1,20 @@
+<article id="card" class="card">
+  <div class="card-category">
+    {{ range .Params.categories }}
+      {{ . }}
+    {{ end }}
+  </div>
+  <div class="card-container">
+    <div class="thumbnail">
+      <img src="{{ .Params.image }}?w=400&h=400" alt="headerphoto"/>
+    </div>
+    <div class="card-content">
+
+      <div class="card-title"><p><a href="{{ .Permalink }}">{{ .Title }}</a></p></div>
+      <div class="card-subtitle">
+        <p class="card-author">By {{ .Params.author }}</p>
+        <p class="card-social" style="opacity:0;">BTN</p>
+      </div>
+    </div>
+  </div>
+</article>
