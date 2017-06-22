@@ -1,11 +1,13 @@
 /* CSS for featured article preview display */
 .featured-article-preview {
+  height: @thumbnail-min-height * 3;
   .font-poppins;
   display: flex;
   flex-direction: column;
 
   .-article-image {
     img {
+      height: @thumbnail-min-height *2;
       object-fit: cover;
       width: 100%;
     }
