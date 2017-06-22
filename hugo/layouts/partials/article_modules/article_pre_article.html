@@ -5,35 +5,35 @@
 
 <div class="social-tags-container">
   <div class="social-container col-xs-12 col-xs-offset-0">
-    <a class="icon-facebook social-icon" href="#" target="_blank"
+    <a class="icon-facebook social-icon" href="http://www.facebook.com/sharer/sharer.php?u={{ .Permalink | safeURL }}&title={{ .Params.title }}&picture={{ .Params.shine_logo }}&description={{ .Params.share_description }}" target="_blank"
       ga-on="click"
       ga-event-category="Share"
       ga-event-action="facebook"
-      ga-event-label="<%= articleUrlPath %>">
+      ga-event-label="{{ .Permalink | safeURL }}">
     </a>
     <a class="icon-twitter social-icon" href="#" target="_blank"
       ga-on="click"
       ga-event-category="Share"
       ga-event-action="twitter"
-      ga-event-label="<%= articleUrlPath %>">
+      ga-event-label="{{ .Permalink | safeURL }}">
     </a>
-    <a class="icon-pinterest social-icon" data-pin-do="buttonPin" data-pin-tall="true" data-pin-round="true" data-pin-save="false" href="https://www.pinterest.com/pin/create/button/?url=<%= ARTICLE_SHARE_URL %>&media=<%= ARTICLE_SHARE_IMAGE %>&description=<%= ARTICLE_SHARE_DESCRIPTION %>" target="_blank"
+    <a class="icon-pinterest social-icon" data-pin-do="buttonPin" data-pin-tall="true" data-pin-round="true" data-pin-save="false" href="https://www.pinterest.com/pin/create/button/?url={{ .Permalink | safeURL }}&media={{ .Params.shine_logo }}&description={{ .Params.share_description }}" target="_blank"
       ga-on="click"
       ga-event-category="Share"
       ga-event-action="pinterest"
-      ga-event-label="<%= articleUrlPath %>">
+      ga-event-label="{{ .Permalink | safeURL }}">
     </a>
-    <a class="icon-linkedin social-icon" href="#" target="_blank"
+    <a class="icon-linkedin social-icon" href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink | safeURL }}&title={{ .Params.title }}" target="_blank"
       ga-on="click"
       ga-event-category="Share"
       ga-event-action="linkedin"
-      ga-event-label="<%= articleUrlPath %>">
+      ga-event-label="{{ .Permalink | safeURL }}">
     </a>
-    <a class="icon-email social-icon" href="#" rel="external"
+    <a class="icon-email social-icon" href="mailto:?subject={{ .Params.title }}&body={{ .Permalink | safeURL}}" rel="external"
       ga-on="click"
       ga-event-category="Share"
       ga-event-action="email"
-      ga-event-label="<%= articleUrlPath %>">
+      ga-event-label="{{ .Permalink | safeURL }}">
     </a>
   </div>
 </div>

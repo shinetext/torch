@@ -9,7 +9,7 @@
       {{ partial "social/author_social.html" . }}
     </div>
   </div>
-  <div class="-bio">
+  <div id="author-bio" class="-bio">
     {{ range .Params.bio }}
       {{ . | markdownify }}
     {{ end }}
