@@ -6,12 +6,7 @@
     <div class="-name">Author: {{ .Params.author }}</div>
 
     <div class="-social-links-container">
-      {{ if .Params.facebook }}
-      <a class="-social-link" href="https://www.facebook.com/{{ .Params.facebook }}" target="_blank">Facebook</a>
-      {{ end }}
-      <!-- Add Twitter -->
-      <!-- Add instagram -->
-      <!-- Add linkedin -->
+      {{ partial "social/author_social.html" . }}
     </div>
   </div>
   <div class="-bio">
