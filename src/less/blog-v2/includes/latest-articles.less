@@ -187,9 +187,6 @@
     .latest-articles-container {
       .-second .card {
         flex: 0 1 48%;
-
-        .card-category {
-        }
       }
       .-second .card .card-container {
         height: @thumbnail-max-height;
@@ -201,8 +198,10 @@
             height: @thumbnail-min-height + 30px;
             .thumbnail {
               height: @thumbnail-min-height + 30px;
-
             }
+          }
+          .card .card-category {
+            margin-top: @thumbnail-min-height - 5px;
           }
         }
         .-second {
