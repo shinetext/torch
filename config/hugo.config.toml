@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://advice-staging.shinetext.com"
 title = "Get Advice | Shine"
 
 contentdir = "hugo/content"
