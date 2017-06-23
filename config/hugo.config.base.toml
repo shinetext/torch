@@ -1,4 +1,3 @@
-baseURL = "/"
 title = "Get Advice | Shine"
 contentdir = "hugo/content"
 dataDir = "hugo/data"
