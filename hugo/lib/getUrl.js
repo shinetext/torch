@@ -6,15 +6,15 @@ const fs = require('fs');
 */
 // baseURL = "https://advice-staging.shinetext.com"
 
-const hugoConfigBase = fs.readFileSync(__dirname + '/../../config/hugo.config.base.toml');
+const hugoConfigBase = fs.readFileSync(__dirname + '/../../config/hugo.config.base.toml').toString();
 const baseURL = process.env.BASE_URL ? `baseURL = "${process.env.BASE_URL}"\n` //format baseURL for toml file
                 : `baseURL = "\/"\n`;
 
 const hugoConfig = baseURL + hugoConfigBase;
 
 // Write hugo config file to config folder
-fs.writeFileSync(__dirname + '/../../config/hugo.config.toml', hugoConfig, function(err) {
-  if (err) {
-    console.log(err)
-  }
-});
+// fs.writeFileSync(__dirname + '/../../config/hugo.config.toml', hugoConfig, function(err) {
+//   if (err) {
+//     console.log(err)
+//   }
+// });
