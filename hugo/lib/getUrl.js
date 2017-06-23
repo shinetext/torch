@@ -13,8 +13,8 @@ const baseURL = process.env.BASE_URL ? `baseURL = "${process.env.BASE_URL}"\n` /
 const hugoConfig = baseURL + hugoConfigBase;
 
 // Write hugo config file to config folder
-// fs.writeFileSync(__dirname + '/../../config/hugo.config.toml', hugoConfig, function(err) {
-//   if (err) {
-//     console.log(err)
-//   }
-// });
+fs.writeFileSync(__dirname + '/../../config/hugo.config.toml', hugoConfig.toString(), function(err) {
+  if (err) {
+    console.log(err)
+  }
+});
