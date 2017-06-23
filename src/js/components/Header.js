@@ -46,9 +46,6 @@ class Header extends Component {
             <li>
               <a href="http://www.shinetext.com/squad">The Squad</a>
             </li>
-            <li>
-              <a href="https://talk.shinetext.com">Shinevisor</a>
-            </li>
           </ul>
         </div>
       </header>

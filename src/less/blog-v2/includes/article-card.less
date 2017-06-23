@@ -38,12 +38,17 @@
 		background: @color-category-card-tag-background;
 		padding: @category-padding;
 		margin-top: @thumbnail-min-height - 35px;
-		color: @color-category-card-tag-font;
 		font-size: @font-category-card-tag;
 		font-weight: 600;
 		text-transform: uppercase;
 		border-radius: 2%;
 		z-index: 1;
+		a {
+			color: @color-category-card-tag-font;
+		}
+		a:hover {
+			text-decoration: none;
+		}
 	}
 
 .card-content {
@@ -67,9 +72,11 @@
 .card-subtitle {
   .font-poppins;
 	font-size: @article-card-author-name-min;
-	color: @article-card-subtitle-color;
   display: flex;
   justify-content: space-between;
+	.card-author {
+		.article-card-author-link;
+	}
 }
 
 

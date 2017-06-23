@@ -1,11 +1,12 @@
 
+{{ $author := .Params.author }}
 <article class="featured-article-preview">
     <div class="-article-image">
       <img src="{{ .Params.image }}?&w=600&h=600" alt="headerphoto"/>
     </div>
     <span class="-category">
       {{ range .Params.categories }}
-        {{ . }}
+        <a href="/categories/{{ . }}">{{ . }}</a>
       {{ end }}
     </span>
     <div class="-content">
@@ -13,7 +14,7 @@
       <div class="-subtitle">
         <div id="header-author-photo">
           <img src="{{ .Params.authorImage }}?fit=thumb&w=100&h=100">
-          <span class="-name">BY: {{ .Params.author }}</span>
+          <span class="-name"><a href="/author/{{ replaceRE " " "-" $author }}">BY: {{ $author }}</a></span>
         </div>
         <div>
           <p class="card-social"><i class="fa fa-share"></i></p>

@@ -2,17 +2,23 @@
 <div role="main" id="advice-home">
   <div class="container-fluid">
     <div class="container" style="display:none;">
-      {{ partial "popular_header.html" }}
+      {{ partial "extra/popular_header.html" }}
     </div>
     <div class="container" style="display:none;">
       {{ partial "homepage_modules/latest_articles.html" . }}
     </div>
     <div class="container">
-      {{ partial "latest_header.html" }}
+      {{ partial "extra/latest_header.html" }}
     </div>
     <div class="container">
       {{ partial "homepage_modules/latest_articles.html" . }}
     </div>
+  </div>
+  <div class="container-fluid">
+    {{ partial "homepage_modules/shine_squad_header.html" }}
+    {{ partial "extra/join_bar.html" }}
+  </div>
+  <div class="container-fluid">
     <div id="homepage-third-section" class="container">
       {{ partial "homepage_modules/latest_articles_second_section.html" . }}
     </div>

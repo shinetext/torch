@@ -1,7 +1,8 @@
+{{ $author := .Params.author }}
 <article id="card" class="card">
   <div class="card-category">
     {{ range .Params.categories }}
-      {{ . }}
+      <a href="/categories/{{ . }}">{{ . }}</a>
     {{ end }}
   </div>
   <div class="card-container">
@@ -12,7 +13,7 @@
 
       <div class="card-title"><p><a href="{{ .Permalink }}">{{ .Title }}</a></p></div>
       <div class="card-subtitle">
-        <p class="card-author">By {{ .Params.author }}</p>
+        <p class="card-author"><a href="/author/{{ replaceRE " " "-" $author }}">By {{ $author }}</a></p>
         <p class="card-social" style="opacity:0;"><i class="fa fa-share"></i></p>
       </div>
     </div>
