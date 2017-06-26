@@ -32,3 +32,33 @@
 @thumbnail-min-height: 150px;
 @thumbnail-max-height: 300px;
 @category-padding: 10.5px 15px;
+
+.article-card-author-link() {
+  a {
+    position: relative;
+    text-decoration: none;
+    color: @article-card-subtitle-color;
+  }
+  a:hover,
+  a:link{
+    color: @article-card-subtitle-color;
+  }
+
+  a:before {
+    background-color: @color-yellow;
+    bottom: -4px;
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.25s ease 0s;
+    transition: all 0.25s ease 0s;
+  }
+  a:hover:before {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+
+}

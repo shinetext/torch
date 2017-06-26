@@ -18,6 +18,20 @@
   .shine-gradient;
 }
 
+// Shine Squad Line seperator
+.shine-squad-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  .line-seperator {
+    width: 42%;
+  }
+  .line-seperator:first-child {
+    margin-left: 0;
+    margin-right: @margin-sm;
+  }
+}
 
 // Icons
 .icon-email {
@@ -45,7 +59,6 @@
   background-image: url("https://images.contentful.com/awpxl2koull4/3SYgZxMlCwEiCyWc0022AQ/7111cfb7be74d3acf576ca37d82885a1/twitter-social-icon.png");
   background-repeat: no-repeat;
 }
-
 
 // Message sending users to homepage to signup for sms services
 .join-bar {
@@ -100,9 +113,7 @@
   }
 }
 
-
 // Read More Button on main-page
-
 
 #read-more {
   .font-poppins-bold;

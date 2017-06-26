@@ -7,3 +7,4 @@ hugo/content/author/*
 hugo/content/author/*.test.md
 hugo/content/post/*
 hugo/content/post/*.test.md
+config/hugo.config.toml
