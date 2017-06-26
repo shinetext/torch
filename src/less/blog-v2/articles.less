@@ -11,6 +11,17 @@
     height: @article-header-height;
     padding: 0;
     text-align: center;
+    .-photo-credit {
+      position: absolute;
+      color: @article-card-subtitle-color;
+      top: 0;
+      margin-top: @article-header-height;
+      z-index: 1;
+
+      @media (min-width: @screen-md-min) {
+        top: initial;
+      }
+    }
   }
   /**
    * Items before the main article section
