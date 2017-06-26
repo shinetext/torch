@@ -5,6 +5,8 @@
   .container-header {
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: white;
     height: @article-header-height;
     padding: 0;
@@ -199,7 +201,7 @@
     flex-direction: column;
     justify-content: space-between;
     border-top: 4px solid @color-yellow;
-    margin-top: @margin-lg;
+    margin-top: @margin-md;
     padding: @margin-lg 0;
 
     .-info-container {
@@ -210,7 +212,7 @@
       @media (min-width: @screen-xs-max) {
         flex-direction: row;
         margin-left: 0;
-
+        justify-content: space-between;
         .-name {
           margin-left: -100px;
         }
@@ -221,7 +223,6 @@
         padding-left: @margin-sm;
         .font-poppins-bold;
         font-size: @font-size-author-name;
-        margin-bottom: @margin-sm;
       }
 
       .-social-link {
