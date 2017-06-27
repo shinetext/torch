@@ -13,7 +13,8 @@ paginate = 9
 
 [params]
   description = "Career and life advice from real people. Get daily fulfillment and read up on how to live your best life."
-  google_tag_manager="GTM-XXXX"
+  google_tag_manager="GTM-PZHRDB"
+  fb_pixel=190488081450568
   # dateFormat = "2006, Jan 2"
   copyrightStartYear = "2015"
   infinite_scroll = true

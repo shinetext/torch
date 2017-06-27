@@ -11,6 +11,9 @@
 {{ else }}
   <link rel="canonical" href="{{ .URL | absLangURL }}" />
 {{ end }}
-{{ template "_internal/google_analytics_async.html" . }}
-{{ partial "extra/google_tag_manager" . }}
-<script async src='https://cdnjs.cloudflare.com/ajax/libs/autotrack/1.0.1/autotrack.js'></script>
+{{ if eq (getenv "ENABLE_ANALYTICS_TRACKING") "true" }}
+  {{ template "_internal/google_analytics_async.html" . }}
+  {{ partial "extra/gtm_head.html" . }}
+  {{ partial "extra/fb_pixel.html" . }}
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/autotrack/1.0.1/autotrack.js'></script>
+{{ end }}
