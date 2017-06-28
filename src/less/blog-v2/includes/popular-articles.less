@@ -1,0 +1,25 @@
+.popular-articles-container {
+  display: flex;
+  flex-direction: column;
+  .-featured {
+    height: 100%;
+    align-self: center;
+    width: 57vh;
+  }
+  .-mini {
+  }
+
+  @media screen and (min-width: @screen-md-min) {
+    flex-direction: row;
+    .-featured {
+      height: 100%;
+      align-self: center;
+      width: initial;
+      margin-right: @margin-xs;
+      justify-content: space-between;
+    }
+    .-mini {
+      margin-left: @margin-sm;
+    }
+  }
+}
