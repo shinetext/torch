@@ -4,12 +4,22 @@ import $ from 'jquery';
 
 class Header extends Component {
   componentDidMount() {
-    $('#mobile-menu-button').click(this.toggleMobileMenu);
-    $('#mobile-menu-button-close').click(this.toggleMobileMenu);
+    $('#mobile-menu-button').click(this.toggleMobileMenu.bind(this));
+    $('#mobile-menu-button-close').click(this.toggleMobileMenu.bind(this));
+    $('.plus-icon').click(this.togglePlusSpin);
   }
   toggleMobileMenu() {
     $('body').toggleClass('mobile-menu-open');
+    this.togglePlusSpin();
     $('#mobile-menu').toggleClass('-open');
+  }
+  togglePlusSpin() {
+    // spin animation for mobile menu plus icon
+    if ($('.plus-icon').css('transform') == 'none') {
+      $('.plus-icon').css('transform', 'rotate(360deg)');
+    } else {
+      $('.plus-icon').css('transform', '');
+    }
   }
   render() {
     return (

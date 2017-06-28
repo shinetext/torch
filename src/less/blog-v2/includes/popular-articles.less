@@ -9,12 +9,18 @@
   .-mini {
   }
 
+  @media screen and (min-width: @screen-xs-max) {
+    // set views for featured elelment on regular ipad/galaxy screens
+    .-featured {
+      width: initial;
+    }
+  }
+
   @media screen and (min-width: @screen-md-min) {
     flex-direction: row;
     .-featured {
       height: 100%;
       align-self: center;
-      width: initial;
       margin-right: @margin-xs;
       justify-content: space-between;
     }
