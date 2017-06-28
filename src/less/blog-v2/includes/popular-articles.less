@@ -5,8 +5,11 @@
     height: 100%;
     align-self: center;
     width: 57vh;
+    -webkit-flex: 2;
   }
   .-mini {
+    margin: 0 20px;
+    -webkit-flex: 1;
   }
 
   @media screen and (min-width: @screen-xs-max) {
@@ -21,11 +24,10 @@
     .-featured {
       height: 100%;
       align-self: center;
-      margin-right: @margin-xs;
+      margin-right: @margin-sm;
       justify-content: space-between;
     }
     .-mini {
-      margin-left: @margin-sm;
     }
   }
 }
