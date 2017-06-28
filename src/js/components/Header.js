@@ -11,7 +11,6 @@ class Header extends Component {
     $('body').toggleClass('mobile-menu-open');
     $('#mobile-menu').toggleClass('-open');
   }
-
   render() {
     return (
       <header>
@@ -56,7 +55,20 @@ class Header extends Component {
           />
           <ul>
             <li>
-              <a href="/">Get Advice</a>
+              <a href="/">
+                Get Advice{' '}
+              </a>
+              <i
+                className="fa fa-plus plus-icon"
+                onClick={() => {
+                  $('#category-submenu').slideToggle();
+                }}
+              />
+              <ul id="category-submenu">
+                <li><a href="/categories/hustle">HUSTLE</a></li>
+                <li><a href="/categories/life">LIFE</a></li>
+                <li><a href="/categories/work">WORK</a></li>
+              </ul>
             </li>
             <li>
               <a href="http://www.shinetext.com/referrals">Invite Friends</a>
