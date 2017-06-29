@@ -2,108 +2,85 @@
   /**
    * Article header
    */
+
   .container-header {
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     color: white;
     height: @article-header-height;
-    padding: 0;
-    text-align: center;
-    .-photo-credit {
-      position: absolute;
-      color: @article-card-subtitle-color;
-      top: 0;
-      margin-top: @article-header-height;
-      z-index: 1;
-
-      @media (min-width: @screen-md-min) {
-        top: initial;
-      }
+    width: 100%;
+    overflow: hidden;
+    .-bgImage {
+      object-fit: cover;
+      display: block;
+      height: 100%;
+      width: 100%;
     }
   }
   /**
    * Items before the main article section
    */
-  .article-header-text {
-    position: relative;
-    background-color: white;
-    text-align: center;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: -@margin-lg;
-    padding: @margin-sm;
-
-    @media (min-width: @screen-md-min) {
-    }
-  }
-
   .pre-article-content {
-    margin-top: @margin-md;
+    width: 100%;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: @margin-sm;
+    .-header {
+      margin-top: @margin-sm;
+      h1 {
+        .font-poppins-bold;
+        font-size: @font-size-article-title;
+        text-align: center;
+      }
+    }
+    .-author-section {
+      display: flex;
+      flex-direction: column;
+      @media (min-width: @screen-sm-max) {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+      }
+    }
 
     #header-author-photo {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: @margin-xs/2;
+      margin-bottom: @margin-sm;
+      margin-top: @margin-sm;
       img {
         border-radius: 50%;
-        height: 90px;
-        width: 90px;
+        height: 70px;
+        width: 70px;
       }
       .-name {
         .font-poppins;
         padding-top: @margin-xs;
         padding-left: @margin-xs;
         font-size: @font-size-article-preview-author;
+        color: @article-card-subtitle-color;
       }
-    }
-
-    .social-tags-container {
-      margin-bottom: @margin-sm;
-      margin-top: @margin-xs;
+      @media (min-width: @screen-sm-max) {
+        flex-direction: row;
+        width: 50%;
+      }
     }
 
     .social-container {
       padding-left: 0;
       padding-right: 0;
+      padding-bottom: 0;
       .social-icon {
-        display: inline-block;
-        margin-right: 8px;
+        text-align: center;
         height: 35px;
         width: 35px;
       }
-    }
-    @media (min-width: @screen-sm-max) {
-      flex-direction: row;
-      justify-content: space-around;
-      margin-bottom: @margin-sm;
-
-      #header-author-photo {
-        flex-direction: row;
-      }
-      .social-tags-container {
-        margin-bottom: 0;
+      @media (min-width: @screen-sm-max) {
+        align-self: center;
       }
     }
-  }
-  /**
-   * Main container for article content. Need to absolute position this so that
-   * the content draws on top of the header as it scrolls down for parallax. And
-   * removing all margin and padding so that the footer it contains can be
-   * drawn full-width.
-   */
-  .main-content {
-    background: rgba(255, 255, 255, 1);
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    z-index: 0;
   }
   /**
    * Main article section
@@ -111,10 +88,17 @@
   #article-body {
     color: @color-article-body;
     font-size: @font-size-article-body;
-
+    padding: 0 @margin-sm;
     blockquote {
       .font-blockquote;
       border-left: 0;
+      border-bottom-style: solid;
+      border-bottom-color: @color-yellow;
+      border-bottom-width: 3px;
+      border-top-style: solid;
+      border-top-color: @color-yellow;
+      text-align: center;
+      border-top-width: 3px;
       font-size: @font-size-article-blockquote;
       padding: @margin-md @margin-sm;
       @media (max-width: @screen-xs-max) {
@@ -122,6 +106,7 @@
       }
 
       p {
+        color: @color-article-body;
         line-height: 1.2em;
         margin: 0 @margin-md;
       }
@@ -139,7 +124,7 @@
 
     h2 {
       .font-poppins-bold;
-      color: black;
+      color: @color-article-headers;
       font-size: @font-size-article-section-title;
       margin: 48px 0 0;
     }
@@ -150,7 +135,7 @@
     }
 
     ol, ul {
-      .font-caveat;
+      .font-poppins;
       font-size: @font-size-article-ol;
 
       p {
@@ -175,7 +160,12 @@
       padding-top: 8px;
       padding-right: 6px;
     }
+    @media (min-width: @screen-sm-max) {
+      padding-left: @margin-md;
+      padding-right: @margin-md;
+    }
   }
+
   /**
    * Post-article section for social sharing and tags.
    */
@@ -184,24 +174,14 @@
     text-align: center;
 
     .social-container {
+      margin-bottom: @margin-lg;
       .social-icon {
+        line-height: 2em;
         display: inline-block;
-        height: 50px;
-        width: 50px;
+        margin: 0 @margin-xs;
+        height: 35px;
+        width: 35px;
       }
-    }
-
-    .tags {
-      color: @color-tags;
-      display: inline-block;
-      font-size: @font-size-normal;
-    }
-
-    .tags-pin {
-      display: inline-block;
-      margin-left: 8px;
-      position: relative;
-      top: -2px;
     }
   }
   /**
@@ -211,58 +191,68 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-top: 4px solid @color-yellow;
-    margin-top: @margin-md;
-    padding: @margin-lg 0;
+    border-top: 4px solid #F2F2F2;
+    padding: @margin-sm @margin-sm;
 
+    .-bio {
+      .font-open-sans;
+      font-size: 24px;
+      margin-bottom: @margin-sm;
+    }
     .-info-container {
+      margin-top: @margin-sm;
+      margin-bottom: @margin-sm;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      @media (min-width: @screen-xs-max) {
-        flex-direction: row;
-        margin-left: 0;
-        justify-content: space-between;
+
+      .-photo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          border-radius: 50%;
+          height: 65px;
+          width: 65px;
+        }
         .-name {
-          margin-left: -100px;
+          margin-left: 0;
+          padding-left: @margin-sm;
+          .font-poppins-bold;
+          font-size: @font-size-author-name;
         }
       }
 
-      .-name {
-        margin-left: 0;
-        padding-left: @margin-sm;
-        .font-poppins-bold;
-        font-size: @font-size-author-name;
-      }
-
-      .-social-link {
-        .font-poppins-bold;
+      .social-icon {
+        height: 50px;
+        width: 50px;
+        padding-top: 15px;
         color: @color-tags;
         display: inline-block;
         font-size: @font-size-author-bio;
-        margin-right: @margin-sm;
         text-decoration: none;
       }
-    }
-
-    .-bio {
-      .font-poppins;
-      font-size: @font-size-author-bio;
-      margin-bottom: @margin-sm;
-    }
-
-    .-photo-container {
-      margin-bottom: @margin-sm;
-      @media (max-width: @screen-xs-max) {
-        text-align: center;
-      }
-
-      img {
-        border-radius: 50%;
-        height: 100px;
-        width: 100px;
+      @media (min-width: @screen-sm-max) {
+        flex-direction: row;
+        justify-content: space-between;
+        .-photo-container {
+          flex-direction: row;
+          align-self: baseline;
+        }
       }
     }
+  }
+  .join-bar {
+    margin-top: 80px;
+    margin-bottom: -80px;
+  }
+}
+
+// Add position relative on desktops and ipad views
+@media (min-width: @screen-xs-max) {
+  .main-article-content {
+    position: relative;
+    margin-top: -80px;
   }
 }
