@@ -26,11 +26,14 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: @margin-sm;
+    padding: @padding-xs @padding-sm;
     .-header {
       margin-top: @margin-sm;
+
       h1 {
         .font-poppins-bold;
         font-size: @font-size-article-title;
+        line-height: 1.5em;
         text-align: center;
       }
     }
@@ -90,7 +93,6 @@
     font-size: @font-size-article-body;
     padding: 0 @margin-sm;
     blockquote {
-      .font-poppins-bold;
       border-left: 0;
       border-bottom-style: solid;
       border-bottom-color: @color-yellow;
@@ -99,17 +101,18 @@
       border-top-color: @color-yellow;
       text-align: center;
       border-top-width: 3px;
-      font-size: @font-size-article-blockquote;
       padding: @margin-md @margin-sm;
-      @media (max-width: @screen-xs-max) {
-        font-size: @font-size-article-blockquote-xs;
-      }
 
       p {
-        .font-open-sans;
+        .font-blockquote;
         color: @color-article-body;
+        font-size: @font-size-article-blockquote;
         line-height: 1.2em;
         margin: 0 @margin-md;
+
+        @media (max-width: @screen-xs-max) {
+          font-size: @font-size-article-blockquote-xs;
+        }
       }
 
       p:before {
@@ -127,6 +130,7 @@
       .font-poppins-bold;
       color: @color-article-headers;
       font-size: @font-size-article-section-title;
+      line-height: 1.5em;
       margin: 48px 0 0;
     }
 
@@ -162,9 +166,17 @@
       padding-top: 8px;
       padding-right: 6px;
     }
-    @media (min-width: @screen-sm-max) {
-      padding-left: @margin-md;
-      padding-right: @margin-md;
+
+    @media (min-width: @screen-md-min) {
+      padding: 0 @padding-md;
+    }
+
+    @media (min-width: @screen-lg-min) {
+      padding: 0 @padding-lg;
+    }
+
+    @media (min-width: 1500px) {
+      padding: 0 160px;
     }
   }
 
