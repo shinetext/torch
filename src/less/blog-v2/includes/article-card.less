@@ -32,7 +32,7 @@
 }
 
 .card-category {
-  .font-poppins;
+  .font-poppins-bold;
   position: absolute;
   display: inline-table;
   background: @color-category-card-tag-background;
@@ -53,7 +53,7 @@
 .card-content {
   .box-shadow;
   flex: 0 0 50%;
-  padding: @margin-xs;
+  padding: @margin-sm;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -73,10 +73,18 @@
 }
 
 .card-subtitle {
-  .font-poppins;
+  .font-open-sans;
   font-size: @article-card-author-name-min;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  img {
+    display: none;
+    margin-right: @margin-xs;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
   .card-author {
     .article-card-author-link;
   }
