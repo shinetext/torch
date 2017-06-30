@@ -1,10 +1,16 @@
+body {
+  background-color: #FAFAFA !important;
+}
 // Header & Line seperating navigation from articles/content
-.latest-header {
+.latest-header, .popular-header {
   .font-poppins-bold;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding-top: @margin-md;
+}
+.popular-header {
+  padding-top: @margin-sm;
 }
 
 .line-seperator {
@@ -117,7 +123,7 @@
 
 #read-more {
   .font-poppins-bold;
-  background-color: grey;
+  background-color: #F2F2F2;
   color: black;
   cursor: pointer;
   font-size: @font-size-normal;

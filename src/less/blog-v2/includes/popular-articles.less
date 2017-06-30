@@ -1,0 +1,33 @@
+.popular-articles-container {
+  display: flex;
+  flex-direction: column;
+  .-featured {
+    height: 100%;
+    align-self: center;
+    width: 57vh;
+    -webkit-flex: 2;
+  }
+  .-mini {
+    margin: 0 20px;
+    -webkit-flex: 1;
+  }
+
+  @media screen and (min-width: @screen-xs-max) {
+    // set views for featured elelment on regular ipad/galaxy screens
+    .-featured {
+      width: initial;
+    }
+  }
+
+  @media screen and (min-width: @screen-md-min) {
+    flex-direction: row;
+    .-featured {
+      height: 100%;
+      align-self: center;
+      margin-right: @margin-sm;
+      justify-content: space-between;
+    }
+    .-mini {
+    }
+  }
+}

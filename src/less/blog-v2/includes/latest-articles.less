@@ -1,8 +1,8 @@
 /* CSS for featured article preview display */
 .featured-article-preview {
-  height: @thumbnail-min-height * 3;
   display: flex;
   flex-direction: column;
+  margin-bottom: @margin-sm;
 
   .-article-image {
     img {
@@ -15,6 +15,7 @@
     display: inline-table;
     position: relative;
     margin-top: -@margin-md;
+    font-size: @font-category-card-tag;
     top: -@margin-lg;
     left: 2.5%;
     object-fit: contain;
@@ -38,7 +39,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: @box-shadow;
+    .box-shadow;
     padding: @margin-sm;
     .-title {
       text-align: center;
@@ -76,8 +77,8 @@
     }
     @media screen and (min-width: @screen-sm-max) {
       img {
-        height: 90px;
-        width: 90px;
+        height: 70px;
+        width: 70px;
       }
     }
   }
@@ -164,9 +165,9 @@
 #homepage-third-section {
   .latest-articles-container {
     .featured-article-preview {
-      height: 400px;
     }
     .-first-half-mini {
+      margin-top: 0;
       display: flex;
       flex-direction: column;
 
