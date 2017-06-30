@@ -1,11 +1,8 @@
 {{ define "main" }}
 <div role="main" id="advice-home">
   <div class="container-fluid">
-    <div class="container" style="display:none;">
-      {{ partial "extra/popular_header.html" }}
-    </div>
-    <div class="container" style="display:none;">
-      {{ partial "homepage_modules/latest_articles.html" . }}
+    <div class="container">
+      {{ partial "homepage_modules/popular_articles.html" . }}
     </div>
     <div class="container">
       {{ partial "extra/latest_header.html" }}
@@ -14,7 +11,7 @@
       {{ partial "homepage_modules/latest_articles.html" . }}
     </div>
   </div>
-  <div class="container-fluid">
+  <div class="container-fluid shine-squad-section">
     {{ partial "homepage_modules/shine_squad_header.html" }}
     {{ partial "homepage_modules/shine_squad_cards.html" }}
     {{ partial "extra/join_bar.html" }}

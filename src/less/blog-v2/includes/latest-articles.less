@@ -1,8 +1,8 @@
 /* CSS for featured article preview display */
 .featured-article-preview {
-  height: @thumbnail-min-height * 3;
   display: flex;
   flex-direction: column;
+  margin-bottom: @margin-md;
 
   .-article-image {
     img {
@@ -15,6 +15,7 @@
     display: inline-table;
     position: relative;
     margin-top: -@margin-md;
+    font-size: @font-category-card-tag;
     top: -@margin-lg;
     left: 2.5%;
     object-fit: contain;
@@ -38,15 +39,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: @box-shadow;
+    .box-shadow;
     padding: @margin-sm;
-    .-title {
+    .-title h2 {
+      color: @color-article-headers;
       text-align: center;
       .font-poppins-bold;
-      font-size: @featured-article-font-size;
+      font-size: @featured-article-font-size-min;
       a {
         text-decoration: none;
         color: inherit;
+      }
+      @media screen and (min-width: @screen-sm-max) {
+        font-size: @featured-article-font-size-max;
       }
     }
     .-subtitle {
@@ -71,13 +76,17 @@
     }
 
     .-name {
-      font-size: @article-card-author-name-max;
+      margin-left: @margin-xs;
+      font-size: @featured-article-author-font-size-min;
       .article-card-author-link;
     }
     @media screen and (min-width: @screen-sm-max) {
       img {
-        height: 90px;
-        width: 90px;
+        height: 70px;
+        width: 70px;
+      }
+      .-name {
+        font-size: @featured-article-author-font-size-max;
       }
     }
   }
@@ -124,12 +133,12 @@
 @media screen and (min-width: @screen-md-min) {
   .latest-articles-container {
     flex-direction: row-reverse;
-    margin: @margin-md;
+    margin-top: @margin-xs + @margin-sm;
   }
 
   .latest-articles-first-half {
     justify-content: space-between;
-    margin: 0 @margin-sm;
+    margin-left: @margin-xs;
     flex: 2;
     -webkit-flex: 2;
     .-first-half-mini {
@@ -146,7 +155,7 @@
 
   .latest-articles-second-half {
     height: 100%;
-    margin: 0 @margin-sm;
+    margin-right: @margin-sm;
     flex: 1;
     -webkit-flex: 1;
     justify-content: space-around;
@@ -164,9 +173,9 @@
 #homepage-third-section {
   .latest-articles-container {
     .featured-article-preview {
-      height: 400px;
     }
     .-first-half-mini {
+      margin-top: 0;
       display: flex;
       flex-direction: column;
 
@@ -181,28 +190,32 @@
   // Media Queries specific to second section fo latest articles
   @media screen and (min-width: @screen-md-min) {
     .latest-articles-container {
+      margin-top: 0;
       .-second .card {
         flex: 0 1 48%;
       }
       .-second .card .card-container {
-        height: @thumbnail-max-height;
+        height: @thumbnail-max-height + 80px;
         flex-direction: column;
       }
       .-first-half-mini {
         .-first {
           .card .card-container {
-            height: @thumbnail-min-height + 30px;
+            height: @thumbnail-min-height + 35px;
             .thumbnail {
-              height: @thumbnail-min-height + 30px;
+              height: @thumbnail-min-height + 35px;
             }
           }
           .card .card-category {
-            margin-top: @thumbnail-min-height - 5px;
+            margin-top: @thumbnail-min-height - 6px;
           }
         }
         .-second {
           flex-direction: row;
           justify-content: space-between;
+          .card .card-category {
+            margin-top: @thumbnail-min-height - 41px;
+          }
         }
       }
     }

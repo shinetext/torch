@@ -125,7 +125,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 1000;
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
   -webkit-transition: all 0.25s ease 0s;
@@ -181,4 +181,21 @@
 
 .mobile-menu-open {
   overflow: hidden;
+}
+
+// Category submenu animation
+#category-submenu {
+  display: none;
+}
+
+.plus-icon {
+  color: white;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
 }

@@ -2,8 +2,8 @@
   <div class="-info-container">
     <div class="-photo-container">
       <img src="{{ .Params.authorImage }}?fit=thumb&w=100&h=100">
+      <div class="-name">{{ .Params.author }}</div>
     </div>
-    <div class="-name">Author: {{ .Params.author }}</div>
 
     <div class="-social-links-container">
       {{ partial "social/author_social.html" . }}

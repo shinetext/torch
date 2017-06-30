@@ -7,31 +7,13 @@
 }
 .font-poppins-bold() {
   font-family: 'Poppins';
-  font-weight: 900;
+  font-weight: 700;
 }
-
-@font-category-card-tag: 10px;
 
 /**
  * Font mixins and variables from v1.
  * Remove as they become obsolete
  */
-
-@font-face {
-  font-family: 'Glacial Indifference';
-  src: url('/fonts/GlacialIndifference-Regular.otf');
-}
-
-@font-face {
-  font-family: 'Glacial Indifference';
-  font-weight: bold;
-  src: url('/fonts/GlacialIndifference-Bold.otf');
-}
-
-.font-caveat() {
-  font-family: 'Caveat Brush', cursive;
-  font-weight: 400;
-}
 
 .font-karla() {
   font-family: 'Karla';
@@ -44,22 +26,19 @@
 }
 
 .font-blockquote() {
-  font-family: 'Glacial Indifference';
+  font-family: 'Poppins';
   font-weight: 700;
 }
 
 .font-section-title() {
-  font-family: 'Glacial Indifference';
+  font-family: 'Poppins';
   font-weight: 400;
   font-size: 48px;
   letter-spacing: 1.33px;
 }
-
-.font-section-subtitle() {
-  font-family: 'Glacial Indifference';
+.font-open-sans {
+  font-family: 'Open Sans';
   font-weight: 400;
-  font-size: 36px;
-  letter-spacing: 1.33px;
 }
 
 @font-size-xl: 86px;
@@ -75,16 +54,15 @@
 @font-size-advice-home-subtitle: 36px;
 @font-size-advice-home-subtitle-sm: 32px;
 
-@font-size-article-title: 54px;
 @font-size-article-ol: 48px;
 @font-size-article-section-title: 36px;
-@font-size-article-body: 18px;
+@font-size-article-body: 16px;
 @font-size-article-blockquote: 32px;
 @font-size-article-blockquote-xs: 24px;
 @font-size-article-preview-category: 18px;
 @font-size-article-preview-title: 28px;
-@font-size-article-preview-author: 24px;
-@font-size-author-bio: 20px;
+@font-size-article-preview-author: 18px;
+@font-size-author-bio: 32px;
 @font-size-author-name: 36px;
 
 @font-size-featured-title: 34px;
@@ -100,15 +78,29 @@
 @font-size-homepage-testimonial-credit: 20px;
 
 /**
+  * Article Page Fonts
+ */
+@font-size-article-title: 36px;
+
+/**
   * Featured Article Fonts
  */
-@featured-article-font-size: 20px;
+@featured-article-font-size-min: 24px;
+@featured-article-font-size-max: 36px;
+@featured-article-author-font-size-min: 14px;
+@featured-article-author-font-size-max: 24px;
 
 /**
   * Article Card Fonts
  */
 @article-card-author-name-max: 18px;
 @article-card-author-name-min: 12px;
-@article-card-title-max: 24px;
-@article-card-title-min: 18px;
+@article-card-title-max: 22px;
+@article-card-title-min: 16px;
 @article-card-subtitle-color: #828282;
+
+@font-category-card-tag: 14px;
+
+/**
+* Shine Squad Cards
+*/
