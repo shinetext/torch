@@ -2,7 +2,17 @@
 <header class="header-section ">
   <div class="intro-header no-img">
     <div class="container">
-      {{ partial "extra/latest_header.html" }}
+      {{ if in .URL "life" }}
+        {{ partial "extra/latest_header.html" "life" }}
+      {{ else if in .URL "hustle" }}
+        {{ partial "extra/latest_header.html" "hustle" }}
+      {{ else if in .URL "chill" }}
+        {{ partial "extra/latest_header.html" "chill" }}
+      {{ else if in .URL "play" }}
+        {{ partial "extra/latest_header.html" "play" }}
+      {{ else if in .URL "grow" }}
+        {{ partial "extra/latest_header.html" "grow" }}
+      {{ end }}
     </div>
   </div>
   </div>

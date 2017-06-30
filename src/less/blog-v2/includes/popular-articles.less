@@ -31,6 +31,15 @@
     }
     .-mini {
       margin-left: @margin-sm + @margin-xs;
+      .card .card-container {
+        height: @thumbnail-max-height + 100px;
+        .thumbnail {
+          height: @thumbnail-min-height + 20px;
+        }
+      }
+      .card .card-category {
+        margin-top: @thumbnail-min-height - 20px;
+      }
     }
   }
 }
