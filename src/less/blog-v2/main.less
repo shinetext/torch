@@ -3,20 +3,29 @@ body {
 }
 // Header & Line seperating navigation from articles/content
 .latest-header, .popular-header {
-  .font-poppins-bold;
+  text-transform: uppercase;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-top: @margin-md;
+  h2 {
+    .font-poppins-bold;
+    font-size: 24px;
+    letter-spacing: .1em;
+  }
+}
+.latest-header {
+  margin-top: @margin-md;
+  margin-bottom: @margin-sm;
 }
 .popular-header {
-  padding-top: @margin-sm;
+  margin-bottom: @margin-xs;
+  padding-top: @margin-md;
+  padding-bottom: 0;
 }
 
 .line-seperator {
   margin-left: @margin-sm;
   margin-right: 0;
-  margin-top: .5em;
   padding-left: 0;
   background-color: black;
   height: .5em;

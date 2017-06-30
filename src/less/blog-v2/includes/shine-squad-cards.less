@@ -4,6 +4,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   .-card {
+    background-color: white;
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 70%;
@@ -19,8 +20,8 @@
     .-image {
       padding: @margin-xs;
       border-radius: 50%;
-      height: 90px;
-      width: 90px;
+      height: 75px;
+      width: 75px;
     }
     .-testimonial {
       padding: @margin-xs;
@@ -40,6 +41,10 @@
     .-card {
       height: @thumbnail-max-height;
       flex-basis: 28%;
+      .-image {
+        height: 100px;
+        width: 100px;
+      }
       .-testimonial {
         font-size: @article-card-title-max;
       }
@@ -58,4 +63,9 @@
   .shine-squad-cards {
     justify-content: center;
   }
+}
+
+.shine-squad-section .join-bar {
+  margin-top: @margin-sm;
+  margin-bottom: @margin-md;
 }

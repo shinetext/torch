@@ -6,7 +6,6 @@
   .card-container {
     display: flex;
     flex-direction: row;
-    color: black;
     height: @thumbnail-min-height;
     text-decoration: none;
 
@@ -33,13 +32,13 @@
 }
 
 .card-category {
+  .font-poppins;
   position: absolute;
   display: inline-table;
   background: @color-category-card-tag-background;
   padding: @category-padding;
-  margin-top: @thumbnail-min-height - 35px;
+  margin-top: @thumbnail-min-height - 41px;
   font-size: @font-category-card-tag;
-  font-weight: 600;
   text-transform: uppercase;
   border-radius: 2%;
   z-index: 1;
@@ -54,7 +53,7 @@
 .card-content {
   .box-shadow;
   flex: 0 0 50%;
-  padding: .5em;
+  padding: @margin-xs;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -65,7 +64,11 @@
   align-items: flex-start;
   margin-top: 0;
   a {
-    color: black;
+    color: @color-article-headers;
+  }
+  a:hover {
+    text-decoration: none;
+    color: inherit;
   }
 }
 
@@ -125,6 +128,6 @@
     font-size: @article-card-author-name-max;
   }
   .card-category {
-    margin-top: @thumbnail-min-height - 35px;
+    margin-top: @thumbnail-min-height - 41px;
   }
 } /* mq 60em*/

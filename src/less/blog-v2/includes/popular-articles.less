@@ -5,10 +5,9 @@
     height: 100%;
     align-self: center;
     width: 57vh;
-    -webkit-flex: 2;
+    -webkit-flex: 3;
   }
   .-mini {
-    margin: 0 20px;
     -webkit-flex: 1;
   }
 
@@ -24,10 +23,14 @@
     .-featured {
       height: 100%;
       align-self: center;
-      margin-right: @margin-sm;
       justify-content: space-between;
+      .featured-article-preview .-article-image img {
+        height: 80%;
+        padding-top: @margin-md;
+      }
     }
     .-mini {
+      margin-left: @margin-sm + @margin-xs;
     }
   }
 }
