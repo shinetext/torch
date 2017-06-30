@@ -214,15 +214,18 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-top: 4px solid #F2F2F2;
-    padding: @margin-md;
+    border-top: 3px solid #F2F2F2;
+    margin: 0 @margin-md;
+    padding: @padding-md 0;
 
     @media (min-width: @screen-lg-min) {
-      padding: @padding-md @padding-lg;
+      margin: 0 @margin-lg;
+      padding: @padding-md 0;
     }
 
     @media (min-width: 1500px) {
-      padding: @padding-md 160px;
+      margin: 0 160px;
+      padding: @padding-md 0;
     }
 
     .-bio {
@@ -286,6 +289,7 @@
   .join-bar {
     margin-top: 80px;
     margin-bottom: -80px;
+    padding: @padding-lg @padding-md;
   }
 }
 
