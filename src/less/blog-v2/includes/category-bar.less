@@ -1,0 +1,31 @@
+.category-bar {
+  .font-poppins;
+  text-transform: uppercase;
+  background: #FAFAFA;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: @margin-lg;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid #F2F2F2;
+
+  .category-bar-link {
+    flex-basis: 1 1 25%;
+    margin: 0 @margin-md 0 @margin-md;
+    justify-content: space-around;
+    color: #828282;
+    font-size: 18px;
+    letter-spacing: 1px;
+    padding: 0.5em 10px;
+    box-sizing: border-box;
+  }
+  @media (max-width: @screen-xs-max) {
+    display: none;
+  }
+  .active {
+    padding: 1.5em 2em;
+    background-color: black;
+    color: white;
+  }
+}

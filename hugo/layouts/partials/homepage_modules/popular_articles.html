@@ -1,0 +1,21 @@
+<section class="popular-articles-container">
+  {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
+<div class="-featured">
+  {{ range $index, $element:= first 1 $pag.Pages }}
+    {{ if (eq $index 0) }}
+      {{ partial "homepage_modules/featured_article.html" . }}
+    {{ end }}
+  {{ end }}
+  <div>
+    {{ partial "extra/join_bar.html" . }}
+  </div>
+</div>
+<div class="-mini">
+  {{ partial "extra/popular_header.html" }}
+  {{ range $index, $element:= first 3 $pag.Pages }}
+    {{ if (ge $index 1) }}
+      {{ partial "article_modules/article_card_preview.html" . }}
+    {{ end }}
+  {{ end }}
+</div>
+</section>

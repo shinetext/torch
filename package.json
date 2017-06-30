@@ -3,12 +3,19 @@
   "version": "1.0.0",
   "description": "Shine blog framework",
   "scripts": {
+    "add-baseurl":"node hugo/lib/getUrl.js",
     "build": "npm run webpack-build && npm run hugo-build",
-    "hugo-build": "hugo --config=config/hugo.config.toml --destination=public/",
+    "build-for-staging": "npm run clear-public && npm run clear-content && npm run add-baseurl && npm run fetch-content -- --staging && npm run build",
+    "build-for-production": "npm run clear-public && npm run clear-content && npm run add-baseurl && npm run fetch-content -- --production && npm run build",
+    "clear-content": "cd hugo/lib && ./clear-content.sh",
+    "clear-public": "rm -rf ./public",
+    "fetch-content": "node hugo/lib/getArticles.js",
+    "hugo-build": "npm run add-baseurl && hugo --config=config/hugo.config.toml --destination=public/",
+    "prehugo-server": "npm run add-baseurl",
     "hugo-server": "hugo server --config=config/hugo.config.toml --verbose --destination=public/",
     "webpack-server": "webpack-dev-server --config=config/webpack.config.js --port=8282 --watch --debug --verbose --progress --colors",
-    "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --progress --colors -p",
-    "webpack-build": "webpack --config=config/webpack.config.js -p"
+    "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --progress --colors",
+    "webpack-build": "webpack --config=config/webpack.config.js"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -28,6 +35,7 @@
     "webpack-assets-manifest": "^0.7.0"
   },
   "dependencies": {
+    "bluebird": "^3.5.0",
     "chalk": "^1.1.3",
     "contentful": "^4.4.2",
     "es6-docready": "^1.0.0",

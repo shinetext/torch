@@ -1,0 +1,45 @@
+@margin-lg: @margin-md * 2;
+@margin-md: 40px;
+@margin-sm: @margin-md / 2;
+@margin-xs: 10px;
+
+/* Padding */
+@padding-lg: @padding-md * 2;
+@padding-md: 40px;
+@padding-sm: @padding-md / 2;
+@padding-xs: 10px;
+
+/* Bootstrap breakpoints */
+@screen-xs-max: 767px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-md-min: 992px;
+@screen-md-max: 1199px;
+@screen-lg-min: 1200px;
+
+/* Category Page Constants */
+
+/* Article Card Featured Preview Constants */
+@featured-article-preview-size: 400px;
+
+/* Advice page constants */
+@article-header-height: 412px;
+@article-preview-height: 360px;
+@featured-author-photo-size: 70px;
+@featured-container-height: 450px;
+
+/* Article Card Preview Constants */
+@thumbnail-min-height: 180px;
+@thumbnail-max-height: 300px;
+@category-padding: 10.5px 15px;
+
+.article-card-author-link() {
+  a {
+    position: relative;
+    text-decoration: none;
+    color: @article-card-subtitle-color;
+  }
+  a:hover, a:link {
+    color: @article-card-subtitle-color;
+  }
+}

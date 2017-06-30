@@ -1,0 +1,201 @@
+/**
+ * Navigation bar
+ */
+.navbar {
+  background: white;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  height: 68px;
+  margin: 0 !important;
+  padding: @margin-xs @margin-sm;
+  z-index: 1;
+
+  .shine-logo {
+    max-height: 44px;
+    max-width: 64px;
+  }
+
+  .navbar-links-container {
+    .font-karla-bold;
+
+    display: block;
+    float: right;
+    font-size: 15px;
+    margin-right: @margin-md;
+    margin-top: -@font-size-normal / 2;
+    position: absolute;
+    right: 0;
+    top: 50%;
+
+    .navbar-links {
+      display: inline-block;
+      margin-left: @margin-md;
+
+      a {
+        position: relative;
+      }
+
+      a:active, a:hover, a:link, a:visited {
+        color: @color-navbar-links;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      a:before {
+        background-color: @color-yellow;
+        bottom: -4px;
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.25s ease 0s;
+        transition: all 0.25s ease 0s;
+      }
+
+      a:hover:before, a.nav-open:before, a.nav-button:before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+
+      a.nav-button:before {
+        background-color: @color-yellow;
+        border-radius: 4px;
+        height: 200%;
+        left: -25%;
+        top: -50%;
+        width: 150%;
+        z-index: -1;
+      }
+
+      a.nav-button:hover:before {
+        background-color: #FFE3A3;
+      }
+    }
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+}
+
+#mobile-menu-button {
+  color: @color-navbar-links;
+  cursor: pointer;
+  display: none;
+  font-size: 32px;
+  margin-right: @margin-md;
+  margin-top: -16px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  @media (max-width: 600px) {
+    display: inline-block;
+  }
+}
+
+#mobile-menu-button:hover {
+  color: @color-yellow;
+}
+
+#mobile-menu-button-close {
+  border-bottom: 1px solid white;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 32px;
+  position: relative;
+  text-align: right;
+  margin: 0 @margin-md;
+  padding: @margin-sm 0;
+}
+
+#mobile-menu-button-close:hover {
+  color: @color-yellow;
+}
+
+#mobile-menu {
+  display: block;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+
+  ul {
+    .font-karla-bold;
+
+    padding-top: @margin-sm;
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    a {
+      color: white;
+      position: relative;
+      text-decoration: none;
+    }
+
+    a:before {
+      background-color: @color-yellow;
+      bottom: -4px;
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.25s ease 0s;
+      transition: all 0.25s ease 0s;
+    }
+
+    a:hover:before {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+
+    a.nav-open:before {
+      transform: scaleX(1);
+    }
+
+    li {
+      list-style: none;
+      padding: @margin-sm 0;
+    }
+  }
+}
+
+#mobile-menu.-open {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+.mobile-menu-open {
+  overflow: hidden;
+}
+
+// Category submenu animation
+#category-submenu {
+  display: none;
+}
+
+.plus-icon {
+  color: white;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+}

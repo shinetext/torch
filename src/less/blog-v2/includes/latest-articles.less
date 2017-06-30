@@ -1,0 +1,231 @@
+/* CSS for featured article preview display */
+.featured-article-preview {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: @margin-md;
+
+  .-article-image {
+    img {
+      height: @thumbnail-min-height *2;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  .-category {
+    .font-poppins-bold;
+    display: inline-table;
+    text-transform: uppercase;
+    position: relative;
+    margin-top: -@margin-md;
+    font-size: @font-category-card-tag;
+    top: -@margin-lg;
+    left: 2.5%;
+    object-fit: contain;
+    padding: @category-padding;
+    background-color: @color-category-card-tag-background;
+    color: @color-category-card-tag-font;
+    a {
+      color: @color-category-card-tag-font;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+  .-content {
+    width: 95%;
+    align-self: center;
+    margin-top: -@margin-md*2;
+    object-fit: cover;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .box-shadow;
+    padding: @margin-sm;
+    .-title h2 {
+      color: @color-article-headers;
+      text-align: center;
+      .font-poppins-bold;
+      font-size: @featured-article-font-size-min;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      @media screen and (min-width: @screen-sm-max) {
+        font-size: @featured-article-font-size-max;
+      }
+    }
+    .-subtitle {
+      .font-open-sans;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  #header-author-photo {
+    display: flex;
+    align-items: center;
+    padding: @margin-xs/4;
+
+    img {
+      border: 5px solid white;
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+
+    .-name {
+      margin-left: @margin-xs;
+      font-size: @featured-article-author-font-size-min;
+      .article-card-author-link;
+    }
+    @media screen and (min-width: @screen-sm-max) {
+      img {
+        height: 70px;
+        width: 70px;
+      }
+      .-name {
+        font-size: @featured-article-author-font-size-max;
+      }
+    }
+  }
+}
+/* CSS for Latest Article Container */
+.latest-articles-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.latest-articles-first-half {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  .-featured-article {
+  }
+
+  .-first-half-mini {
+    .card {
+      .card-container {
+        height: @thumbnail-min-height;
+        flex-direction: row;
+
+        .thumbnail {
+          height: @thumbnail-min-height;
+        }
+      }
+    }
+  }
+}
+
+.latest-articles-second-half {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .card {
+    .card-container {
+      flex-direction: row;
+    }
+  }
+}
+// /* Media Query styles */
+@media screen and (min-width: @screen-md-min) {
+  .latest-articles-container {
+    flex-direction: row-reverse;
+    margin-top: @margin-xs + @margin-sm;
+  }
+
+  .latest-articles-first-half {
+    justify-content: space-between;
+    margin-left: @margin-xs;
+    flex: 2;
+    -webkit-flex: 2;
+    .-first-half-mini {
+      .card {
+        .card-container {
+          flex-direction: row;
+          .card-content .card-subtitle img {
+            display: initial;
+          }
+        }
+      }
+    }
+  }
+
+  .latest-articles-second-half {
+    height: 100%;
+    margin-right: @margin-sm;
+    flex: 1;
+    -webkit-flex: 1;
+    justify-content: space-around;
+
+    .card {
+      .card-container {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+// Second Section of latest articles
+
+#homepage-third-section {
+  .latest-articles-container {
+    .featured-article-preview {
+    }
+    .-first-half-mini {
+      margin-top: 0;
+      display: flex;
+      flex-direction: column;
+
+      .-first {
+      }
+      .-second {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  // Media Queries specific to second section fo latest articles
+  @media screen and (min-width: @screen-md-min) {
+    .latest-articles-container {
+      margin-top: 0;
+      .-second .card {
+        flex: 0 1 48%;
+      }
+      .-second .card .card-container {
+        height: @thumbnail-max-height + 60px;
+        flex-direction: column;
+        .card-content .card-subtitle img {
+          display: none;
+        }
+      }
+      .-first-half-mini {
+        .-first {
+          .card .card-container {
+            height: @thumbnail-min-height + 15px;
+            .thumbnail {
+              height: @thumbnail-min-height + 15px;
+            }
+          }
+          .card .card-category {
+            margin-top: @thumbnail-min-height - 26px;
+          }
+          .card-content .card-subtitle img {
+            display: initial;
+          }
+        }
+        .-second {
+          flex-direction: row;
+          justify-content: space-between;
+          .card .card-category {
+            margin-top: @thumbnail-min-height - 41px;
+          }
+        }
+      }
+    }
+  }
+}

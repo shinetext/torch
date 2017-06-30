@@ -1,28 +1,28 @@
 {{ define "main" }}
 <div role="main" id="advice-home">
-  <div id="featured-container">
-    {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }} {{ if .Params.featured }}
-      {{ .Render "featured_article" }}
-    {{ end }} {{ end }}
+  <div class="container-fluid">
+    <div class="container">
+      {{ partial "homepage_modules/popular_articles.html" . }}
+    </div>
+    <div class="container">
+      {{ partial "extra/latest_header.html" }}
+    </div>
+    <div class="container">
+      {{ partial "homepage_modules/latest_articles.html" . }}
+    </div>
+  </div>
+  <div class="container-fluid shine-squad-section">
+    {{ partial "homepage_modules/shine_squad_header.html" }}
+    {{ partial "homepage_modules/shine_squad_cards.html" }}
+    {{ partial "extra/join_bar.html" }}
   </div>
   <div class="container-fluid">
-    <div class="row">
-      <div id="recent-posts-title">
-        <div class="recent-posts-icon"></div>
-        <h2>Latest Articles</h2>
-        <div class="recent-posts-description">Authentic advice from <em>real</em> people on living your best life.</div>
-      </div>
+    <div id="homepage-third-section" class="container">
+      {{ partial "homepage_modules/latest_articles_second_section.html" . }}
     </div>
-    <div class="row">
-      <div id="recent-articles">
-        <div class="recent-artices">
-          {{ $pag := .Paginate (where .Data.Pages "Type" "post") }} {{ range $pag.Pages }}
-            {{ .Render "article_card_preview" }}
-          {{ end }}
-        </div>
-      </div>
+    <div>
+      {{ partial "extra/read_more.html" }}
     </div>
-    <div id="read-more" ga-on="click" ga-event-category="Behavior" ga-event-action="Read More">Read More</div>
   </div>
 </div>
 {{ end }}

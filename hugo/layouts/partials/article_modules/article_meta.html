@@ -1,0 +1,4 @@
+<!-- meta data attached to each post; needs to be customized for shine -->
+<span class="article-meta">
+  {{ default (i18n "dateFormat") .Site.Params.dateformat | .Date.Format | i18n "postedOnDate" }}
+</span>

@@ -1,0 +1,306 @@
+#shine-article {
+  /**
+   * Article header
+   */
+
+  .container-header {
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    .-bgImage {
+      object-fit: cover;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    @media (min-width: @screen-xs-max) {
+      height: @article-header-height;
+    }
+  }
+
+  /**
+   * Items before the main article section
+   */
+  .pre-article-content {
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: @margin-sm;
+    padding: @padding-xs @padding-sm;
+    .-header {
+      margin-top: @margin-sm;
+
+      h1 {
+        .font-poppins-bold;
+        font-size: @font-size-article-title;
+        line-height: 1.5em;
+        text-align: center;
+      }
+    }
+    .-author-section {
+      display: flex;
+      flex-direction: column;
+      @media (min-width: @screen-sm-max) {
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
+    #header-author-photo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: @margin-sm;
+      margin-top: @margin-sm;
+      img {
+        border-radius: 50%;
+        height: 70px;
+        width: 70px;
+      }
+      .-name {
+        .font-poppins;
+        padding-top: @margin-xs;
+        padding-left: @margin-sm;
+        font-size: @font-size-article-preview-author;
+        color: @article-card-subtitle-color;
+
+        @media (max-width: @screen-sm-max) {
+          padding-left: 0;
+        }
+      }
+      @media (min-width: @screen-md-min) {
+        flex-direction: row;
+        width: 50%;
+      }
+    }
+
+    .social-container {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+      .social-icon {
+        text-align: center;
+        height: 35px;
+        width: 35px;
+      }
+      @media (min-width: @screen-sm-max) {
+        align-self: center;
+      }
+    }
+  }
+  /**
+   * Main article section
+   */
+  #article-body {
+    color: @color-article-body;
+    font-size: @font-size-article-body;
+    padding: 0 @margin-sm;
+
+    blockquote {
+      border-left: 0;
+      border-bottom-style: solid;
+      border-bottom-color: @color-yellow;
+      border-bottom-width: 3px;
+      border-top-style: solid;
+      border-top-color: @color-yellow;
+      text-align: center;
+      border-top-width: 3px;
+      padding: @margin-md @margin-sm;
+
+      p {
+        .font-blockquote;
+        color: @color-article-blockquote;
+        font-size: @font-size-article-blockquote;
+        line-height: 1.2em;
+        margin: 0 @margin-md;
+
+        @media (max-width: @screen-xs-max) {
+          font-size: @font-size-article-blockquote-xs;
+        }
+      }
+
+      p:before {
+        content: "\A";
+        border-color: @color-yellow transparent transparent transparent;
+        border-style: solid;
+        border-width: 50px 200px 0 0;
+        left: @margin-sm;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    em {
+      line-height: 1.8em;
+    }
+
+    h2 {
+      .font-poppins-bold;
+      color: @color-article-headers;
+      font-size: @font-size-article-section-title;
+      line-height: 1.5em;
+      margin: 48px 0 0;
+    }
+
+    img {
+      max-height: 480px;
+      max-width: 100%;
+    }
+
+    ol, ul {
+      .font-poppins;
+      font-size: @font-size-article-ol;
+
+      p {
+        .font-poppins;
+        display: inline-block;
+        font-size: @font-size-article-body;
+        margin-left: @margin-sm;
+        vertical-align: top;
+      }
+    }
+
+    p {
+      .font-open-sans;
+      line-height: 1.8em;
+      margin: @margin-sm 0;
+    }
+
+    .dropcap {
+      .font-poppins-bold;
+      float: left;
+      font-size: 68px;
+      line-height: 48px;
+      padding-top: 8px;
+      padding-right: 6px;
+    }
+
+    @media (min-width: @screen-md-min) {
+      padding: 0 @padding-md;
+    }
+
+    @media (min-width: @screen-lg-min) {
+      padding: 0 @padding-lg;
+    }
+
+    @media (min-width: 1500px) {
+      padding: 0 160px;
+    }
+  }
+
+  /**
+   * Post-article section for social sharing and tags.
+   */
+  .post-article {
+    margin-top: @margin-lg;
+    text-align: center;
+
+    .social-container {
+      margin-bottom: @margin-lg;
+      .social-icon {
+        line-height: 2em;
+        display: inline-block;
+        margin: 0 @margin-xs;
+        height: 35px;
+        width: 35px;
+      }
+    }
+  }
+  /**
+   * Author section below the article,
+   */
+  .author-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 3px solid #F2F2F2;
+    margin: 0 @margin-md;
+    padding: @padding-md 0;
+
+    @media (min-width: @screen-lg-min) {
+      margin: 0 @margin-lg;
+      padding: @padding-md 0;
+    }
+
+    @media (min-width: 1500px) {
+      margin: 0 160px;
+      padding: @padding-md 0;
+    }
+
+    .-bio {
+      .font-open-sans;
+      color: @color-article-body;
+      font-size: @font-size-author-bio;
+      line-height: 1.8em;
+      margin-bottom: @margin-sm;
+    }
+
+    .-info-container {
+      margin-top: @margin-sm;
+      margin-bottom: @margin-sm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .-photo-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+          border-radius: 50%;
+          height: 65px;
+          width: 65px;
+        }
+        .-name {
+          margin-left: 0;
+          margin-top: @margin-sm;
+          .font-poppins-bold;
+          font-size: @font-size-author-name;
+        }
+      }
+
+      .social-icon {
+        height: 50px;
+        width: 50px;
+        padding-top: 15px;
+        color: @color-tags;
+        display: inline-block;
+        font-size: 24px;
+        text-decoration: none;
+      }
+
+      @media (min-width: @screen-sm-max) {
+        flex-direction: row;
+        justify-content: space-between;
+        .-photo-container {
+          flex-direction: row;
+          align-self: baseline;
+
+          .-name {
+            padding-left: @margin-sm;
+          }
+        }
+      }
+    }
+  }
+
+  .join-bar {
+    margin-top: 80px;
+    margin-bottom: -80px;
+    padding: @padding-lg @padding-md;
+  }
+}
+
+// Add position relative on desktops and ipad views
+@media (min-width: @screen-xs-max) {
+  .main-article-content {
+    position: relative;
+    margin-top: -80px;
+  }
+}

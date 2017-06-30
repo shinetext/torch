@@ -2,68 +2,53 @@
 <header class="header-section ">
   <div class="intro-header no-img">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-          <div class="page-heading">
-            <h1>{{ if .Data.Singular }}#{{ end }}{{ .Title }}</h1>
-            <hr class="small">
-          </div>
-        </div>
-      </div>
+      {{ if in .URL "life" }}
+        {{ partial "extra/latest_header.html" "life" }}
+      {{ else if in .URL "hustle" }}
+        {{ partial "extra/latest_header.html" "hustle" }}
+      {{ else if in .URL "chill" }}
+        {{ partial "extra/latest_header.html" "chill" }}
+      {{ else if in .URL "play" }}
+        {{ partial "extra/latest_header.html" "play" }}
+      {{ else if in .URL "grow" }}
+        {{ partial "extra/latest_header.html" "grow" }}
+      {{ else }}
+        {{ partial "extra/latest_header.html" "latest" }}
+      {{ end }}
     </div>
+  </div>
+  </div>
   </div>
 </header>
 {{ end }} {{ define "main" }}
+{{ $sp := .Site.Params }}
+{{ if and (isset $sp "Post") (isset $sp.Post "infinite_scroll") }}
+    {{ with $sp.Post.infinite_scroll }}
+        {{ $.Scratch.Set "infinite_scroll" (eq . true) }}
+    {{ end }}
+{{ else }}
+    {{ $.Scratch.Set "infinite_scroll" false }}
+{{ end }}
+
+{{ if eq ($.Scratch.Get "infinite_scroll") false }}
+    {{ with $sp.infinite_scroll }}
+        {{ $.Scratch.Set "infinite_scroll" (eq . true) }}
+    {{ else }}
+        {{ $.Scratch.Set "infinite_scroll" false }}
+    {{ end }}
+{{ end }}
+
+{{ $infinite_scroll := $.Scratch.Get "infinite_scroll" }}
+
 <div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      {{ with .Content }}
-      <div class="well">
-        {{.}}
-      </div>
-      {{ end }}
-      <div class="posts-list">
+    <section class="cards {{ if $infinite_scroll }}infinite-scroll{{ end }}">
+      {{ if .IsNode }}
         {{ range .Paginator.Pages }}
-        <article class="post-preview">
-          <a href="{{ .Permalink }}">
-            <h2 class="post-title">{{ .Title }}</h2> {{ if .Params.subtitle }}
-            <h3 class="post-subtitle">
-                    {{ .Params.subtitle }}
-                  </h3> {{ end }}
-          </a>
-
-          <p class="post-meta">
-            {{ default (i18n "dateFormat") .Site.Params.dateformat | .Date.Format | i18n "postedOnDate" }}
-          </p>
-          <div class="post-entry">
-            {{ if .Truncated }} {{ .Summary }}
-            <a href="{{ .Permalink }}" class="post-read-more">[{{ i18n "readMore" }}]</a> {{ else }} {{ .Content }} {{ end }}
-          </div>
-
-          {{ if .Params.tags }}
-          <span class="post-meta">
-                  {{ range .Params.tags }}
-                    #<a href="{{ $.Site.LanguagePrefix }}/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
-                  {{ end }}
-                </span> {{ end }}
-
-        </article>
+          {{ partial "article_modules/article_card_preview.html" . }}
         {{ end }}
-      </div>
-      {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-      <ul class="pager main-pager">
-        {{ if .Paginator.HasPrev }}
-        <li class="previous">
-          <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}">&larr; {{ i18n "newerPosts" }}</a>
-        </li>
-        {{ end }} {{ if .Paginator.HasNext }}
-        <li class="next">
-          <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}">{{ i18n "olderPosts" }} &rarr;</a>
-        </li>
-        {{ end }}
-      </ul>
       {{ end }}
-    </div>
-  </div>
+    </section>
+  {{ partial "extra/join_bar.html" }}
+  {{ partial "extra/paginator.html" . }}
 </div>
 {{ end }}

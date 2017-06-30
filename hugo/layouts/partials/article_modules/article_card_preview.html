@@ -1,0 +1,21 @@
+{{ $author := .Params.author }}
+<article id="card" class="card">
+  <div class="card-category">
+    {{ range .Params.categories }}
+      <a href="/categories/{{ . }}">{{ . }}</a>
+    {{ end }}
+  </div>
+  <div class="card-container">
+    <a href="{{ .Permalink }}"class="thumbnail">
+      <img src="{{ .Params.image }}?w=400&h=400" alt="headerphoto"/>
+    </a>
+    <div class="card-content">
+
+      <div class="card-title"><p><a href="{{ .Permalink }}">{{ .Title }}</a></p></div>
+      <div class="card-subtitle">
+        <img src="{{ .Params.authorImage }}?fit=thumb&w=100&h=100">
+        <p class="card-author"><a href="/author/{{ replaceRE " " "-" $author }}">{{ $author }}</a></p>
+      </div>
+    </div>
+  </div>
+</article>

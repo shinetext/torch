@@ -1,27 +1,85 @@
 'use strict';
 
+const Promise = require('bluebird');
 const contentful = require('contentful');
 const createArticle = require('./createArticle');
-let cms;
 
-/**
-* Establish connection to contentful
-* get all article entries and create markdown file
-*/
+// Need to specify what environment to pull content for
+const contentEnv = process.argv.slice(2)[0];
+if (
+  contentEnv !== '--staging' &&
+  contentEnv !== '--production' &&
+  contentEnv !== '--all'
+) {
+  console.log(`
+    You need to specify the environment to pull content for.
 
+      Usage:
+        $ npm run fetch-content -- --staging
 
-if (process.env.CONTENTFUL_SPACE_ID && process.env.CONTENTFUL_ACCESS_TOKEN) {
-  cms = contentful.createClient({
-    space: process.env.CONTENTFUL_SPACE_ID,
-    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-  });
+      Flags:
+        --staging     Fetches articles set to publish to staging
+        --production  Fetches articles set to publish to production
+        --all         Fetches all articles
+    `);
+
+  process.exit();
 }
 
-cms.getEntries({ content_type: 'article' })
-.then(function (entries) {
-  entries.items.forEach(entry => {
-    // Take article and create  markdown template
-    createArticle(entry)
-  })
-})
-.catch(err => (console.error(err)));
+// Need to set Contentful space ID and access token to fetch data
+if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
+  console.error(
+    'Missing environment variables CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN'
+  );
+  process.exit();
+}
+
+// Fetch articles from Contentful and write them to the filesystem
+Promise.coroutine(function*() {
+  try {
+    const cms = contentful.createClient({
+      space: process.env.CONTENTFUL_SPACE_ID,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    });
+
+    let query = {
+      content_type: 'article',
+      limit: 1000, // default is 100. max is 1000
+      skip: 0,
+    };
+
+    if (contentEnv === '--staging') {
+      query['fields.publishTo[in]'] = 'staging';
+      console.log('Fetching all published articles for staging');
+    } else if (contentEnv === '--production') {
+      query['fields.publishTo[in]'] = 'production';
+      console.log('Fetching all published articles for production');
+    } else {
+      console.log('Fetching all published articles');
+    }
+
+    let entries = [];
+    let moreEntries = true;
+    while (moreEntries) {
+      const result = yield cms.getEntries(query);
+      if (result.items) {
+        entries = entries.concat(result.items);
+      }
+
+      if (result.total > result.skip + result.limit) {
+        let lastSkip = result.skip;
+        query.skip = result.skip + result.limit;
+      } else {
+        moreEntries = false;
+      }
+    }
+
+    console.log(`Fetched ${entries.length} articles to publish`);
+    entries.forEach(entry => {
+      // Take article and create markdown template
+      createArticle(entry);
+    });
+  } catch (err) {
+    console.error(err);
+  }
+})();
