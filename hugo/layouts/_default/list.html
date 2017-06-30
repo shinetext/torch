@@ -12,6 +12,8 @@
         {{ partial "extra/latest_header.html" "play" }}
       {{ else if in .URL "grow" }}
         {{ partial "extra/latest_header.html" "grow" }}
+      {{ else }}
+        {{ partial "extra/latest_header.html" "latest" }}
       {{ end }}
     </div>
   </div>
