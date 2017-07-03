@@ -1,0 +1,11 @@
+{{- with .Title | default .Site.Title }}
+<meta property="twitter:title" content="{{ . }}" />
+{{- end }}
+{{- with .Params.description }}
+<meta property="twitter:description" content="{{ . }}" />
+{{- end }}
+{{- with .Params.image }}
+<meta property="twitter:image" content="https:{{ . }}?w=1200" />
+{{- end }}
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:site" content="@ShineText" />

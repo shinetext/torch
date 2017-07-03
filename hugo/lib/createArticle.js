@@ -10,8 +10,9 @@ module.exports = entry => {
   let idxOfPubExMod = body.indexOf('<div class="pubexchange_module"'); // index of the pub exchange module in article body
   let type = 'article';
   let cleanTitle = title.replace(/\"/g, '\\"');
-  let cleanDescription = description.replace(/\"/g, '\\"');
-  let cleanBody = marked(body.slice(0, idxOfPubExMod)); // slice pubexchange off of article body
+  let cleanDescription = description.replace(/\"/g, '\\"').trim();
+  let cleanBody = marked(body).slice(0, idxOfPubExMod); // slice pubexchange off of article body
+
   let headerPhotoInfo = content.headerPhoto.fields;
 
   // Grab Author information
@@ -39,6 +40,8 @@ module.exports = entry => {
   const templateData = `+++
   date = "${moment(date).format()}"
   title = "${cleanTitle}"
+  description = "${cleanDescription}"
+  slug = "${slug}"
   categories = ["${category}"]
   image = "${headerPhotoInfo.file.url}"
   authorImage = "${authorImageInfo.file.url}"

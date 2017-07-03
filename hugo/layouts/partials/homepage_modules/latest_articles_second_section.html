@@ -2,13 +2,13 @@
   {{ if (ge (index .Paginator.Pagers) 2) }}
   <div class="latest-articles-first-half">
     <div class="-featured-article">
-      {{ range $index, $element:= first 1 ((index .Paginator.Pagers 1).Pages) }}
+      {{ range $index, $element:= first 1 ((index .Paginator.Pagers 2).Pages) }}
           {{ partial "homepage_modules/featured_article.html" . }}
       {{ end }}
     </div>
     <div class="-first-half-mini">
       <div class="-first">
-        {{ range $index, $element:= last 3 (index .Paginator.Pagers 1).Pages }}
+        {{ range $index, $element:= last 3 (index .Paginator.Pagers 2).Pages }}
           {{ if (eq $index 0) }}
             {{ partial "article_modules/article_card_preview.html" . }}
           {{ end }}
@@ -22,12 +22,11 @@
     </div>
   </div>
   <div class="latest-articles-second-half">
-    {{ range $index, $element:= first 4 (index .Paginator.Pagers 1).Pages }}
+    {{ range $index, $element:= first 4 (index .Paginator.Pagers 2).Pages }}
       {{ if (ge $index 1) }}
         {{ partial "article_modules/article_card_preview.html" . }}
       {{ end }}
     {{ end}}
   </div>
   {{ end }}
-
 </section>
