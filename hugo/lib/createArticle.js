@@ -11,7 +11,8 @@ module.exports = entry => {
   let type = 'article';
   let cleanTitle = title.replace(/\"/g, '\\"');
   let cleanDescription = description.replace(/\"/g, '\\"').trim();
-  let cleanBody = marked(body.slice(0, idxOfPubExMod)); // slice pubexchange off of article body
+  let cleanBody = marked(body).slice(0, idxOfPubExMod); // slice pubexchange off of article body
+
   let headerPhotoInfo = content.headerPhoto.fields;
 
   // Grab Author information
