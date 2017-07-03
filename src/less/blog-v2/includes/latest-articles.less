@@ -13,6 +13,7 @@
   }
   .-category {
     .font-poppins-bold;
+    letter-spacing: .1em;
     display: inline-table;
     text-transform: uppercase;
     position: relative;
@@ -45,7 +46,7 @@
     padding: @margin-sm;
     .-title h2 {
       color: @color-article-headers;
-      text-align: center;
+      text-align: left;
       .font-poppins-bold;
       font-size: @featured-article-font-size-min;
       a {
@@ -226,6 +227,16 @@
           }
         }
       }
+    }
+  }
+}
+
+// Join Bar on home page style changes
+#advice-home {
+  .join-bar {
+    padding: @margin-xs;
+    .join-message {
+      font-size: 24px;
     }
   }
 }
