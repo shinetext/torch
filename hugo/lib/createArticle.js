@@ -40,6 +40,7 @@ module.exports = entry => {
   date = "${moment(date).format()}"
   title = "${cleanTitle}"
   description = "${cleanDescription}"
+  slug = "${slug}"
   categories = ["${category}"]
   image = "${headerPhotoInfo.file.url}"
   authorImage = "${authorImageInfo.file.url}"
