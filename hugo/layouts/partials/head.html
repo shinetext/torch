@@ -4,13 +4,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <!-- Site Title, Description and Favicon -->
+
 {{- with .Title | default .Site.Title }}
   <title>{{ . }}</title>
-  <meta property="og:title" content="{{ . }}" />
 {{- end }}
+{{- partial "extra/meta_og.html" . }}
+{{- partial "extra/meta_twitter.html" . }}
+
 {{- with .Site.Params.favicon }}
   <link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
-{{- end -}}
+{{- end }}
 {{- with .Site.Params.fb_app_id }}
   <meta property="fb:app_id" content="{{ . }}" />
 {{- end }}
