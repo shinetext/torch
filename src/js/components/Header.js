@@ -68,10 +68,17 @@ class Header extends Component {
               <a href="/">
                 Get Advice{' '}
               </a>
+              <i
+                className="fa fa-plus plus-icon"
+                onClick={() => {
+                  $('#category-submenu').slideToggle();
+                }}
+              />
               <ul id="category-submenu">
+                <li><a href="/categories/chill">CHILL</a></li>
+                <li><a href="/categories/grow">GROW</a></li>
                 <li><a href="/categories/hustle">HUSTLE</a></li>
-                <li><a href="/categories/life">LIFE</a></li>
-                <li><a href="/categories/work">WORK</a></li>
+                <li><a href="/categories/play">PLAY</a></li>
               </ul>
             </li>
             <li>
