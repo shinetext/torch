@@ -1,7 +1,9 @@
 {{ $shareTitle := "Shine Advice" }}
+{{ $author := .Params.author }}
+
 <div id="header-author-photo">
   <img src="{{ .Params.authorImage }}?fit=thumb&w=100&h=100">
-  <span class="-name">{{ .Params.author }}</span>
+  <span class="-name"><a href="/author/{{ replaceRE " " "-" $author }}">{{ $author }}</a></span>
 </div>
   <div class="social-container">
     <a class="fa fa-facebook fa-2x social-icon fb-icon" href="http://www.facebook.com/sharer/sharer.php?u={{ .Permalink | safeURL }}&title={{ $shareTitle }}&picture={{ .Site.Params.shine_logo }}&description={{ .Site.Params.description }}" target="_blank"
