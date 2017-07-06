@@ -3,6 +3,7 @@
 const Promise = require('bluebird');
 const contentful = require('contentful');
 const createArticle = require('./createArticle');
+const createPromotedJson = require('./createPromotedJson');
 
 // Need to specify what environment to pull content for
 const contentEnv = process.argv.slice(2)[0];
@@ -73,7 +74,6 @@ Promise.coroutine(function*() {
         moreEntries = false;
       }
     }
-
     console.log(`Fetched ${entries.length} articles to publish`);
     entries.forEach(entry => {
       // Take article and create markdown template
@@ -81,5 +81,36 @@ Promise.coroutine(function*() {
     });
   } catch (err) {
     console.error(err);
+  }
+
+  try {
+    const cms = contentful.createClient({
+      space: process.env.CONTENTFUL_SPACE_ID,
+      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    });
+    // query for promoted articles
+    let promotedQuery = {
+      content_type: 'article',
+      limit: 6, // default is 100. max is 1000
+      skip: 0,
+      order: '-sys.createdAt',
+      'fields.promoted': true,
+    };
+    // query contentful for latest articles for shinetext article feed
+    let promotedEntries = yield cms.getEntries(promotedQuery);
+    promotedEntries
+      ? console.log(
+          `Fetched recent promoted articles for shinetext.com artices feed`
+        )
+      : console.log(
+          `Error fetching recent promoted articles for shinetext.com artices feed`
+        );
+    let promoted = []; // format entries for aurora
+    promotedEntries.items.forEach(entry => {
+      promoted.push(entry.fields);
+    });
+    createPromotedJson(promoted);
+  } catch (e) {
+    console.error(e);
   }
 })();

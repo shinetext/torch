@@ -6,5 +6,6 @@ hugo/data/path/manifest.json
 hugo/content/author/*
 hugo/content/author/*.test.md
 hugo/content/post/*
+hugo/static/promoted.json
 hugo/content/post/*.test.md
 config/hugo.config.toml
