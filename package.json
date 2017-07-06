@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Shine blog framework",
   "scripts": {
-    "add-baseurl":"node hugo/lib/getUrl.js",
+    "add-baseurl": "node hugo/lib/getUrl.js",
     "build": "npm run webpack-build && npm run hugo-build",
     "build-for-staging": "npm run clear-public && npm run clear-content && npm run add-baseurl && npm run fetch-content -- --staging && npm run build",
     "build-for-production": "npm run clear-public && npm run clear-content && npm run add-baseurl && npm run fetch-content -- --production && npm run build",
@@ -15,7 +15,7 @@
     "hugo-server": "hugo server --config=config/hugo.config.toml --verbose --destination=public/",
     "webpack-server": "webpack-dev-server --config=config/webpack.config.js --port=8282 --watch --debug --verbose --progress --colors",
     "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --progress --colors",
-    "webpack-build": "webpack --config=config/webpack.config.js"
+    "webpack-build": "webpack --config=config/webpack.config.js -p"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
