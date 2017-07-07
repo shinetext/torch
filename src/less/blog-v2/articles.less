@@ -56,6 +56,7 @@
       align-items: center;
       margin-bottom: @margin-sm;
       margin-top: @margin-sm;
+      text-decoration: none;
       img {
         border-radius: 50%;
         height: 50px;
@@ -67,7 +68,8 @@
         padding-left: @margin-sm;
         font-size: @font-size-article-preview-author;
         color: @article-card-subtitle-color;
-
+        text-transform: uppercase;
+        letter-spacing: .1em;
         @media (max-width: @screen-sm-max) {
           padding-left: 0;
         }
@@ -288,6 +290,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-decoration: none;
+        color: inherit;
         img {
           border-radius: 50%;
           height: 50px;
