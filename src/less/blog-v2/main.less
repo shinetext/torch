@@ -2,7 +2,8 @@ body {
   background-color: #fdfdfd !important;
 }
 // Header & Line seperating navigation from articles/content
-.latest-header, .popular-header {
+.latest-header,
+.popular-header {
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
@@ -91,7 +92,7 @@ body {
   .join-message {
     margin: @margin-xs 0;
     text-align: center;
-    color: #F2F2F2;
+    color: #f2f2f2;
     display: inline-block;
     .font-poppins-bold;
     font-size: 32px;
@@ -117,7 +118,7 @@ body {
 
 #read-more {
   .font-poppins-bold;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   color: black;
   cursor: pointer;
   font-size: @font-size-normal;
@@ -138,8 +139,7 @@ body {
   }
 }
 
-#read-more.disabled {
-  background-color: @color-button-disabled-background;
-  color: @color-button-disabled-text;
-  cursor: default;
+#read-more:hover {
+  transition: .8s;
+  background-color: @color-yellow;
 }
