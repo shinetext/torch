@@ -15,7 +15,7 @@
         {{ end}}
       </div>
       <div class="-second">
-        {{ range last 2 (index .Paginator.Pagers 1).Pages }}
+        {{ range last 3 (index .Paginator.Pagers 1).Pages }}
           {{ partial "article_modules/article_card_preview.html" . }}
         {{ end}}
       </div>
