@@ -29,15 +29,17 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: @padding-xs @padding-sm;
+    padding: 0 @padding-sm;
     .-header {
       margin-top: @margin-sm;
-
       h1 {
         .font-poppins-bold;
         font-size: @font-size-article-title;
         line-height: 1.5em;
         text-align: center;
+        @media (min-width: @screen-sm-max) {
+          font-size: @font-size-article-title-max;
+        }
       }
     }
     .-author-section {
@@ -58,12 +60,18 @@
       margin-top: @margin-sm;
       text-decoration: none;
       img {
+        display: none;
         border-radius: 50%;
         height: 50px;
         width: 50px;
       }
       .-name {
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
         .font-poppins;
+        text-transform: uppercase;
         padding-top: @margin-xs;
         padding-left: @margin-sm;
         font-size: @font-size-article-preview-author;
@@ -76,7 +84,11 @@
       }
       @media (min-width: @screen-md-min) {
         flex-direction: row;
+        margin-top: @margin-sm;
         width: 50%;
+        img {
+          display: initial;
+        }
       }
     }
 
@@ -342,6 +354,14 @@
 @media (min-width: @screen-xs-max) {
   .main-article-content {
     position: relative;
+    width: 80%;
+    margin: auto;
     margin-top: -80px;
+    align-self: center;
+  }
+}
+@media (min-width: @screen-md-max) {
+  .main-article-content {
+    width: 60%;
   }
 }

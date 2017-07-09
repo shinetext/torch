@@ -1,0 +1,6 @@
+##
+## Custom headers when hosted on Netlify
+##
+
+/promoted.json
+  Access-Control-Allow-Origin: *

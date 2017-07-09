@@ -1,6 +1,6 @@
 {{ define "main" }}
 <div role="main" id="advice-home">
-  <div class="container-fluid">
+  <div>
     <div class="container">
       {{ partial "homepage_modules/popular_articles.html" . }}
     </div>
@@ -11,18 +11,16 @@
       {{ partial "homepage_modules/latest_articles.html" . }}
     </div>
   </div>
-  <div class="container-fluid shine-squad-section">
+  <div class="container shine-squad-section">
     {{ partial "homepage_modules/shine_squad_header.html" }}
     {{ partial "homepage_modules/shine_squad_cards.html" }}
     {{ partial "extra/join_bar.html" }}
   </div>
-  <div class="container-fluid">
+  <div>
     <div id="homepage-third-section" class="container">
       {{ partial "homepage_modules/latest_articles_second_section.html" . }}
     </div>
-    <div>
       {{ partial "extra/read_more.html" }}
-    </div>
   </div>
 </div>
 {{ end }}
