@@ -36,6 +36,40 @@ body {
   .shine-gradient;
 }
 
+// Author banner on author pages
+.author-banner {
+  background-color: white;
+  .box-shadow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: @margin-sm 0;
+  margin-bottom: @margin-sm;
+  .-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .-name {
+    text-align: center;
+    h1 {
+      .font-poppins-bold;
+      font-size: @author-banner-font-size;
+    }
+  }
+  .social-links-container {
+    font-size: @author-banner-font-size;
+    display: flex;
+    .social-icon {
+      color: @article-card-subtitle-color;
+      padding: 2.5px @margin-xs;
+      height: 35px;
+      width: 35px;
+    }
+  }
+}
+
 // Icons
 .icon-email {
   background-image: url("https://images.contentful.com/awpxl2koull4/5eeOIV18JOW2ewAMiEukkQ/109f351ece666845a8192bfa31c8aa73/email-social-icon.png");

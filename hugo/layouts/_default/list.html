@@ -1,5 +1,8 @@
 {{ define "header" }}
 <header class="header-section ">
+  {{ if in .URL "author" }}
+    {{ partial "extra/author_banner.html" . }}
+  {{ else }}
   <div class="intro-header no-img">
     <div class="container list-page">
       {{ if in .URL "life" }}
@@ -17,6 +20,7 @@
       {{ end }}
     </div>
   </div>
+ {{ end }}
   </div>
   </div>
 </header>
