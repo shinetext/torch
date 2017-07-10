@@ -342,10 +342,6 @@
             margin-top: 0;
           }
         }
-        #sms-share,
-        #sms-share-post {
-          display: none;
-        }
       }
     }
   }
@@ -357,7 +353,7 @@
   }
 }
 
-// Add position relative on desktops and ipad views
+// Add position relative on desktops and ipad views && remove sms icon from desktop views
 @media (min-width: @screen-xs-max) {
   .main-article-content {
     position: relative;
@@ -365,6 +361,10 @@
     margin: auto;
     margin-top: -80px;
     align-self: center;
+  }
+  #sms-share,
+  #sms-share-post {
+    display: none;
   }
 }
 @media (min-width: @screen-md-max) {
