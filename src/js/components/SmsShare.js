@@ -27,4 +27,5 @@ const SmsShare = () => {
 
 if (window.location.href.includes('articles')) {
   ReactDOM.render(<SmsShare />, document.getElementById('sms-share'));
+  ReactDOM.render(<SmsShare />, document.getElementById('sms-share-post'));
 }
