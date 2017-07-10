@@ -2,10 +2,9 @@
   display: flex;
   flex-direction: column;
   .-featured {
-    height: 100%;
-    align-self: center;
-    width: 56vh;
-    -webkit-flex: 3;
+    margin-left: -15px;
+    margin-right: -15px;
+    -webkit-flex: 3.1;
   }
   .-mini {
     -webkit-flex: 1;
@@ -13,32 +12,28 @@
 
   @media screen and (min-width: @screen-xs-max) {
     // set views for featured elelment on regular ipad/galaxy screens
-    .-featured {
-      width: initial;
-    }
   }
 
   @media screen and (min-width: @screen-md-min) {
+    margin-top: @margin-md + @margin-sm;
     flex-direction: row;
     .-featured {
-      height: 100%;
-      align-self: center;
-      justify-content: space-between;
+      margin-left: initial;
+      margin-right: initial;
       .featured-article-preview .-article-image img {
-        height: 80%;
-        padding-top: @margin-md;
+        height: @thumbnail-min-height*3;
+      }
+      .join-message {
+        font-size: 26px;
       }
     }
     .-mini {
       margin-left: @margin-sm + @margin-xs;
       .card .card-container {
-        height: @thumbnail-max-height + 100px;
         .thumbnail {
-          height: @thumbnail-min-height + 20px;
         }
       }
       .card .card-category {
-        margin-top: @thumbnail-min-height - 20px;
       }
     }
   }

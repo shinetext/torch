@@ -1,7 +1,10 @@
 {{ define "header" }}
 <header class="header-section ">
+  {{ if in .URL "author" }}
+    {{ partial "extra/author_banner.html" . }}
+  {{ else }}
   <div class="intro-header no-img">
-    <div class="container">
+    <div class="container list-page">
       {{ if in .URL "life" }}
         {{ partial "extra/latest_header.html" "life" }}
       {{ else if in .URL "hustle" }}
@@ -17,6 +20,7 @@
       {{ end }}
     </div>
   </div>
+ {{ end }}
   </div>
   </div>
 </header>
@@ -40,7 +44,7 @@
 
 {{ $infinite_scroll := $.Scratch.Get "infinite_scroll" }}
 
-<div class="container" role="main">
+<div class="container list-page" role="main">
     <section class="cards {{ if $infinite_scroll }}infinite-scroll{{ end }}">
       {{ if .IsNode }}
         {{ range .Paginator.Pages }}

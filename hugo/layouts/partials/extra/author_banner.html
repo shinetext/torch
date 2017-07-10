@@ -1,0 +1,11 @@
+{{ range first 1 .Paginator.Pages }}
+<div class="author-banner">
+  <img class="-image" src="{{ .Params.authorImage }}?w=300&h=300" />
+  <div class="-name">
+    <h1>{{ .Params.author }}</h1>
+  </div>
+  <div class="social-links-container">
+    {{ partial "social/author_social.html" . }}
+  </div>
+</div>
+{{ end }}
