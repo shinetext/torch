@@ -142,3 +142,23 @@
     margin-top: @thumbnail-min-height - 41px;
   }
 } /* mq 60em*/
+
+// Animation Slide up
+.come-in {
+  transform: translateY(100px);
+  animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+  animation-duration: 0.6s; /* So they look staggered */
+}
+
+.already-visible {
+  transform: translateY(0);
+  animation: none;
+}
+
+@keyframes come-in {
+  to {
+    transform: translateY(0);
+  }
+}
