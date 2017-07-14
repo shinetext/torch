@@ -198,9 +198,9 @@
 
     ol,
     ul {
-      .font-poppins;
+      .font-poppins-bold;
       font-size: @font-size-article-ol;
-
+      list-style-type: disc;
       p {
         .font-poppins;
         display: inline-block;
@@ -209,7 +209,11 @@
         vertical-align: top;
       }
     }
-
+    ol {
+      @media (min-width: @screen-sm-max) {
+        list-style-type: decimal;
+      }
+    }
     p {
       .font-open-sans;
       line-height: 1.8em;
