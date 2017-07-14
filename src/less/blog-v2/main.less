@@ -146,7 +146,38 @@ body {
 }
 
 @media (min-width: @screen-xs-max) {
+  #popup {
+    background-image: url('https://files.slack.com/files-tmb/T09B4PP5M-F6AA4EDT4-520223abdc/shine-peace-girl_720.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-position: 10em;
+  }
   #popup .half {
-    width: 50%;
+    padding-left: 50px;
+    width: 55%;
+
+    h2,
+    p {
+      width: 110%;
+    }
+  }
+  #mobi-comm {
+    width: 80%;
+  }
+}
+@media (min-width: @screen-sm-max) {
+  #mobi-comm {
+    width: 80%;
+  }
+}
+@media (min-width: @screen-md-min) {
+  #popup {
+    background-position: 14em;
+  }
+}
+@media (min-width: 1600px) {
+  #popup {
+    background-position: 27em;
+    height: 380px;
   }
 }
