@@ -32,7 +32,7 @@ if (!process.env.CONTENTFUL_SPACE_ID || !process.env.CONTENTFUL_ACCESS_TOKEN) {
   console.error(
     'Missing environment variables CONTENTFUL_SPACE_ID and CONTENTFUL_ACCESS_TOKEN'
   );
-  process.exit();
+  process.exit(1);
 }
 
 // Fetch articles from Contentful and write them to the filesystem
@@ -81,6 +81,7 @@ Promise.coroutine(function*() {
     });
   } catch (err) {
     console.error(err);
+    process.exit(1);
   }
 
   try {
@@ -112,5 +113,6 @@ Promise.coroutine(function*() {
     createPromotedJson(promoted);
   } catch (e) {
     console.error(e);
+    process.exit(1);
   }
 })();
