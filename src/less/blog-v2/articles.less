@@ -29,15 +29,17 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: @padding-xs @padding-sm;
+    padding: 0 @padding-sm;
     .-header {
       margin-top: @margin-sm;
-
       h1 {
         .font-poppins-bold;
         font-size: @font-size-article-title;
         line-height: 1.5em;
         text-align: center;
+        @media (min-width: @screen-sm-max) {
+          font-size: @font-size-article-title-max;
+        }
       }
     }
     .-author-section {
@@ -56,25 +58,37 @@
       align-items: center;
       margin-bottom: @margin-sm;
       margin-top: @margin-sm;
+      text-decoration: none;
       img {
+        display: none;
         border-radius: 50%;
         height: 50px;
         width: 50px;
       }
       .-name {
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
         .font-poppins;
+        text-transform: uppercase;
         padding-top: @margin-xs;
         padding-left: @margin-sm;
         font-size: @font-size-article-preview-author;
         color: @article-card-subtitle-color;
-
+        text-transform: uppercase;
+        letter-spacing: .1em;
         @media (max-width: @screen-sm-max) {
           padding-left: 0;
         }
       }
       @media (min-width: @screen-md-min) {
         flex-direction: row;
+        margin-top: @margin-sm;
         width: 50%;
+        img {
+          display: initial;
+        }
       }
     }
 
@@ -118,6 +132,9 @@
 
   .mail-icon {
     color: @color-mail-icon;
+  }
+  .sms-icon {
+    color: @color-yellow;
   }
 
   /**
@@ -179,7 +196,8 @@
       max-width: 100%;
     }
 
-    ol, ul {
+    ol,
+    ul {
       .font-poppins;
       font-size: @font-size-article-ol;
 
@@ -197,9 +215,9 @@
       line-height: 1.8em;
       margin: @margin-sm 0;
       a {
-        color: #4F4F4F;
+        color: #4f4f4f;
         text-decoration: underline;
-        text-decoration-color: #FFCC45;
+        text-decoration-color: #ffcc45;
       }
     }
 
@@ -253,7 +271,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-top: 3px solid #F2F2F2;
+    border-top: 3px solid #f2f2f2;
     margin: 0 @margin-md;
     padding: @padding-md 0;
 
@@ -287,6 +305,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-decoration: none;
+        color: inherit;
         img {
           border-radius: 50%;
           height: 50px;
@@ -333,10 +353,22 @@
   }
 }
 
-// Add position relative on desktops and ipad views
+// Add position relative on desktops and ipad views && remove sms icon from desktop views
 @media (min-width: @screen-xs-max) {
   .main-article-content {
     position: relative;
+    width: 80%;
+    margin: auto;
     margin-top: -80px;
+    align-self: center;
+  }
+  #sms-share,
+  #sms-share-post {
+    display: none;
+  }
+}
+@media (min-width: @screen-md-max) {
+  .main-article-content {
+    width: 60%;
   }
 }

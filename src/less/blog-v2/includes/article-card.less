@@ -57,7 +57,7 @@
   padding: @margin-sm;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .card-title {
@@ -75,6 +75,8 @@
 
 .card-subtitle {
   .font-open-sans;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   font-size: @article-card-author-name-min;
   display: flex;
   flex-direction: row;
@@ -140,3 +142,25 @@
     margin-top: @thumbnail-min-height - 41px;
   }
 } /* mq 60em*/
+
+// Animation Slide up
+@media screen and (min-width: @screen-xs-max) {
+  .come-in {
+    transform: translateY(150px);
+    animation: come-in 0.8s ease forwards;
+  }
+  .come-in:nth-child(odd) {
+    animation-duration: 0.6s; /* So they look staggered */
+  }
+
+  .already-visible {
+    transform: translateY(0);
+    animation: none;
+  }
+
+  @keyframes come-in {
+    to {
+      transform: translateY(0);
+    }
+  }
+}
