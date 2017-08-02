@@ -4,15 +4,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <meta name="description" content="{{ .Site.Params.description }}">
 
+  {{ if in .URL "articles" }}
+    {{- partial "article_modules/article_meta.html" . }}
+  {{ else }}
+    {{- partial "homepage_modules/homepage_meta.html" . }}
+  {{ end }}
 <!-- Site Title, Description and Favicon -->
 
 {{- with .Title | default .Site.Title }}
   <title>{{ . }}</title>
 {{- end }}
-{{- partial "extra/meta_og.html" . }}
-{{- partial "extra/meta_twitter.html" . }}
+
 
 {{- with .Site.Params.favicon }}
   <link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
