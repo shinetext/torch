@@ -9,7 +9,7 @@ module.exports = entry => {
   let { title, body, date, category, tags, slug, description } = content;
   let idxOfPubExMod = body.indexOf('<div class="pubexchange_module"'); // index of the pub exchange module in article body
   let type = 'article';
-  let cleanTitle = title.replace(/\"/g, '\\"');
+  let cleanTitle = title.replace(/\"/g, '\\"').trim();
   let cleanDescription = description.replace(/\"/g, '\\"').trim();
   let cleanBody = marked(body.slice(0, idxOfPubExMod)); // slice pubexchange off of article body
   let headerPhotoInfo = content.headerPhoto.fields;
