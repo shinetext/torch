@@ -6,7 +6,16 @@ module.exports = entry => {
   let content = entry.fields;
 
   // Grab Article information used build template meta data
-  let { title, body, date, category, tags, slug, description, canonical } = content;
+  let {
+    title,
+    body,
+    date,
+    category,
+    tags,
+    slug,
+    description,
+    canonical,
+  } = content;
   let idxOfPubExMod = body.indexOf('<div class="pubexchange_module"'); // index of the pub exchange module in article body
   let type = 'article';
   let cleanTitle = title.replace(/\"/g, '\\"');
@@ -48,7 +57,7 @@ module.exports = entry => {
   tags = ${JSON.stringify(tags)}
   author = "${name}"
   bio = ['${marked(bio)}']
-  canonicalLink = '${canonical}'
+  canonicalLink = "${canonical}"
   twitter = "${twitter ? twitter : ''}"
   instagram = "${instagram ? instagram : ''}"
   facebook = "${facebook ? facebook : ''}"
