@@ -16,7 +16,7 @@ if (
     You need to specify the environment to pull content for.
 
       Usage:
-        $ npm run fetch-content -- --staging
+        $ npm getArticles.js --staging
 
       Flags:
         --staging     Fetches articles set to publish to staging
