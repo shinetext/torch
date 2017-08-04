@@ -1,5 +1,7 @@
 <!-- meta data attached to each article; needs to be customized for shine -->
+{{ $author := .Params.author }}
 <meta name="description" content="{{ .Params.description }}" />
+<link rel="author" href="{{ .Site.BaseURL }}author/{{ replaceRE " " "-" $author }}" />
 <meta property="author" content="{{ .Params.author }}" />
 <meta property="og:type" content="article" / >
 {{- partial "extra/meta_og.html" . }}
