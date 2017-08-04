@@ -3,21 +3,30 @@
   {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
   <div class="latest-articles-first-half">
     <div class="-featured-article">
-      {{ range $index, $element:= first 1 ((index .Paginator.Pagers 1).Pages) }}
+      {{ range $index, $element:= last 5 $pag.Pages }}
+        {{ if (eq $index 2) }}
           {{ partial "homepage_modules/featured_article.html" . }}
+        {{ end }}
       {{ end }}
     </div>
     <div class="-first-half-mini">
-      {{ range $index, $element:= first 4 (index .Paginator.Pagers 1).Pages }}
-        {{ if (ge $index 1) }}
+      {{ range $index, $element:= last 5 $pag.Pages }}
+        {{ if (ge $index 3) }}
+          {{ partial "article_modules/article_card_preview.html" . }}
+        {{ end }}
+      {{ end }}
+      {{ range $index, $element:= first 1 (index .Paginator.Pagers 1).Pages }}
+        {{ if (eq $index 0) }}
           {{ partial "article_modules/article_card_preview.html" . }}
         {{ end }}
       {{ end}}
     </div>
   </div>
   <div class="latest-articles-second-half">
-    {{ range last 3 $pag.Pages }}
-      {{ partial "article_modules/article_card_preview.html" . }}
+    {{ range $index, $element:= first 6 $pag.Pages }}
+      {{ if (ge $index 3) }}
+        {{ partial "article_modules/article_card_preview.html" . }}
+      {{ end }}
     {{ end }}
   </div>
   {{ end }}
