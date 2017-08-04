@@ -1,4 +1,8 @@
-<!-- meta data attached to each post; needs to be customized for shine -->
-<span class="article-meta">
-  {{ default (i18n "dateFormat") .Site.Params.dateformat | .Date.Format | i18n "postedOnDate" }}
-</span>
+<!-- meta data attached to each article; needs to be customized for shine -->
+{{ $author := .Params.author }}
+<meta name="description" content="{{ .Params.description }}" />
+<link rel="author" href="{{ .Site.BaseURL }}author/{{ replaceRE " " "-" $author }}" />
+<meta property="author" content="{{ .Params.author }}" />
+<meta property="og:type" content="article" / >
+{{- partial "extra/meta_og.html" . }}
+{{- partial "extra/meta_twitter.html" . }}
