@@ -7,5 +7,5 @@
 {{- with .Params.image }}
 <meta property="og:image" content="https:{{ . }}?w=1200" />
 {{- end }}
-<meta property="og:url" content="{{ .Site.BaseURL }}{{ .URL }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="Shine" />

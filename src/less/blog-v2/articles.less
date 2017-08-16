@@ -6,16 +6,15 @@
   .container-header {
     color: white;
     width: 100%;
+    height: @article-header-height/2;
     overflow: hidden;
-    .-bgImage {
-      object-fit: cover;
-      display: block;
-      height: 100%;
-      width: 100%;
-    }
+    background-size: cover;
 
     @media (min-width: @screen-xs-max) {
       height: @article-header-height;
+      background-attachment: fixed;
+      background-position: center top;
+      background-repeat: no-repeat;
     }
   }
 
@@ -203,9 +202,10 @@
 
       p {
         .font-poppins;
-        display: inline-block;
         font-size: @font-size-article-body;
+        display: inline-block;
         margin-left: @margin-sm;
+        margin-top: 0;
         vertical-align: top;
       }
     }
