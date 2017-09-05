@@ -19,10 +19,10 @@ fs
   .then(function() {
     // Write hugo config file to config folder
     fs.writeFile(__dirname + "/../../config/hugo.config.toml", hugoConfig);
-    // Write robot.txt file to static directory
+    // Write robots.txt file to static directory
     let robotFileText = "User-agent: * \nDisallow: /";
     if (baseURL !== "https://advice.shinetext.com/") {
-      fs.writeFile(__dirname + "/../static/robot.txt", robotFileText);
+      fs.writeFile(__dirname + "/../static/robots.txt", robotFileText);
     }
   })
   .catch(function(error) {
