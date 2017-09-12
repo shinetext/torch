@@ -96,7 +96,7 @@ Promise.coroutine(function*() {
       skip: 0,
       order: '-sys.createdAt',
       'fields.promoted': true,
-      'fields.publishTo[production]': true,
+      'fields.publishTo[in]': 'production',
     };
     // query contentful for latest articles for shinetext article feed
     let promotedEntries = yield cms.getEntries(promotedQuery);
