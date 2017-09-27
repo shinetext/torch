@@ -15,8 +15,7 @@ fs
   .readFileAsync(__dirname + "/../../config/hugo.config.base.toml")
   .then(function(configData) {
     hugoConfig = baseURL + configData.toString(); // concat baseURL and base config file
-  })
-  .then(function() {
+
     // Write hugo config file to config folder
     fs.writeFile(__dirname + "/../../config/hugo.config.toml", hugoConfig);
     // Write robots.txt file to static directory

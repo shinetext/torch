@@ -57,7 +57,7 @@ module.exports = entry => {
   tags = ${JSON.stringify(tags)}
   author = "${name}"
   bio = ['${marked(bio)}']
-  canonicalLink = "${canonical}"
+  canonicalLink = "${canonical ? canonical : ''}"
   twitter = "${twitter ? twitter : ''}"
   instagram = "${instagram ? instagram : ''}"
   facebook = "${facebook ? facebook : ''}"

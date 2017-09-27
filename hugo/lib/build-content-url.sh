@@ -7,6 +7,7 @@ set -euo pipefail
 
 node getArticles.js $1
 node getUrl.js
+node writeRobotsTxt.js $1
 
 EXIT_STATUS=$?
 
