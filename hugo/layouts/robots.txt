@@ -1,0 +1,7 @@
+User-agent: *
+{{ $baseUrl := .Site.BaseURL }}
+{{ if (eq  (string $baseUrl) (string "https://advice.shinetext.com/")) }}
+Disallow:
+{{ else }}
+Disallow: /
+{{end}}
