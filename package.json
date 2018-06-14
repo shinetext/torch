@@ -5,7 +5,7 @@
   "scripts": {
     "add-baseurl": "node hugo/lib/getUrl.js",
     "build": "npm run webpack-build && npm run hugo-build",
-    "build-for-staging": "npm run clear-public && npm run clear-content && npm run build-script-staging && npm run build && npm run lambda-serve",
+    "build-for-staging": "npm run clear-public && npm run clear-content && npm run build-script-staging && npm run build && npm run lambda-build",
     "build-for-production": "npm run clear-public && npm run clear-content && npm run add-baseurl && npm run build-script-production && npm run build",
     "clear-content": "cd hugo/lib && ./clear-content.sh",
     "clear-public": "rm -rf ./public",
@@ -17,7 +17,8 @@
     "webpack-server": "webpack-dev-server --config=config/webpack.config.js --port=8282 --watch --debug --progress --colors",
     "webpack-watcher": "webpack --config=config/webpack.config.js --watch --debug --progress --colors",
     "webpack-build": "webpack --config=config/webpack.config.js -p",
-    "lambda-serve": "netlify-lambda serve lambda-src"
+    "lambda-serve": "netlify-lambda serve lambda-src",
+    "lambda-build": "netlify-lambda build lambda-src"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
