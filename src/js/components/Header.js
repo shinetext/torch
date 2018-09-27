@@ -34,13 +34,27 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
-              <a className="nav-open" href="/">Get Advice</a>
+              <a className="nav-open" href="/">
+                Get Advice
+              </a>
             </div>
             <div className="navbar-links">
-              <a href="http://www.shinetext.com/referrals">Invite Friends</a>
+              <a
+                className="nav-open"
+                href="/https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav"
+              >
+                Get The App
+              </a>
             </div>
             <div className="navbar-links">
-              <a href="http://www.shinetext.com/squad">The Squad</a>
+              <a href="http://www.shinetext.com/referrals/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Invite Friends
+              </a>
+            </div>
+            <div className="navbar-links">
+              <a href="http://www.shinetext.com/squad/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                The Squad
+              </a>
             </div>
           </div>
           <i
@@ -65,9 +79,7 @@ class Header extends Component {
           />
           <ul>
             <li>
-              <a href="/">
-                Get Advice{' '}
-              </a>
+              <a href="/">Get Advice </a>
               <i
                 className="fa fa-plus plus-icon"
                 onClick={() => {
@@ -75,10 +87,18 @@ class Header extends Component {
                 }}
               />
               <ul id="category-submenu">
-                <li><a href="/categories/chill">CHILL</a></li>
-                <li><a href="/categories/grow">GROW</a></li>
-                <li><a href="/categories/hustle">HUSTLE</a></li>
-                <li><a href="/categories/play">PLAY</a></li>
+                <li>
+                  <a href="/categories/chill">CHILL</a>
+                </li>
+                <li>
+                  <a href="/categories/grow">GROW</a>
+                </li>
+                <li>
+                  <a href="/categories/hustle">HUSTLE</a>
+                </li>
+                <li>
+                  <a href="/categories/play">PLAY</a>
+                </li>
               </ul>
             </li>
             <li>
