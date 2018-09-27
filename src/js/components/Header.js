@@ -41,7 +41,7 @@ class Header extends Component {
             <div className="navbar-links">
               <a
                 className="nav-open"
-                href="/https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav"
+                href="https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav"
               >
                 Get The App
               </a>
@@ -79,7 +79,7 @@ class Header extends Component {
           />
           <ul>
             <li>
-              <a href="/">Get Advice </a>
+              <a href="/">Get Advice</a>
               <i
                 className="fa fa-plus plus-icon"
                 onClick={() => {
