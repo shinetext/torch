@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <header>
         <div className="navbar">
-          <a href="http://www.shinetext.com">
+          <a href="https://www.shinetext.com">
             <img
               className="shine-logo"
               src="https://images.contentful.com/awpxl2koull4/FFhnW3pbga4qmCOM24kmc/8c718dac9a5357db86c55b637461f4f3/Shine-logo-web.png?w=100"
@@ -47,12 +47,12 @@ class Header extends Component {
               </a>
             </div>
             <div className="navbar-links">
-              <a href="http://www.shinetext.com/referrals/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://www.shinetext.com/referrals/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 Invite Friends
               </a>
             </div>
             <div className="navbar-links">
-              <a href="http://www.shinetext.com/squad/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://www.shinetext.com/squad/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 The Squad
               </a>
             </div>
@@ -102,10 +102,10 @@ class Header extends Component {
               </ul>
             </li>
             <li>
-              <a href="http://www.shinetext.com/referrals">Invite Friends</a>
+              <a href="https://www.shinetext.com/referrals">Invite Friends</a>
             </li>
             <li>
-              <a href="http://www.shinetext.com/squad">The Squad</a>
+              <a href="https://www.shinetext.com/squad">The Squad</a>
             </li>
           </ul>
         </div>
