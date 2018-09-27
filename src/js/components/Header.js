@@ -34,16 +34,13 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
-              <a className="nav-open" href="/">
-                Get Advice
+              <a href="https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Get The App
               </a>
             </div>
             <div className="navbar-links">
-              <a
-                className="nav-open"
-                href="https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav"
-              >
-                Get The App
+              <a className="nav-open" href="/">
+                Get Advice
               </a>
             </div>
             <div className="navbar-links">
