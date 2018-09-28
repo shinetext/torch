@@ -76,6 +76,11 @@ class Header extends Component {
           />
           <ul>
             <li>
+              <a href="https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Get The App
+              </a>
+            </li>
+            <li>
               <a href="/">Get Advice</a>
               <i
                 className="fa fa-plus plus-icon"
@@ -99,10 +104,14 @@ class Header extends Component {
               </ul>
             </li>
             <li>
-              <a href="https://www.shinetext.com/referrals">Invite Friends</a>
+              <a href="https://www.shinetext.com/referrals?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Invite Friends
+              </a>
             </li>
             <li>
-              <a href="https://www.shinetext.com/squad">The Squad</a>
+              <a href="https://www.shinetext.com/squad?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                The Squad
+              </a>
             </li>
           </ul>
         </div>
