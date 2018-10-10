@@ -1,0 +1,6 @@
+{{ if eq (getenv "ENABLE_ANALYTICS_TRACKING") "true" }}
+<!-- Loads Google Optimize container to run experiments or personalizations -->
+<script>
+    ga('require', '{{ .Site.Params.google_optimize }}');
+</script>
+{{ end }}
