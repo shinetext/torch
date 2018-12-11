@@ -34,6 +34,9 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
+              <a href="https://premium.shinetext.com/gift">🎁 Gift</a>
+            </div>
+            <div className="navbar-links">
               <a href="https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 Get The App
               </a>
@@ -75,6 +78,9 @@ class Header extends Component {
             ga-event-label="close"
           />
           <ul>
+            <li>
+              <a href="https://premium.shinetext.com/gift">🎁 Gift</a>
+            </li>
             <li>
               <a href="https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 Get The App
