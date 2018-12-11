@@ -26,6 +26,22 @@ $ CONTENTFUL_SPACE_ID=<contentful space id here> \
   npm run -- build-for-staging
 ```
 
+Alternatively, if you find yourself needing to do this often, you can create commands to set the environment variables in a file like `npm-env`.
+
+**npm-env** example:
+
+```bash
+CONTENTFUL_SPACE_ID=<contentful space id here>
+CONTENTFUL_ACCESS_TOKEN=<contentful access token here>
+```
+
+And then `source` it once, after which you can `npm run` as often as needed.
+
+```bash
+$ source npm-env
+$ npm run -- build-for-staging
+```
+
 ## About
 
 ## License
