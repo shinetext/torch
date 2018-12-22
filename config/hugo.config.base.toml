@@ -20,7 +20,7 @@ enableRobotsTXT = true
   # dateFormat = "2006, Jan 2"
   copyrightStartYear = "2015"
   infinite_scroll = true
-  shine_logo = "https://images.contentful.com/awpxl2koull4/FFhnW3pbga4qmCOM24kmc/8c718dac9a5357db86c55b637461f4f3/Shine-logo-web.png"
+  shine_logo = "https://images.ctfassets.net/awpxl2koull4/6Ge2cCqfKg0IM8CIsOMiq6/bc0dee5dd91c1b37a155c220e95893d4/shine-logo-nav-122018.png"
   share_description = "Career and life advice from real people. Get daily fulfillment and read up on how to live your best life."
 
 [params.opengraph]
