@@ -28,7 +28,7 @@ class Header extends Component {
           <a href="https://www.shinetext.com">
             <img
               className="shine-logo"
-              src="https://images.contentful.com/awpxl2koull4/FFhnW3pbga4qmCOM24kmc/8c718dac9a5357db86c55b637461f4f3/Shine-logo-web.png?w=100"
+              src="https://images.ctfassets.net/awpxl2koull4/6Ge2cCqfKg0IM8CIsOMiq6/bc0dee5dd91c1b37a155c220e95893d4/shine-logo-nav-122018.png?w=100"
             />
           </a>
 
