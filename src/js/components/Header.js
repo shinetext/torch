@@ -34,21 +34,16 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
-              <a href="https://premium.shinetext.com/gift">🎁 Gift</a>
-            </div>
-            <div className="navbar-links">
-              <a href="https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://shineapp.onelink.me/Unhk/3fccab66">
                 Get The App
               </a>
             </div>
             <div className="navbar-links">
-              <a className="nav-open" href="/">
-                Get Advice
-              </a>
+              <a href="https://premium.shinetext.com">Shine Premium</a>
             </div>
             <div className="navbar-links">
-              <a href="https://www.shinetext.com/referrals/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Invite Friends
+              <a className="nav-open" href="/">
+                Get Advice
               </a>
             </div>
             <div className="navbar-links">
@@ -79,12 +74,12 @@ class Header extends Component {
           />
           <ul>
             <li>
-              <a href="https://premium.shinetext.com/gift">🎁 Gift</a>
-            </li>
-            <li>
-              <a href="https://www.shinetext.com/app/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://shineapp.onelink.me/Unhk/3fccab66">
                 Get The App
               </a>
+            </li>
+            <li>
+              <a href="https://premium.shinetext.com">Shine Premium</a>
             </li>
             <li>
               <a href="/">Get Advice</a>
@@ -108,11 +103,6 @@ class Header extends Component {
                   <a href="/categories/play">PLAY</a>
                 </li>
               </ul>
-            </li>
-            <li>
-              <a href="https://www.shinetext.com/referrals?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Invite Friends
-              </a>
             </li>
             <li>
               <a href="https://www.shinetext.com/squad?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
