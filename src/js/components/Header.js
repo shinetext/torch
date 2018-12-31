@@ -34,6 +34,11 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
+              <a href="https://images.ctfassets.net/awpxl2koull4/YaA04LXbkyUsyGggOS22I/f7734cca463599e1e359e16c3d7c21f2/Shine2019HustleAndHeartReport.pdf">
+                Hustle & Heart Report
+              </a>
+            </div>
+            <div className="navbar-links">
               <a href="https://shineapp.onelink.me/Unhk/3fccab66">
                 Get The App
               </a>
@@ -73,6 +78,11 @@ class Header extends Component {
             ga-event-label="close"
           />
           <ul>
+            <li>
+              <a href="https://images.ctfassets.net/awpxl2koull4/YaA04LXbkyUsyGggOS22I/f7734cca463599e1e359e16c3d7c21f2/Shine2019HustleAndHeartReport.pdf">
+                Hustle & Heart Report
+              </a>
+            </li>
             <li>
               <a href="https://shineapp.onelink.me/Unhk/3fccab66">
                 Get The App
