@@ -45,7 +45,7 @@ Promise.coroutine(function*() {
 
     let query = {
       content_type: 'article',
-      limit: 1000, // default is 100. max is 1000
+      limit: 250, // default is 100. max is 1000
       skip: 0,
     };
 
