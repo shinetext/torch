@@ -34,16 +34,6 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
-              <a href="https://images.ctfassets.net/awpxl2koull4/YaA04LXbkyUsyGggOS22I/f7734cca463599e1e359e16c3d7c21f2/Shine2019HustleAndHeartReport.pdf">
-                Hustle & Heart Report
-              </a>
-            </div>
-            <div className="navbar-links">
-              <a href="https://shineapp.onelink.me/Unhk/3fccab66">
-                Get The App
-              </a>
-            </div>
-            <div className="navbar-links">
               <a href="https://premium.shinetext.com">Shine Premium</a>
             </div>
             <div className="navbar-links">
@@ -79,20 +69,10 @@ class Header extends Component {
           />
           <ul>
             <li>
-              <a href="https://images.ctfassets.net/awpxl2koull4/YaA04LXbkyUsyGggOS22I/f7734cca463599e1e359e16c3d7c21f2/Shine2019HustleAndHeartReport.pdf">
-                Hustle & Heart Report
-              </a>
-            </li>
-            <li>
-              <a href="https://shineapp.onelink.me/Unhk/3fccab66">
-                Get The App
-              </a>
-            </li>
-            <li>
               <a href="https://premium.shinetext.com">Shine Premium</a>
             </li>
             <li>
-              <a href="/">Get Advice</a>
+              <a href="/">Get Advice </a>
               <i
                 className="fa fa-plus plus-icon"
                 onClick={() => {
