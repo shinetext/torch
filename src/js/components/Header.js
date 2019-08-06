@@ -51,10 +51,6 @@ class Header extends Component {
             id="mobile-menu-button"
             className="fa fa-bars"
             aria-hidden="true"
-            ga-on="click"
-            ga-event-category="Behavior"
-            ga-event-action="mobile menu click"
-            ga-event-label="open"
           />
         </div>
         <div id="mobile-menu">
@@ -62,10 +58,6 @@ class Header extends Component {
             id="mobile-menu-button-close"
             className="fa fa-times"
             aria-hidden="true"
-            ga-on="click"
-            ga-event-category="Behavior"
-            ga-event-action="mobile menu click"
-            ga-event-label="close"
           />
           <ul>
             <li>
