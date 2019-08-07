@@ -5,30 +5,10 @@
   <span class="-name">{{ $author }}</span>
 </a>
   <div class="social-container">
-    <a class="fa fa-facebook fa-2x social-icon fb-icon" href="http://www.facebook.com/sharer/sharer.php?u={{ .Permalink | safeURL }}&title={{ $shareTitle }}&picture={{ .Site.Params.shine_logo }}&description={{ .Site.Params.description }}" target="_blank"
-      ga-on="click"
-      ga-event-category="Share"
-      ga-event-action="facebook"
-      ga-event-label="{{ .URL }}"></a>
-    <a class="fa fa-twitter fa-2x social-icon twitter-icon" href="http://twitter.com/share?via=ShineText&url={{ .Permalink | safeURL }}&text={{ .Params.title }}" target="_blank"
-      ga-on="click"
-      ga-event-category="Share"
-      ga-event-action="twitter"
-      ga-event-label="{{ .URL }}"></a>
-    <a class="fa fa-pinterest fa-2x social-icon pintrest-icon" data-pin-do="buttonPin" data-pin-tall="true" data-pin-round="true" data-pin-save="false" href="https://www.pinterest.com/pin/create/button/?url={{ .Permalink | safeURL }}&media={{ .Site.Params.shine_logo }}&description={{ .Site.Params.description }}" target="_blank"
-      ga-on="click"
-      ga-event-category="Share"
-      ga-event-action="pinterest"
-      ga-event-label="{{ .URL }}"></a>
-    <a class="fa fa-linkedin fa-2x social-icon linkedin-icon" href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink | safeURL }}&title={{ .Params.title | jsonify }}" target="_blank"
-      ga-on="click"
-      ga-event-category="Share"
-      ga-event-action="linkedin"
-      ga-event-label="{{ .URL }}"></a>
-    <a class="fa fa-envelope-o fa-2x social-icon mail-icon" href="mailto:?subject={{ .Params.title }}&body={{ .Permalink | safeURL }}" rel="external"
-      ga-on="click"
-      ga-event-category="Share"
-      ga-event-action="email"
-      ga-event-label="{{ .URL }}"></a>
+    <a class="fa fa-facebook fa-2x social-icon fb-icon" href="http://www.facebook.com/sharer/sharer.php?u={{ .Permalink | safeURL }}&title={{ $shareTitle }}&picture={{ .Site.Params.shine_logo }}&description={{ .Site.Params.description }}" target="_blank"></a>
+    <a class="fa fa-twitter fa-2x social-icon twitter-icon" href="http://twitter.com/share?via=ShineText&url={{ .Permalink | safeURL }}&text={{ .Params.title }}" target="_blank"></a>
+    <a class="fa fa-pinterest fa-2x social-icon pintrest-icon" data-pin-do="buttonPin" data-pin-tall="true" data-pin-round="true" data-pin-save="false" href="https://www.pinterest.com/pin/create/button/?url={{ .Permalink | safeURL }}&media={{ .Site.Params.shine_logo }}&description={{ .Site.Params.description }}" target="_blank"></a>
+    <a class="fa fa-linkedin fa-2x social-icon linkedin-icon" href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink | safeURL }}&title={{ .Params.title | jsonify }}" target="_blank"></a>
+    <a class="fa fa-envelope-o fa-2x social-icon mail-icon" href="mailto:?subject={{ .Params.title }}&body={{ .Permalink | safeURL }}" rel="external"></a>
     <a id="sms-share"></a>
 </div>
