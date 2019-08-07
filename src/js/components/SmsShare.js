@@ -17,10 +17,6 @@ const SmsShare = () => {
       className="fa fa fa-comment-o fa-2x social-icon sms-icon"
       href={`sms:${op}body=${body}&utm_source=Blog&utm_medium=Sms`}
       rel="external"
-      ga-on="click"
-      ga-event-category="Share"
-      ga-event-action="sms"
-      ga-event-label={window.location.href}
     />
   );
 };
