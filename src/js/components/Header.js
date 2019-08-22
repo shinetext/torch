@@ -34,7 +34,10 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
-              <a href="https://premium.shinetext.com">Shine Premium</a>
+              <a href="https://premium.shinetext.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">Shine Premium</a>
+            </div>
+            <div className="navbar-links">
+              <a href="https://premium.shinetext.com/quiz/start?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">Self-Care Style Quiz</a>
             </div>
             <div className="navbar-links">
               <a className="nav-open" href="/">
@@ -61,7 +64,10 @@ class Header extends Component {
           />
           <ul>
             <li>
-              <a href="https://premium.shinetext.com">Shine Premium</a>
+              <a href="https://premium.shinetext.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">Shine Premium</a>
+            </li>
+            <li>
+              <a href="https://premium.shinetext.com/quiz/start?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">Self-Care Style Quiz</a>
             </li>
             <li>
               <a href="/">Get Advice </a>
