@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <header>
         <div className="navbar">
-          <a href="https://www.shinetext.com">
+          <a href="https://advice.shinetext.com">
             <img
               className="shine-logo"
               src="https://images.ctfassets.net/awpxl2koull4/6Ge2cCqfKg0IM8CIsOMiq6/bc0dee5dd91c1b37a155c220e95893d4/shine-logo-nav-122018.png?w=100"
