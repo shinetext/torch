@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <header>
         <div className="navbar">
-          <a href="https://www.shinetext.com">
+          <a href="https://advice.shinetext.com">
             <img
               className="shine-logo"
               src="https://images.ctfassets.net/awpxl2koull4/6Ge2cCqfKg0IM8CIsOMiq6/bc0dee5dd91c1b37a155c220e95893d4/shine-logo-nav-122018.png?w=100"
@@ -34,7 +34,10 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
-              <a href="https://premium.shinetext.com">Shine Premium</a>
+              <a href="https://premium.shinetext.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">Shine Premium</a>
+            </div>
+            <div className="navbar-links">
+              <a href="https://premium.shinetext.com/quiz/start?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">Self-Care Style Quiz</a>
             </div>
             <div className="navbar-links">
               <a className="nav-open" href="/">
@@ -61,7 +64,10 @@ class Header extends Component {
           />
           <ul>
             <li>
-              <a href="https://premium.shinetext.com">Shine Premium</a>
+              <a href="https://premium.shinetext.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">Shine Premium</a>
+            </li>
+            <li>
+              <a href="https://premium.shinetext.com/quiz/start?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">Self-Care Style Quiz</a>
             </li>
             <li>
               <a href="/">Get Advice </a>
