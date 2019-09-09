@@ -11,6 +11,7 @@ theme =  ""
 googleAnalytics = "UA-68971267-1"
 paginate = 9
 enableRobotsTXT = true
+languageCode = "en"
 
 [params]
   description = "Career and life advice from real people. Get daily fulfillment and read up on how to live your best life."
