@@ -52,6 +52,8 @@ module.exports = entry => {
   slug = "${slug}"
   categories = ["${category}"]
   image = "${headerPhotoInfo.file.url}"
+  imageContentType = "${headerPhotoInfo.file.contentType}"
+  imageSize = "${headerPhotoInfo.file.details.size}"
   authorImage = "${authorImageInfo.file.url}"
   featured = false
   tags = ${JSON.stringify(tags)}
