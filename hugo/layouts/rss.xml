@@ -1,4 +1,3 @@
-{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ .Site.Title }} | Shine</title>
@@ -11,7 +10,7 @@
     {{ with .Site.Copyright }}<copyright>{{.}}</copyright>{{end}}
     {{ if not .Date.IsZero }}<lastBuildDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
     {{ with .OutputFormats.Get "RSS" }}
-        {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
     {{ end }}
     {{ range .Pages }}
     <item>
@@ -22,7 +21,7 @@
       <dc:creator>{{ .Params.author }}</dc:creator>
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
-      <enclosure>{{ .Params.Image }}</enclosure>
+      <enclosure url="https:{{ .Params.Image }}" length="{{ .Params.ImageSize }}" type="{{ .Params.ImageContentType }}" />
     </item>
     {{ end }}
   </channel>
