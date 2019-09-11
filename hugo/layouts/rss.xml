@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>{{ .Site.Title }} | Shine</title>
     <link>{{ .Permalink }}</link>
@@ -22,6 +22,9 @@
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Summary | html }}</description>
       <enclosure url="https:{{ .Params.Image }}" length="{{ .Params.ImageSize }}" type="{{ .Params.ImageContentType }}" />
+      <media:group>
+        <media:content url="https:{{ .Params.Image }}" type="{{ .Params.ImageContentType }}" expression="full" fileSize="{{ .Params.ImageSize }}" />
+      </media:group>
     </item>
     {{ end }}
   </channel>
