@@ -23,9 +23,7 @@
       <description>{{ .Summary | html }}</description>
       <content:encoded>{{ `<![CDATA[` | safeHTML }}{{ .Content | safeHTML }}{{ `]]>` | safeHTML }}</content:encoded>
       <enclosure url="https:{{ .Params.Image }}" length="{{ .Params.ImageSize }}" type="{{ .Params.ImageContentType }}" />
-      <media:group>
-        <media:content url="https:{{ .Params.Image }}" type="{{ .Params.ImageContentType }}" expression="full" fileSize="{{ .Params.ImageSize }}" />
-      </media:group>
+      <media:content url="https:{{ .Params.Image }}" type="{{ .Params.ImageContentType }}" expression="full" fileSize="{{ .Params.ImageSize }}" />
     </item>
     {{ end }}
   </channel>
