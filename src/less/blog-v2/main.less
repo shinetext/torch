@@ -97,14 +97,14 @@ body {
   background-repeat: no-repeat;
 }
 
-// Message sending users to homepage to signup for sms services
+// Message in CTA bar
 .join-bar {
   .font-poppins-bold;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color:black;
   width: 100%;
   padding: @margin-md;
   .signup-button {
@@ -138,14 +138,54 @@ body {
       text-align: center;
       width: 300px;
     }
-
-    .join-message {
-    }
+  }  
+}
+.join-bar-article {
+  .font-poppins-bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(120deg,#ffcc45,#4023fd);
+  width: 100%;
+  padding: @margin-md;
+  .join-message-article {
+    margin: @margin-xs 0;
+    text-align: center;
+    color: #f2f2f2;
+    display: inline-block;
+    .font-poppins;
+    font-size: 30px;
   }
 
-  @media (min-width: @screen-md-min) {
-    .signup-button {
-    }
+  img {
+    width:300px;
+    height:auto;
+    padding-bottom:20px;
+  }
+
+  .join-message-description {
+  text-align:center;
+    color:#f2f2f2;
+  .font-poppins;
+  font-size: 18px;
+  }
+
+  .signup-button-article {
+    margin: @margin-xs 0;
+    font-size: @font-size-btn;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 250px;
+    background-color:black;
+    .font-poppins-bold;
+    border-radius: 5px;
+    color: white;
+    float: right;
+    letter-spacing: 15%;
+    text-transform: uppercase;
   }
 }
 
