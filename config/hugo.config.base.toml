@@ -58,3 +58,6 @@ defaultContentLanguage = "en"
     lang = "en"
     languageName = "English"
     weight = 1
+
+[outputs]
+  page = ["html", "json"]

@@ -1,0 +1,19 @@
+{
+  "author": {
+    "name": "{{ .Params.Author }}",
+    "bio": {{ .Params.bio | jsonify }},
+    "image": "{{ .Params.authorImage }}"
+  },
+  "image": {
+    "contentType": "{{ .Params.imageContentType }}",
+    "size": "{{ .Params.imageSize }}",
+    "url": "{{ .Params.image }}"
+  },
+  "categories": {{ .Params.categories | jsonify }},
+  "content": {{ .Content | jsonify }},
+  "date": "{{ .Params.date }}",
+  "description": {{ .Description | jsonify }},
+  "slug": "{{ .Params.slug }}",
+  "title": "{{ .Title }}",
+  "tags": {{ .Params.tags | jsonify }}
+}
