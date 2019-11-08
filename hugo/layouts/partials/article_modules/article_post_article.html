@@ -5,8 +5,7 @@
 <div class="social-container">
   <a class="fa fa-2x fa-facebook social-icon fb-icon" href="http://www.facebook.com/sharer/sharer.php?u={{ .Permalink | safeURL }}&title={{ .Params.title }}&picture={{ .Site.Params.shine_logo }}&description={{ .Site.Params.description }}" target="_blank"></a>
   <a class="fa fa-2x fa-twitter social-icon twitter-icon" href="http://twitter.com/share?via=ShineText&url={{ .Permalink | safeURL }}&text={{ .Params.title | jsonify }}" target="_blank"></a>
-  <a class="fa fa-2x fa-pinterest social-icon pinterest-icon" href="https://www.pinterest.com/pin/create/button/?url={{ .Permalink | safeURL }}&media={{ .Site.Params.shine_logo }}&description={{ .Site.Params.description }}" data-pin-custom="true" data-pin-do="buttonBookmark" target="_blank">
-      <i ></i>
+  <a class="fa fa-2x fa-pinterest social-icon pinterest-icon" data-pin-custom="true" data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/?url={{ .Permalink | safeURL }}&media={{ .Site.Params.shine_logo }}&description={{ .Site.Params.description }}" target="_blank">
     </a>
   <a class="fa fa-2x fa-linkedin social-icon linkedin-icon" href="https://www.linkedin.com/shareArticle?mini=true&url={{ .Permalink | safeURL }}&title={{ .Params.title }}" target="_blank">
     </a>
