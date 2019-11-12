@@ -6,27 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   {{ if in .URL "articles" }}
-    {{- partial "article_modules/article_meta.html" . }}
+  {{- partial "article_modules/article_meta.html" . }}
   {{ else }}
-    {{- partial "homepage_modules/homepage_meta.html" . }}
+  {{- partial "homepage_modules/homepage_meta.html" . }}
   {{ end }}
-<!-- Site Title, Description and Favicon -->
+  <!-- Site Title, Description and Favicon -->
 
-{{- with .Title | default .Site.Title }}
+  {{- with .Title | default .Site.Title }}
   <title>{{ . }} | Shine</title>
-{{- end }}
+  {{- end }}
 
+  {{ if and .Title .Params.author .Params.image }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{ .Title }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ .Params.author }}"
+    },
+    "datePublished": "{{ .Date }}",
+    "publisher": {
+      "@type": "Organization",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ .Site.Params.shine_logo }}"
+      },
+      "name": "Shine",
+      "url": "https://www.shinetext.com"
+    },
+    "image": [
+      "https:{{ .Params.image }}?fit=fill&w=960&h=960",
+      "https:{{ .Params.image }}?fit=fill&w=1920&h=1440",
+      "https:{{ .Params.image }}?fit=fill&w=1920&h=1080"
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:{{ .Permalink }}"
+    }
+  }
+  </script>
+  {{ end }}
 
-{{- with .Site.Params.favicon }}
+  {{- with .Site.Params.favicon }}
   <link href='{{ . | absURL }}' rel='icon' type='image/x-icon'/>
-{{- end }}
-{{- with .Site.Params.fb_app_id }}
+  {{- end }}
+  {{- with .Site.Params.fb_app_id }}
   <meta property="fb:app_id" content="{{ . }}" />
-{{- end }}
-<!-- Hugo Version number -->
+  {{- end }}
+  <!-- Hugo Version number -->
   {{ .Hugo.Generator -}}
-<!-- Links and stylesheets -->
-{{- partial "includes.html" . }}
+  <!-- Links and stylesheets -->
+  {{- partial "includes.html" . }}
 
-{{- partial "head_custom.html" . }}
+  {{- partial "head_custom.html" . }}
 </head>
