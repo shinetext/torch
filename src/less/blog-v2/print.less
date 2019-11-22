@@ -27,12 +27,27 @@
   }
 
   #shine-article {
-    #article-body blockquote {
-      border-right: 0;
+    #article-body {
+      font-size: 14px;
 
-      /* Hides the yellow triangle in blockquotes */
-      p:before {
-        content: none;
+      blockquote {
+        border-right: 0;
+        padding: 20px;
+
+        p {
+          font-size: 18px;
+        }
+
+        /* Hides the yellow triangle in blockquotes */
+        p:before {
+          content: none;
+        }
+      }
+
+      .dropcap {
+        font-size: 40px;
+        padding-top: 0;
+        padding-right: 4px;
       }
     }
 
