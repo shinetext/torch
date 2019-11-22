@@ -1,0 +1,57 @@
+@media print {
+  /* Hide URLs from all the `a` tags */
+  a[href]:after {
+    content: none !important;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  .category-bar {
+    display: none;
+  }
+
+  /* Make sure this is showing so that printed pages still get Shine branding */
+  .navbar {
+    display: block !important;
+  }
+
+  /* Hide Sumo sidebar */
+  .sumome-share-client-wrapper {
+    display: none !important;
+  }
+
+  #shine-article {
+    #article-body blockquote {
+      border-right: 0;
+
+      /* Hides the yellow triangle in blockquotes */
+      p:before {
+        content: none;
+      }
+    }
+
+    .container-header {
+      display: none;
+    }
+
+    .join-bar-article {
+      display: none;
+    }
+
+    .main-article-content {
+      margin-top: 0;
+    }
+
+    .pre-article-content {
+      .social-container {
+        display: none;
+      }
+    }
+
+    .pubexchange_module {
+      display: none;
+    }
+  }
+}
