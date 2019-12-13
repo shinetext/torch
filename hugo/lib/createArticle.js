@@ -13,6 +13,7 @@ module.exports = entry => {
     category,
     tags,
     slug,
+    metaTitle,
     description,
     canonical,
   } = content;
@@ -48,6 +49,7 @@ module.exports = entry => {
   const templateData = `+++
   date = "${moment(date).format()}"
   title = "${cleanTitle}"
+  metaTitle = "${metaTitle ? metaTitle : ''}"
   description = "${cleanDescription}"
   slug = "${slug}"
   categories = ["${category}"]
