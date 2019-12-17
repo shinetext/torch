@@ -12,9 +12,13 @@
   {{ end }}
   <!-- Site Title, Description and Favicon -->
 
-  {{- with .Title | default .Site.Title }}
-  <title>{{ . }} | Shine</title>
-  {{- end }}
+  {{ if .Params.metaTitle }}
+  <title>{{- .Params.metaTitle }} | Shine</title>
+  {{ else if .Title }}
+  <title>{{- .Title}} | Shine</title>
+  {{ else }}
+  <title>{{- .Site.Title }} | Shine</title>
+  {{ end }}
 
   {{ if and .Title .Params.author .Params.image }}
   <script type="application/ld+json">
