@@ -1,6 +1,10 @@
-{{- with .Title | default .Site.Title }}
-<meta property="og:title" content="{{ . }}" />
-{{- end }}
+{{ if .Params.metaTitle }}
+<meta property="og:title" content="{{- .Params.metaTitle }}" />
+{{ else if .Title }}
+<meta property="og:title" content="{{- .Title }}" />
+{{ else }}
+<meta property="og:title" content="{{- .Site.Title }}" />
+{{ end }}
 {{- with .Params.description }}
 <meta property="og:description" content="{{ . }}" />
 {{- end }}
