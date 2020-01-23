@@ -9,7 +9,7 @@ icon = "fa-envelope"
 id = "facebook"
 url = "https://www.facebook.com/%s"
 title = "Facebook"
-icon = "fa-facebook"
+icon = "fa-facebook-f"
 
 [[social_icons]]
 id = "googleplus"
@@ -39,7 +39,7 @@ icon = "fa-reddit-alien"
 id = "linkedin"
 url = "https://linkedin.com/in/%s"
 title = "LinkedIn"
-icon = "fa-linkedin"
+icon = "fa-linkedin-in"
 
 [[social_icons]]
 id = "xing"
