@@ -8,10 +8,10 @@
       <div class="-header">
         <h1>{{ .Title }}</h1>
       </div>
-      <div class="-date">{{ .Date.Format "Jan 2, 2006" }}</div>
       <div class="-author-section">
         {{ partial "article_modules/article_pre_article.html" . }}
       </div>
+      <div class="-date">{{ .Date.Format "Jan 2, 2006" }}</div>
     </div>
     <div role="main" id="article-body">
       {{ .Content }}

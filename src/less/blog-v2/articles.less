@@ -52,7 +52,12 @@
     }
     .-date {
       .font-open-sans;
-      color: #4f4f4f;
+      align-self: flex-end;
+      color: #828282;
+      font-style: italic;
+      @media (min-width: @screen-sm-max) {
+        margin-top: @margin-sm;
+      }
     }
 
     #header-author-photo {
