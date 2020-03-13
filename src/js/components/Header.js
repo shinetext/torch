@@ -39,13 +39,13 @@ class Header extends Component {
               </a>
             </div>
             <div className="navbar-links">
-              <a href="https://virusanxiety.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Coronavirus Anxiety
+              <a href="https://premium.shinetext.com/quiz/start?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Self-Care Style Quiz
               </a>
             </div>
             <div className="navbar-links">
-              <a href="https://premium.shinetext.com/quiz/start?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Self-Care Style Quiz
+              <a href="https://virusanxiety.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Coronavirus Anxiety
               </a>
             </div>
             <div className="navbar-links">
@@ -78,7 +78,14 @@ class Header extends Component {
               </a>
             </li>
             <li>
-              <a href="https://virusanxiety.com">Coronavirus Anxiety</a>
+              <a href="https://premium.shinetext.com/quiz/start?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Self-Care Style Quiz
+              </a>
+            </li>
+            <li>
+              <a href="https://virusanxiety.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Coronavirus Anxiety
+              </a>
             </li>
             <li>
               <a href="/">Get Advice </a>
