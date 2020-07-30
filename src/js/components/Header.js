@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <header>
         <div className="navbar">
-          <a href="https://advice.shinetext.com">
+          <a href="https://www.shinetext.com">
             <img
               className="shine-logo"
               src="https://images.ctfassets.net/awpxl2koull4/6Ge2cCqfKg0IM8CIsOMiq6/bc0dee5dd91c1b37a155c220e95893d4/shine-logo-nav-122018.png?w=100"
@@ -34,28 +34,21 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
-              <a href="https://premium.shinetext.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Shine Premium
+              <a href="https://join.shinetext.com/about?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                About
               </a>
             </div>
             <div className="navbar-links">
-              <a href="https://premium.shinetext.com/quiz/start?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Self-Care Style Quiz
+              <a href="/">Advice</a>
+            </div>
+            <div className="navbar-links">
+              <a href="https://join.shinetext.com/shine-at-work?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Shine at Work
               </a>
             </div>
             <div className="navbar-links">
-              <a href="https://virusanxiety.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Coronavirus Anxiety
-              </a>
-            </div>
-            <div className="navbar-links">
-              <a className="nav-open" href="/">
-                Get Advice
-              </a>
-            </div>
-            <div className="navbar-links">
-              <a href="https://www.shinetext.com/squad/?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                The Squad
+              <a href="https://join.shinetext.com/get-started?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Get Started
               </a>
             </div>
           </div>
@@ -73,22 +66,13 @@ class Header extends Component {
           />
           <ul>
             <li>
-              <a href="https://premium.shinetext.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Shine Premium
+              <a href="https://join.shinetext.com/about?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                About
               </a>
             </li>
+
             <li>
-              <a href="https://premium.shinetext.com/quiz/start?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Self-Care Style Quiz
-              </a>
-            </li>
-            <li>
-              <a href="https://virusanxiety.com?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                Coronavirus Anxiety
-              </a>
-            </li>
-            <li>
-              <a href="/">Get Advice </a>
+              <a href="/">Advice </a>
               <i
                 className="fa fa-plus plus-icon"
                 onClick={() => {
@@ -111,8 +95,13 @@ class Header extends Component {
               </ul>
             </li>
             <li>
-              <a href="https://www.shinetext.com/squad?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
-                The Squad
+              <a href="https://join.shinetext.com/shine-at-work?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Shine at Work
+              </a>
+            </li>
+            <li>
+              <a href="https://join.shinetext.com/get-started?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+                Get Started
               </a>
             </li>
           </ul>

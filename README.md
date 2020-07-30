@@ -16,7 +16,7 @@ The page will then be available at http://localhost:1313.
 
 ## Netlify & HUGO & Contentful & Github
 
-![High level overview](https://github.com/shinetext/torch/blob/master/images/example.png)
+![High level overview](https://github.com/shinetext/torch/blob/main/images/example.png)
 
 In order to pull content from staging to develop against, you can run:
 
