@@ -14,7 +14,7 @@ enableRobotsTXT = true
 languageCode = "en"
 
 [params]
-  description = "Career and life advice from real people. Get daily fulfillment and read up on how to live your best life."
+  description = "The daily self-care app to help you rest, heal, and grow."
   google_tag_manager="GTM-PZHRDB"
   google_optimize="GTM-MTMSV5Q"
   fb_pixel=190488081450568
