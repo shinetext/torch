@@ -8,7 +8,6 @@ destination = "public"
 publishdir = "public"
 staticdir = "hugo/static"
 theme =  ""
-googleAnalytics = "UA-68971267-1"
 paginate = 9
 enableRobotsTXT = true
 languageCode = "en"
@@ -16,8 +15,6 @@ languageCode = "en"
 [params]
   description = "The daily self-care app to help you rest, heal, and grow."
   google_tag_manager="GTM-PZHRDB"
-  google_optimize="GTM-MTMSV5Q"
-  fb_pixel=190488081450568
   # dateFormat = "2006, Jan 2"
   copyrightStartYear = "2015"
   infinite_scroll = true
