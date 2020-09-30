@@ -1,6 +1,6 @@
 User-agent: *
 {{ $baseUrl := .Site.BaseURL }}
-{{ if (eq  (string $baseUrl) (string "https://advice.shinetext.com/")) }}
+{{ if (eq  (string $baseUrl) (string "https://advice.theshineapp.com/")) }}
 Disallow:
 {{ else }}
 Disallow: /

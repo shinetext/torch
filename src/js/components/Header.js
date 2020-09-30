@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <header>
         <div className="navbar">
-          <a href="https://www.shinetext.com">
+          <a href="https://www.theshineapp.com">
             <img
               className="shine-logo"
               src="https://images.ctfassets.net/awpxl2koull4/6Ge2cCqfKg0IM8CIsOMiq6/bc0dee5dd91c1b37a155c220e95893d4/shine-logo-nav-122018.png?w=100"
@@ -34,7 +34,7 @@ class Header extends Component {
 
           <div className="navbar-links-container">
             <div className="navbar-links">
-              <a href="https://join.shinetext.com/about?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://www.theshineapp.com/about?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 About
               </a>
             </div>
@@ -42,12 +42,12 @@ class Header extends Component {
               <a href="/">Advice</a>
             </div>
             <div className="navbar-links">
-              <a href="https://join.shinetext.com/shine-at-work?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://www.theshineapp.com/shine-at-work?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 Shine at Work
               </a>
             </div>
             <div className="navbar-links">
-              <a href="https://join.shinetext.com/get-started?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://www.theshineapp.com/get-started?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 Get Started
               </a>
             </div>
@@ -66,7 +66,7 @@ class Header extends Component {
           />
           <ul>
             <li>
-              <a href="https://join.shinetext.com/about?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://www.theshineapp.com/about?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 About
               </a>
             </li>
@@ -95,12 +95,12 @@ class Header extends Component {
               </ul>
             </li>
             <li>
-              <a href="https://join.shinetext.com/shine-at-work?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://www.theshineapp.com/shine-at-work?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 Shine at Work
               </a>
             </li>
             <li>
-              <a href="https://join.shinetext.com/get-started?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
+              <a href="https://www.theshineapp.com/get-started?utm_source=Shine&utm_medium=Blog&utm_campaign=Top_Nav">
                 Get Started
               </a>
             </li>
