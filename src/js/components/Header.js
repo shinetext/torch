@@ -81,6 +81,9 @@ class Header extends Component {
               />
               <ul id="category-submenu">
                 <li>
+                  <a href="/categories/care">CARE</a>
+                </li>
+                <li>
                   <a href="/categories/chill">CHILL</a>
                 </li>
                 <li>
@@ -91,6 +94,9 @@ class Header extends Component {
                 </li>
                 <li>
                   <a href="/categories/play">PLAY</a>
+                </li>
+                <li>
+                  <a href="/categories/work">WORK</a>
                 </li>
               </ul>
             </li>
