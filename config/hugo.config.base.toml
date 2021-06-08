@@ -14,7 +14,7 @@ languageCode = "en"
 
 [params]
   description = "The daily self-care app to help you rest, heal, and grow."
-  google_tag_manager="GTM-PZHRDB"
+  google_tag_manager="GTM-MQ72WGM"
   # dateFormat = "2006, Jan 2"
   copyrightStartYear = "2015"
   infinite_scroll = true
