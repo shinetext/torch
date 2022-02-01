@@ -2,7 +2,7 @@ const moment = require('moment');
 const marked = require('marked');
 const fs = require('fs');
 
-module.exports = entry => {
+module.exports = (entry) => {
   let content = entry.fields;
 
   // Grab Article information used build template meta data
@@ -17,22 +17,14 @@ module.exports = entry => {
     description,
     canonical,
   } = content;
-  let idxOfPubExMod = body.indexOf('<div class="pubexchange_module"'); // index of the pub exchange module in article body
-  let type = 'article';
   let cleanTitle = title.replace(/\"/g, '\\"').trim();
   let cleanDescription = description.replace(/\"/g, '\\"').trim();
-  let cleanBody = marked(body.slice(0, idxOfPubExMod)); // slice pubexchange off of article body
+  let cleanBody = marked(body);
   let headerPhotoInfo = content.headerPhoto.fields;
 
   // Grab Author information
-  let {
-    bio,
-    name,
-    twitter,
-    facebook,
-    instagram,
-    linkedin,
-  } = content.author.fields;
+  let { bio, name, twitter, facebook, instagram, linkedin } =
+    content.author.fields;
   let authorImageInfo = content.author.fields.picture.fields;
   // Use title for the filename. Lowercase, replace ' ' with '-', and only keep alphanumeric characters
   let filename;
@@ -73,7 +65,7 @@ ${cleanBody}
   return fs.writeFile(
     __dirname + `/../content/post/${filename}.md`,
     templateData,
-    function(err) {
+    function (err) {
       if (err) {
         console.log(err);
       }
